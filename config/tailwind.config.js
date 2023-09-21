@@ -11,7 +11,13 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        ace: ['Bruno Ace', 'cursive'],
+        roboto: ['Roboto', 'sans-serif'],
       },
+      colors: {
+        primaryGreen: '#97BF0F',
+        secondaryOrange: '#FFB400',
+      }
     },
   },
   plugins: [
