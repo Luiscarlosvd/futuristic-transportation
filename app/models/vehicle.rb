@@ -1,7 +1,8 @@
 class Vehicle < ApplicationRecord
-  has_many :reservations
+  has_many :reservations, dependant: :destroy
 
-  validates :city, presence: true
-  validates :event_date, presence: true
+  validates :description, presence: true, length: { maximum: 10000 }
+  validates :price, presence: true
+  validates :photo, presence: true
 
 end
