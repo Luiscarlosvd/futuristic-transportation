@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const VehiclesList = () => {
-  return (
-    <div>
-      <h1>Vehicles List</h1>
-    </div>
-  )
-}
+const VehiclesList = () => (
+  <div>
+    <h1>Vehicles List</h1>
+  </div>
+);
 
-export default VehiclesList
+export default VehiclesList;

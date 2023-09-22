@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const MyReservationsList = () => {
-  return (
-    <div>
-      <h1>My Reservations</h1>
-    </div>
-  )
-}
+const MyReservationsList = () => (
+  <div>
+    <h1>My Reservations</h1>
+  </div>
+);
 
-export default MyReservationsList
+export default MyReservationsList;

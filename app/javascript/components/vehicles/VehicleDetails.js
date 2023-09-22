@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const VehicleDetails = () => {
-  return (
-    <div>
-      <h1>Vehicle Details</h1>
-    </div>
-  )
-}
+const VehicleDetails = () => (
+  <div>
+    <h1>Vehicle Details</h1>
+  </div>
+);
 
-export default VehicleDetails
+export default VehicleDetails;

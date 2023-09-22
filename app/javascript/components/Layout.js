@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
+import React from 'react';
 import Navbar from './Navbar';
-import React from "react"
 
 const Layout = () => (
   <div className="layout">

@@ -1,12 +1,10 @@
-import React from 'react'
-import NewReservation from '../components/reservations/NewReservation'
+import React from 'react';
+import NewReservation from '../components/reservations/NewReservation';
 
-const NewReserve = () => {
-  return (
-    <div>
-      <NewReservation />
-    </div>
-  )
-}
+const NewReserve = () => (
+  <div>
+    <NewReservation />
+  </div>
+);
 
-export default NewReserve
+export default NewReserve;

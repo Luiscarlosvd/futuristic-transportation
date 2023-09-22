@@ -1,12 +1,10 @@
-import React from 'react'
-import DeleteVehicleList from '../components/vehicles/DeleteVehicleList'
+import React from 'react';
+import DeleteVehicleList from '../components/vehicles/DeleteVehicleList';
 
-const DeleteVehicle = () => {
-  return (
-    <div>
-      <DeleteVehicleList />
-    </div>
-  )
-}
+const DeleteVehicle = () => (
+  <div>
+    <DeleteVehicleList />
+  </div>
+);
 
-export default DeleteVehicle
+export default DeleteVehicle;

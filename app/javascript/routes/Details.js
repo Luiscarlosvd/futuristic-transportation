@@ -1,12 +1,12 @@
-import React from 'react'
-import VehicleDetails from '../components/vehicles/VehicleDetails'
+import React from 'react';
+import VehicleDetails from '../components/vehicles/VehicleDetails';
 
 const Details = () => (
-    <>
-        <main>
-            <VehicleDetails />
-        </main>
-    </>
-)
+  <>
+    <main>
+      <VehicleDetails />
+    </main>
+  </>
+);
 
-export default Details
+export default Details;

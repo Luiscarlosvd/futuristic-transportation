@@ -1,12 +1,10 @@
-import React from 'react'
-import AddVehicle from '../components/vehicles/AddVehicle'
+import React from 'react';
+import AddVehicle from '../components/vehicles/AddVehicle';
 
-const NewVehicle = () => {
-  return (
-    <div>
-      <AddVehicle />
-    </div>
-  )
-}
+const NewVehicle = () => (
+  <div>
+    <AddVehicle />
+  </div>
+);
 
-export default NewVehicle
+export default NewVehicle;
