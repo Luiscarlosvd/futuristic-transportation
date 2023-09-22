@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
-  <div>
+  <div className='fixed bg-slate-600'>
     <h1>Navbar</h1>
     <NavLink to="/">Home</NavLink>
     <NavLink to="/vehicles">Vehicles List</NavLink>
