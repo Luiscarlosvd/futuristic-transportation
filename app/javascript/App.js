@@ -6,6 +6,8 @@ import Vehicles from "./routes/Vehicles";
 import Details from "./routes/Details";
 import Reservations from "./routes/Reservations";
 import NewReserve from "./routes/NewReserve";
+import Login from "./routes/Login";
+import Signup from "./routes/Signup";
 // import Vehicle from "./routes/Vehicle";
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           </Route>
           <Route path="reserve" element={<NewReserve />}/>
           <Route path="my-reservations" element={<Reservations />} />
+          <Route path="log-in" element={<Login />} />
+          <Route path="sign-up" element={<Signup />} />
         </Route>
       </Routes>
     </Router>
