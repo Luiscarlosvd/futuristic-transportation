@@ -13,6 +13,8 @@ const Navbar = () => {
       <NavLink to="details/id/reserve">Reserve Specific</NavLink>
       <NavLink to="log-in">Login </NavLink>
       <NavLink to="sign-up">Signup</NavLink>
+      <NavLink to="vehicles/new">Add a Vehicle</NavLink>
+      <NavLink to="vehicles/delete">Delete a Vehicle</NavLink>
     </div>
   );
 };
