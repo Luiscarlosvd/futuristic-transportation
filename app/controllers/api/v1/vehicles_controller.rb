@@ -18,4 +18,10 @@ class Api::V1::VehiclesController < ApplicationController
     @vehicle.destroy
     head :no_content
   end
+
+  private
+
+  def vehicle_params
+    params.require(:vehicle).permit(:name, :description, :price, :photo, :photo_back, :photo_left, :photo_right)
+  end
 end
