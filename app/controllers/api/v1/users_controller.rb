@@ -3,9 +3,9 @@ class Api::V1::UsersController < ApplicationController
 
     # GET /api/v1/users
     def index
-      @user = User.all
-      if @user.present?
-        render json: { success: true, users: @user }
+      @users = User.all
+      if @users.present?
+        render json: { success: true, users: @users }
       else
         render json: { success: false, message: 'No Users Found' }
       end
