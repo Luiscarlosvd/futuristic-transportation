@@ -32,6 +32,23 @@
   transform: scale(1.05);
 }
 
+.form-bg {
+  background-color: rgba(0, 0, 0, 0.562);
+  backdrop-filter: blur(2px);
+}
+
+.bg-image-form {
+  background-image: url(Firefly_imagen_de_vehiculos_futuristas_con_fondo_blanco_y_de_perfil_con_propulsores_y_alas_20373-removebg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+form > input {
+  background-color: rgba(255, 0, 0, 0) !important;
+  color: white;
+}
+
 @media (min-width: 768px) {
   .home-img {
     background-position: center;
