@@ -1,5 +1,4 @@
 class Api::V1::UsersController < ApplicationController
-  # before_action :set_user, only: %i[show destroy]
   skip_before_action :verify_authenticity_token, only: %i[create destroy]
 
   def index
@@ -25,14 +24,11 @@ class Api::V1::UsersController < ApplicationController
 
   # DELETE /api/v1/users/1
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
   end
 
   private
-
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def user_params
     params.require(:user).permit(:name, :email)
