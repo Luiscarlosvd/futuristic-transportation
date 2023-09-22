@@ -1,8 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 .home-img {
-  background-image: url(Image-Home-Car-3.png);
+  background-image: url(Image-Home-Car-2.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: contain;
+}
+
+.bg-main {
+  background: radial-gradient(circle, rgba(255,180,0,1) 50%, rgba(255,159,0,1) 100%);
+}
+
+.text-shadow-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.green-button {
+  padding: 0.85rem 2rem;
+  background-color: #97BF0F;
+  color: white;
+  border-radius: 2000px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s;
+}
+
+.green-button:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .home-img {
+    background-position: center;
+  }
+
+  .home-title {
+    margin-top: 15rem;
+  }
 }
