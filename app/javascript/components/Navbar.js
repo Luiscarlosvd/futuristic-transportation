@@ -7,8 +7,10 @@ const Navbar = () => {
       <h1>Navbar</h1>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/vehicles">Vehicles List</NavLink>
-      <NavLink to="/details">Vehicle Details</NavLink>
+      <NavLink to="/details/id">Vehicle Details</NavLink>
       <NavLink to="/my-reservations">My Reservations</NavLink>
+      <NavLink to="/reserve">Reserve</NavLink>
+      <NavLink to="details/id/reserve">Reserve Specific</NavLink>
     </div>
   )
 }
