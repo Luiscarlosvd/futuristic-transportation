@@ -5,5 +5,5 @@ Rails.application.routes.draw do
       resources :vehicles, only: [:index, :create, :destroy]
     end
   end
-  get '/app(/*all)', to: 'react_app#index'
+  get '(/*all)', to: 'react_app#index'
 end
