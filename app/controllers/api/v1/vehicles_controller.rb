@@ -1,4 +1,6 @@
 class Api::V1::VehiclesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: %i[create destroy]
+
   def index
     @vehicles = Vehicle.all
     render json: @vehicles
@@ -15,8 +17,11 @@ class Api::V1::VehiclesController < ApplicationController
 
   def destroy
     @vehicle = Vehicle.find(params[:id])
-    @vehicle.destroy
-    head :no_content
+    if @vehicle.destroy
+      render json: { message: 'Vehicle deleted successfully' }, status: :no_content
+    else
+      render json: { errors: @vehicle.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private
