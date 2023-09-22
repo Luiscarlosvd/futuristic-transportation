@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+/* Home */
+
 .home-img {
   background-image: url(Image-Home-Car-2.png);
   background-repeat: no-repeat;
@@ -39,5 +41,45 @@
 
   .home-title {
     margin-top: 15rem;
+  }
+}
+
+/*Log In and Sign Up */
+
+.form-bg {
+  background-color: rgba(0, 0, 0, 0.285);
+  backdrop-filter: blur(0.7px);
+}
+
+.bg-image-form {
+  background-image: url(Image-LogIn-2.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: auto 60%;
+}
+
+form > input {
+  background-color: rgba(255, 0, 0, 0) !important;
+  color: white;
+}
+
+.bg-registration {
+  background: radial-gradient(circle, rgba(128,128,128,1) 55%, rgba(68,74,84,1) 100%);
+}
+
+@media (min-width: 648px) {
+  .form-bg {
+    padding: 3rem 7rem;
+  }
+}
+
+@media (min-width: 740px) {
+  .bg-image-form {
+    background-position: center;
+    background-size: contain;
+  }
+
+  .form-bg {
+    padding: 5rem 9rem; 
   }
 }
