@@ -31,8 +31,8 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  # username: postgres
-  # password: nachofino1
+  username: postgres
+  password: nachofino1
 
   # The password associated with the postgres role (username).
 
@@ -62,12 +62,12 @@ test:
   database: futuristic_transportation_test
   username: testing
   password: testing
-  
+
   # As with config/credentials.yml, you never want to store sensitive information,
   # like your database password, in your source code. If your source code is
   # ever seen by anyone, they now have access to your database.
-  # username: postgres
-  # password: nachofino1
+  username: postgres
+  password: nachofino1
 # Instead, provide the password or a full connection URL as an environment
 # variable when you boot the app. For example:
 #
