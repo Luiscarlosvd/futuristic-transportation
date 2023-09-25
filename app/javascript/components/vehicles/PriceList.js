@@ -10,7 +10,7 @@ const PriceList = ({ price }) => {
   };
   
   return (
-    <div className='my-6 font-roboto text-lg shadow-md'>
+    <div className='my-6 font-roboto text-lg shadow-md price-list-container'>
         <div className='price-list'>
             <p>Finance fee</p>
             <p className='font-bold'>${financeFee(price)}</p>
