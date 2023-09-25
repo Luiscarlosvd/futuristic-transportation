@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import logo from "../../assets/images/logo-no-back.png";
-import { HiMenuAlt4 } from "react-icons/hi";
-import { BsTwitter } from "react-icons/bs";
-import { FaFacebookF, FaVimeoV, FaPinterestP } from "react-icons/fa";
-import { TiSocialGooglePlus } from "react-icons/ti";
-
-
+import { HiMenuAlt4 } from 'react-icons/hi';
+import { BsTwitter } from 'react-icons/bs';
+import { FaFacebookF, FaVimeoV, FaPinterestP } from 'react-icons/fa';
+import { TiSocialGooglePlus } from 'react-icons/ti';
+import logo from '../../assets/images/logo-no-back.png';
 
 const Navbar = () => {
-
   const location = useLocation();
 
   const [show, setShow] = useState(true);
@@ -18,9 +15,12 @@ const Navbar = () => {
     setShow(!show);
   };
 
-  useEffect(()=>{
-    console.log(location)
-    location.pathname === "/" || location.pathname === "/log-in" || location.pathname === "/sign-up" ? setShow(false) : setShow(true) ;
+  useEffect(() => {
+    if (['/', '/log-in', '/sign-up'].includes(location.pathname)) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
   }, [location]);
 
   return (
@@ -30,15 +30,15 @@ const Navbar = () => {
           toggleShow();
         }}
         className={`fixed text-primaryGreen left-3 top-3  text-3xl cursor-pointer nav-icon ${
-          show ? "display" : "hide"
-        } ${location.pathname === "/" || location.pathname === "/log-in" || location.pathname === "/sign-up"  ? "block" : "hidden" }`}
+          show ? 'display' : 'hide'
+        } ${location.pathname === '/' || location.pathname === '/log-in' || location.pathname === '/sign-up' ? 'block' : 'hidden'}`}
       />
       <div
         className={`bg-white fixed h-screen flex flex-col justify-start z-50 w-60 nav-container ${
-          show ? "display" : "hide"
+          show ? 'display' : 'hide'
         }`}
       >
-        <img src={logo} className="w-2/3 mx-auto" />
+        <img src={logo} className="w-2/3 mx-auto" alt="Galactic Gears" />
         <div className="flex flex-col font-ace ml-2 text-darkGrey font-bold navigation">
           <NavLink className="p-2" to="/">
             HOME
@@ -59,7 +59,8 @@ const Navbar = () => {
             RESERVE SPECIFIC
           </NavLink>
           <NavLink className="p-2" to="log-in">
-            LOGIN{" "}
+            LOGIN
+            {' '}
           </NavLink>
           <NavLink className="p-2" to="sign-up">
             SIGNUP

@@ -107,7 +107,7 @@ form > input:focus {
 /* nav */
 
 .navigation > a:hover {
-  background-color: #97BF0F;
+  background-color: #97bf0f;
   color: white;
   padding-left: 15px;
   transition: all 100ms linear;
@@ -122,7 +122,7 @@ form > input:focus {
 }
 
 .nav-container.display {
-  left: 0px;
+  left: 0;
 }
 
 .nav-container.hide {
@@ -140,23 +140,24 @@ form > input:focus {
 @keyframes rotateRight {
   0% {
     transform: rotate(0deg);
-    color: #97BF0F;
+    color: #97bf0f;
   }
+
   100% {
     transform: rotate(180deg);
-    color: white
+    color: white;
   }
 }
 
 @keyframes rotateLeft {
   0% {
     transform: rotate(180deg);
-    color: white
+    color: white;
   }
+
   100% {
     transform: rotate(0deg);
-    color: #97BF0F;
-
+    color: #97bf0f;
   }
 }
 
@@ -177,5 +178,5 @@ form > input:focus {
 }
 
 .media-list > svg:hover {
-  color: #97BF0F;
+  color: #97bf0f;
 }
