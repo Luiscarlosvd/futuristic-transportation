@@ -10,7 +10,7 @@ import PriceList from './PriceList';
 const VehicleDetails = () => {
   const vehicle = useSelector((state) => state.vehicles);
   const { vehicleId } = useParams();
-  const vehicleDetails = vehicle.vehicles.find((vehicle) => vehicle.id === vehicleId);
+  const vehicleDetails = vehicle.vehicles.find((vehicle) => vehicle.id === parseInt(vehicleId));
 
   return (
     <>
