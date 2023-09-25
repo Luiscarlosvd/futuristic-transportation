@@ -1,10 +1,10 @@
 class InitializeVehicles < ActiveRecord::Migration[7.0]
   def up
     Vehicle.create(
-      name: "Toyota Corolla",
-      description: "Un confiable y eficiente compacto.",
+      name: "Super Duper Vehicle",
+      description: "An confident an futuristic version of all terrain pickup",
       price: 20000.00,
-      photo: "https://example.com/images/toyota_corolla_front.jpg",
+      photo: "https://lh3.googleusercontent.com/u/2/drive-viewer/AK7aPaBZu9r6FDBzFsC-K13-wIdpBV3ncfnI35pQJfcRzpkOO0MOq_16QER_pHSAf7RZvXnTZYJ_SnasIVS8mUjoq06_-bWpbQ=w1868-h903",
       photo_back: "https://example.com/images/toyota_corolla_back.jpg",
       photo_left: "https://example.com/images/toyota_corolla_left.jpg",
       photo_right: "https://example.com/images/toyota_corolla_right.jpg"
