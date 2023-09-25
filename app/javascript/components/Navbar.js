@@ -1,14 +1,22 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from "../../assets/images/logo-no-back.png";
 import { HiMenuAlt4 } from "react-icons/hi";
 
 const Navbar = () => {
+
+  const location = useLocation();
+
   const [show, setShow] = useState(true);
 
   const toggleShow = () => {
     setShow(!show);
   };
+
+  useEffect(()=>{
+    console.log(location)
+    location.pathname === "/" || location.pathname === "/log-in" || location.pathname === "/sign-up" ? setShow(false) : setShow(true) ;
+  }, [location]);
 
   return (
     <>
@@ -65,3 +73,37 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// import React from 'react';
+// import { useLocation } from 'react-router-dom';
+
+// function Navbar() {
+//   // Get the current location object
+//   const location = useLocation();
+
+//   // Conditionally render different components based on the pathname
+//   return (
+//     <nav>
+//       <ul>
+//         <li>
+//           <a href="/">Home</a>
+//         </li>
+//         <li>
+//           <a href="/about">About</a>
+//         </li>
+//         {location.pathname === '/' && (
+//           <li>
+//             <a href="/contact">Contact</a>
+//           </li>
+//         )}
+//         {location.pathname === '/about' && (
+//           <li>
+//             <a href="/">Back</a>
+//           </li>
+//         )}
+//       </ul>
+//     </nav>
+//   );
+// }
+
+// export default Navbar;
