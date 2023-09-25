@@ -17,7 +17,7 @@ const initialState = {
       id: 1,
       name: 'Super duper vehicle',
       description: 'This is the best vehicle you are going to see',
-      price: 29.99,
+      price: 20000.99,
       photo: 'https://lh3.googleusercontent.com/u/2/drive-viewer/AK7aPaBZu9r6FDBzFsC-K13-wIdpBV3ncfnI35pQJfcRzpkOO0MOq_16QER_pHSAf7RZvXnTZYJ_SnasIVS8mUjoq06_-bWpbQ=w1868-h903',
       photo_back: 'link.png',
       photo_left: 'link.png',
