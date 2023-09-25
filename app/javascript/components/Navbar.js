@@ -22,7 +22,7 @@ const Navbar = () => {
       setShow(true);
     }
     if (window.innerWidth <= 768) {
-      setShow(false)
+      setShow(false);
     }
   }, [location]);
 
