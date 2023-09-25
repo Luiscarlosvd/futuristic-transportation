@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+/* Home */
+
 .home-img {
   background-image: url(Image-Home-Car-2.png);
   background-repeat: no-repeat;
@@ -56,5 +58,61 @@ form > input {
 
   .home-title {
     margin-top: 15rem;
+  }
+}
+
+/* Log In and Sign Up */
+
+.form-bg {
+  background-color: rgba(0, 0, 0, 0.285);
+  backdrop-filter: blur(0.5px);
+  box-shadow: 0 3px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.bg-image-form {
+  background-image: url(Image-Log-Sign.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: auto 60%;
+}
+
+form > input {
+  background-color: rgba(255, 0, 0, 0) !important;
+  color: white;
+  transition: all 0.2s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
+}
+
+form > input:focus {
+  transform: scale(1.05);
+}
+
+.bg-registration {
+  background: radial-gradient(circle, rgba(128, 128, 128, 1) 55%, rgba(68, 74, 84, 1) 100%);
+}
+
+.transition-scale {
+  transition: all 0.2s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
+}
+
+.transition-scale:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 648px) {
+  .form-bg {
+    padding: 3rem 7rem;
+  }
+}
+
+@media (min-width: 740px) {
+  .bg-image-form {
+    background-position: center;
+    background-size: contain;
+  }
+
+  .form-bg {
+    padding: 5rem 9rem;
   }
 }
