@@ -37,10 +37,6 @@
   .home-img {
     background-position: center;
   }
-
-  .home-title {
-    margin-top: 15rem;
-  }
 }
 
 /* Vehicle Details */
@@ -75,9 +71,49 @@
 .price-list {
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 1.5rem;
+  padding: 1.1rem 1.5rem;
 }
 
 .price-list:nth-child(even) {
   background-color: #cdcdcdda;
+}
+
+.navbar-space {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-space {
+    display: flex;
+    min-width: 240px;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1132px) {
+  .details-container {
+    display: flex;
+  }
+
+  .detailsBack {
+    bottom: 8rem
+  }
+
+  .details-photo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 66.666%;
+  }
+
+  .price-list-container {
+    max-width: 500px;
+    margin: 1.5rem auto;
+  }
+
+  .details-right-container {
+    width: 33.3333%;
+    height: 80%;
+  }
 }
