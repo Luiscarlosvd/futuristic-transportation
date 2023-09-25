@@ -15,7 +15,7 @@ const SignupForm = () => (
             className="font-ace text-lg border-white rounded-full placeholder-white py-5"
           />
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             className="font-ace text-lg border-white rounded-full placeholder-white py-5"
           />
