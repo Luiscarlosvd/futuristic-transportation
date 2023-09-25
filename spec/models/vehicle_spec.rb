@@ -31,4 +31,9 @@ RSpec.describe Vehicle, type: :model do
     vehicle.photo = nil
     expect(vehicle).not_to be_valid
   end
+
+  it 'is not valid with a description that is too long' do
+    vehicle.description = 'a' * 10_001
+    expect(vehicle).not_to be_valid
+  end
 end
