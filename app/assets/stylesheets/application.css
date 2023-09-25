@@ -159,3 +159,9 @@ form > input:focus {
 
   }
 }
+
+@media (max-width: 740px) {
+  .nav-icon {
+    display: block !important;
+  }
+}
