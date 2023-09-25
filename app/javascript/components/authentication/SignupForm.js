@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SignupForm = () => (
@@ -23,15 +23,17 @@ const SignupForm = () => (
             type="submit"
             className="bg-white font-ace text-slate-600 py-2 px-5 rounded-full transition-scale shadow-md"
           >
-            {" "}
-            Register{" "}
+            {' '}
+            Register
+            {' '}
           </button>
         </form>
         <p className="text-white">
           Already have an acount?
           <Link to="/log-in" className="underline text-blue-700">
-            {" "}
-            Sign In{" "}
+            {' '}
+            Sign In
+            {' '}
           </Link>
         </p>
       </div>
