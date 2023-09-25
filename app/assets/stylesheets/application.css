@@ -165,3 +165,17 @@ form > input:focus {
     display: block !important;
   }
 }
+
+.licence {
+  font-size: 13px;
+}
+
+.media-list > svg {
+  transition: color 100ms linear;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.media-list > svg:hover {
+  color: #97BF0F;
+}

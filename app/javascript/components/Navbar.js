@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from 'react-router-dom';
 import logo from "../../assets/images/logo-no-back.png";
 import { HiMenuAlt4 } from "react-icons/hi";
+import { BsTwitter } from "react-icons/bs";
+import { FaFacebookF, FaVimeoV, FaPinterestP } from "react-icons/fa";
+import { TiSocialGooglePlus } from "react-icons/ti";
+
+
 
 const Navbar = () => {
 
@@ -66,10 +71,15 @@ const Navbar = () => {
             DELETE VEHICLE
           </NavLink>
         </div>
-        <div className="mt-auto">
-          <div>
-            
+        <div className="mt-auto flex flex-col gap-3 ml-4 mb-3">
+          <div className="flex gap-2 items-center text-darkGrey media-list">
+            <BsTwitter />
+            <FaFacebookF />
+            <TiSocialGooglePlus />
+            <FaVimeoV />
+            <FaPinterestP />
           </div>
+          <p className="licence">© 2023 Galactic Gears.</p>
         </div>
       </div>
     </>
