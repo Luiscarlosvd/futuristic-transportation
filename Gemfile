@@ -76,3 +76,5 @@ group :test do
 end
 
 gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'rspec-rails', '~> 6.0', groups: %i[development test]
