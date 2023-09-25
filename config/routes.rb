@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, except: [:update]
       resources :vehicles, only: [:index, :create, :destroy]
+      resources :reservations, only: [:index, :create, :destroy]
     end
   end
   root 'react_app#index'
