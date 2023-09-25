@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+gem 'devise'
+
+gem 'rack-cors'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.8'
 
@@ -72,3 +76,5 @@ group :test do
 end
 
 gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'rspec-rails', '~> 6.0', groups: %i[development test]
