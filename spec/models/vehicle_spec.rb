@@ -16,8 +16,19 @@ RSpec.describe Vehicle, type: :model do
   it 'is valid with valid attributes' do
     expect(vehicle).to be_valid
   end
+
   it 'is not valid without a description' do
     vehicle.description = nil
+    expect(vehicle).not_to be_valid
+  end
+
+  it 'is not valid without a price' do
+    vehicle.price = nil
+    expect(vehicle).not_to be_valid
+  end
+
+  it 'is not valid without a photo' do
+    vehicle.photo = nil
     expect(vehicle).not_to be_valid
   end
 end
