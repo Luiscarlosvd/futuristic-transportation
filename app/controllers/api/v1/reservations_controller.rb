@@ -23,4 +23,10 @@ class Api::V1::ReservationsController < ApplicationController
       render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def reservation_params
+    params.require(:reservation).permit(:city, :event_date)
+  end
 end
