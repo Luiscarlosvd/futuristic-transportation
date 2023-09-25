@@ -41,3 +41,26 @@
     margin-top: 15rem;
   }
 }
+
+/* Vehicle Details */
+
+.detailsBack {
+  color: white;
+  position: absolute;
+  font-size: 1.65rem;
+  width: 4rem;
+  height: 3.5rem;
+  background-color: #98be18;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 0.8rem;
+  border-radius: 0 2rem 2rem 0;
+  transition: all 0.2s;
+}
+
+.detailsBack:hover {
+  background-color: #7daa14;
+  transform: scale(1.05);
+}
