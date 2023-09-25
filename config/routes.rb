@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root 'root#index'
-
+  
   devise_for :users
   namespace :api do
     namespace :v1 do
@@ -8,5 +7,6 @@ Rails.application.routes.draw do
       resources :vehicles, only: [:index, :create, :destroy]
     end
   end
+  root 'react_app#index'
   get '(/*all)', to: 'react_app#index'
 end
