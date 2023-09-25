@@ -49,11 +49,11 @@
 .form-bg {
   background-color: rgba(0, 0, 0, 0.285);
   backdrop-filter: blur(0.5px);
-  box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 4px 1px rgba(0, 0, 0, 0.5);
 }
 
 .bg-image-form {
-  background-image: url(Image-LogIn-2.png);
+  background-image: url(Image-Log-Sign.png);
   background-repeat: no-repeat;
   background-position: right;
   background-size: auto 60%;
@@ -71,7 +71,7 @@ form > input:focus {
 }
 
 .bg-registration {
-  background: radial-gradient(circle, rgba(128,128,128,1) 55%, rgba(68,74,84,1) 100%);
+  background: radial-gradient(circle, rgba(128, 128, 128, 1) 55%, rgba(68, 74, 84, 1) 100%);
 }
 
 .transition-scale {
@@ -96,6 +96,6 @@ form > input:focus {
   }
 
   .form-bg {
-    padding: 5rem 9rem; 
+    padding: 5rem 9rem;
   }
 }
