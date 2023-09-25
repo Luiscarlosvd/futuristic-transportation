@@ -32,9 +32,9 @@ const Navbar = () => {
         onClick={() => {
           toggleShow();
         }}
-        className={`fixed text-primaryGreen left-3 top-3  text-3xl cursor-pointer nav-icon ${
+        className={`fixed left-3 top-3 text-3xl cursor-pointer nav-icon ${
           show ? 'display' : 'hide'
-        } ${location.pathname === '/' || location.pathname === '/log-in' || location.pathname === '/sign-up' ? 'block' : 'hidden'}`}
+        } ${location.pathname === '/' || location.pathname === '/log-in' || location.pathname === '/sign-up' ? 'block white' : 'hidden'}`}
       />
       <div
         className={`bg-white fixed -left-full h-screen overflow-y-scroll flex flex-col justify-start z-50 w-60 nav-container ${
