@@ -103,3 +103,10 @@ form > input:focus {
     padding: 5rem 9rem;
   }
 }
+
+.navigation > a:hover {
+  background-color: #97BF0F;
+  color: white;
+  padding-left: 15px;
+  transition: all 100ms linear;
+}
