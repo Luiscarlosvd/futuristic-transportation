@@ -9,7 +9,7 @@ import logo from '../../assets/images/logo-no-back.png';
 const Navbar = () => {
   const location = useLocation();
 
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const toggleShow = () => {
     setShow(!show);
@@ -20,6 +20,9 @@ const Navbar = () => {
       setShow(false);
     } else {
       setShow(true);
+    }
+    if (window.innerWidth <= 768) {
+      setShow(false)
     }
   }, [location]);
 
@@ -34,7 +37,7 @@ const Navbar = () => {
         } ${location.pathname === '/' || location.pathname === '/log-in' || location.pathname === '/sign-up' ? 'block' : 'hidden'}`}
       />
       <div
-        className={`bg-white fixed h-screen flex flex-col justify-start z-50 w-60 nav-container ${
+        className={`bg-white fixed -left-full h-screen overflow-y-scroll flex flex-col justify-start z-50 w-60 nav-container ${
           show ? 'display' : 'hide'
         }`}
       >

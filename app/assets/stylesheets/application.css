@@ -125,9 +125,9 @@ form > input:focus {
   left: 0;
 }
 
-.nav-container.hide {
-  left: -100%;
-}
+/* .nav-container.hide {
+  left: -3000px;
+} */
 
 .nav-icon.display {
   animation: rotateLeft 300ms ease-in-out forwards;
