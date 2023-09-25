@@ -16,13 +16,14 @@
 }
 
 .green-button {
-  padding: 0.85rem 2rem;
+  padding: 1rem 2rem;
   background-color: #97bf0f;
   color: white;
   border-radius: 2000px;
   font-weight: 500;
   display: flex;
   align-items: center;
+  font-size: 1.2rem;
   gap: 1rem;
   transition: all 0.2s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
@@ -52,6 +53,7 @@
   height: 3.5rem;
   background-color: #98be18;
   left: 0;
+  bottom: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -63,4 +65,19 @@
 .detailsBack:hover {
   background-color: #7daa14;
   transform: scale(1.05);
+}
+
+.h-1px {
+  height: 1.75px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.514);
+}
+
+.price-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem;
+}
+
+.price-list:nth-child(even) {
+  background-color: #cdcdcdda;
 }
