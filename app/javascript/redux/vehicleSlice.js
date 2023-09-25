@@ -2,9 +2,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
-  async (id) => {
+  async () => {
     try {
-      const response = await axios.get(`/vehicles`);
+      const response = await axios.get('api/v1/vehicles');
       return response.data;
     } catch (error) {
       return error.message;
