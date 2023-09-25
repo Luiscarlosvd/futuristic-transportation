@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../../assets/images/logo-no-back.png' 
 
 const Navbar = () => (
   <div className="bg-slate-600">
     <h1>Navbar</h1>
+    <img src={logo} />
     <NavLink to="/">Home</NavLink>
     <NavLink to="/vehicles">Vehicles List</NavLink>
     <NavLink to="/details/id">Vehicle Details</NavLink>
