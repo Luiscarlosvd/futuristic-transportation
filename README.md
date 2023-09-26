@@ -116,13 +116,11 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-
-```
 you need to install ruby 3.2.2 using the prefer tool, example: 
 - [rvm](https://rvm.io/)
 - [rbenv](https://github.com/rbenv/rbenv)
 - [asdf-vm](https://asdf-vm.com/)
-```
+
 - Browser (Google Chrome, Mozilla Firefox, Safari or any other browser)
 
 ### Setup
