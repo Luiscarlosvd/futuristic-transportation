@@ -236,7 +236,7 @@ form > input:focus {
 /* New Reservation */
 
 .bg-new-reservation {
-  background: radial-gradient(circle, rgba(157,200,1,0.9243346997001926) 55%, rgba(132,166,14,0.9523459041819853) 100%);
+  background: radial-gradient(circle, rgba(157, 200, 1, 0.9243346997001926) 55%, rgba(132, 166, 14, 0.9523459041819853) 100%);
 }
 
 .bg-image-new-reservation {
@@ -244,7 +244,7 @@ form > input:focus {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 110%;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .form-new-reservation-bg {
