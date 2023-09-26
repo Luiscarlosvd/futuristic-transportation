@@ -103,3 +103,56 @@ form > input:focus {
     padding: 5rem 9rem;
   }
 }
+
+/* nav */
+
+.navigation > a:hover {
+  background-color: #97bf0f;
+  color: white;
+  padding-left: 15px;
+  transition: all 100ms linear;
+}
+
+.nav-container {
+  transition: all 300ms ease-in-out;
+}
+
+.nav-container.display {
+  left: 0;
+}
+
+.nav-icon {
+  z-index: 1000;
+  transition: all 300ms;
+  color: white;
+}
+
+.nav-icon.display {
+  transform: rotate(180deg);
+  color: #97bf0f;
+}
+
+@media (max-width: 768px) {
+  .nav-icon {
+    display: block;
+    color: #97bf0f;
+  }
+
+  .white {
+    color: white;
+  }
+}
+
+.licence {
+  font-size: 13px;
+}
+
+.media-list > svg {
+  transition: color 100ms linear;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.media-list > svg:hover {
+  color: #97bf0f;
+}
