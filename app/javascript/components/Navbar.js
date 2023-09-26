@@ -42,7 +42,7 @@ const Navbar = () => {
         }`}
       >
         <img src={logo} className="w-2/3 mx-auto" alt="Galactic Gears" />
-        <div className="flex flex-col font-ace ml-2 text-darkGrey font-bold navigation">
+        <div className="flex flex-col font-ace ml-2 text-darkGrey font-bold navigation mb-10">
           <NavLink className="p-2" to="/">
             HOME
           </NavLink>
@@ -53,7 +53,7 @@ const Navbar = () => {
             VEHICLE DETAILS
           </NavLink>
           <NavLink className="p-2" to="/my-reservations">
-            MY RESERVATIONS
+            RESERVATIONS
           </NavLink>
           <NavLink className="p-2" to="/reserve">
             RESERVE
