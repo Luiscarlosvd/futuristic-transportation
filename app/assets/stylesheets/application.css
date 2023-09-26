@@ -232,3 +232,7 @@ form > input:focus {
 .media-list > svg:hover {
   color: #97bf0f;
 }
+
+.gray-bg {
+  background-color: rgb(201, 201, 201);
+}
