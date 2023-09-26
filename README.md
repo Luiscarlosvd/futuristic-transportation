@@ -141,6 +141,7 @@ Install this project with:
 ```sh
   cd futuristic-transportation
   bundle install
+  npm install
 ```
 
 ### Usage
