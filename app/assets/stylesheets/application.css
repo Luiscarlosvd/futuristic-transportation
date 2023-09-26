@@ -251,11 +251,15 @@ form > input:focus {
   background-color: #25252552;
   backdrop-filter: blur(0.9px);
   width: 95%;
-  margin: 0 auto;
+  margin: 60px auto;
   border-radius: 10px;
   padding: 2rem 0;
 }
 
+.input-date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  padding-right: 0.5rem;
+}
 
 @media (min-width: 740px) {
   .bg-image-new-reservation {
