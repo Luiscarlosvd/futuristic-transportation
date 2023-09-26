@@ -9,26 +9,30 @@ import 'swiper/css';
 const VehiclesList = () => {
   const swiperRef = useRef();
   const vehicles = useSelector((state) => state.vehicles);
-  const pagesQuantity = Math.ceil(4 / 3)
-  const [page, setPage] = useState(0)
+  const pagesQuantity = Math.ceil(7 / 3)
+
+  const [listStart, setListStart] = useState(true)
+  const [listEnd, setListEnd] = useState(false)
 
   const slideForward = () => {
-    if (page < pagesQuantity - 1) {
-      setPage(page + 1)
+    if (!listEnd) {
       swiperRef.current.slideNext()
+      if (swiperRef.current.isEnd) {setListEnd(true)} 
+    } 
+    if (listStart) {
+      setListStart(false)
     }
   }
 
   const slideBack = () => {
-    if ( page > 0 ) {
-      setPage(page - 1)
+    if (!listStart) {
       swiperRef.current.slidePrev()
+      if (swiperRef.current.isBeginning) {setListStart(true)}
+    }
+    if (listEnd) {
+      setListEnd(false)
     }
   }
-
-  useEffect(() => {
-    swiperRef.current.on('reachEnd')
-  }, [])
 
   return (
     <div className='flex w-screen'>
@@ -40,7 +44,7 @@ const VehiclesList = () => {
         </div>
         <p className='text-center'>----------- divisor----------</p>
         <div className='flex items-center justify-center w-full gap-8'>
-          <div className={`slide mr-auto pl-8 pr-3 py-3 rounded-r-full bg-primaryGreen ${(page === 0) ? "gray-bg" : ""}`}>
+          <div className={`slide mr-auto pl-8 pr-3 py-3 rounded-r-full bg-primaryGreen ${listStart ? "gray-bg" : ""}`}>
             <TbTriangle className="text-l text-white -rotate-90" onClick={() => {slideBack()}} />
           </div>
           <Swiper
@@ -58,10 +62,13 @@ const VehiclesList = () => {
             <SwiperSlide><VehicleCard name='Vehicle2' description="Hola como estas!" image="https://holis.com"/></SwiperSlide>
             <SwiperSlide><VehicleCard name='Vehicle3' description="Hola como estas!!" image="https://holass.com"/></SwiperSlide>
             <SwiperSlide><VehicleCard name='Vehicle3' description="Hola como estas!!" image="https://holass.com"/></SwiperSlide>
+            <SwiperSlide><VehicleCard name='Vehicle3' description="Hola como estas!!" image="https://holass.com"/></SwiperSlide>
+            <SwiperSlide><VehicleCard name='Vehicle3' description="Hola como estas!!" image="https://holass.com"/></SwiperSlide>
+            <SwiperSlide><VehicleCard name='Vehicle3' description="Hola como estas!!" image="https://holass.com"/></SwiperSlide>
       
           </Swiper>
         
-          <div className={`slide ml-auto pr-8 pl-3 py-3 rounded-l-full bg-primaryGreen ${(page === pagesQuantity - 1) ? "gray-bg" : ""}`}>
+          <div className={`slide ml-auto pr-8 pl-3 py-3 rounded-l-full bg-primaryGreen ${listEnd ? "gray-bg" : ""}`}>
             <TbTriangle className="text-l text-white rotate-90" onClick={() => {slideForward()}} />
           </div>
         </div>
