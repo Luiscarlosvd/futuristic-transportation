@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
   async () => {
     try {
-      const response = await axios.get('api/v1/vehicles');
+      const response = await axios.get('/api/v1/vehicles');
       return response.data.vehicles;
     } catch (error) {
       return error.message;

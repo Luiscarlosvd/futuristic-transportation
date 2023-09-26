@@ -10,6 +10,17 @@ const MyReservationsList = () => {
 
   const userId = 1;
 
+  function formatEventDate(eventDate) {
+    const date = new Date(eventDate);
+    const options = {
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+    };
+    return date.toLocaleDateString(undefined, options);
+  }
+
   useEffect(() => {
     if (reservations.length === 0) {
       dispatch(fetchReservations());
@@ -26,9 +37,9 @@ const MyReservationsList = () => {
   return (
     <div className="flex">
       <div className="navbar-space" />
-      <div className="min-h-screen">
+      <div className="min-h-screen w-full gray-bg">
 
-        <h1 className="text-center text-xl font-bold text-gray-700 py-6">Reservations</h1>
+        <h1 className="text-center text-xl text-shadow-title font-bold py-6 mb-20 font-ace">Reservations</h1>
         <div className="flex flex-row flex-wrap justify-center gap-8">
 
           {filteredVehicles.map((vehicle, index) => (
@@ -38,11 +49,11 @@ const MyReservationsList = () => {
                 alt={vehicle.name}
                 className="w-64 h-40 object-cover"
               />
-              <div className="bg-white w-64 rounded-xl shadow-md p-4">
+              <div className="bg-reservations w-64 rounded-xl shadow-md p-4">
                 <p className="text-gray-700 font-bold text-lg">{vehicle.name}</p>
                 <p className="text-gray-500 text-sm">{vehicle.description}</p>
                 <p className="text-gray-500 font-bold text-sm">{userReserves[index].city}</p>
-                <p className="text-gray-500 text-sm">{userReserves[index].event_date}</p>
+                <p className="text-gray-500 font-bold text-lg">{formatEventDate(userReserves[index].event_date)}</p>
               </div>
             </div>
           ))}
