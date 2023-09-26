@@ -247,6 +247,16 @@ form > input:focus {
   opacity: .9;
 }
 
+.form-new-reservation-bg {
+  background-color: #25252552;
+  backdrop-filter: blur(0.9px);
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 2rem 0;
+}
+
+
 @media (min-width: 740px) {
   .bg-image-new-reservation {
     background-position: center;
