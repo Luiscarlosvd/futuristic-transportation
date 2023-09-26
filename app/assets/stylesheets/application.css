@@ -132,9 +132,9 @@ form > input:focus {
   color: #97bf0f;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 768px) {
   .nav-icon {
-    display: block !important;
+    display: block;
     color: #97bf0f;
   }
 
