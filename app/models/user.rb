@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :reservations
 
-  validates :name, presence: true, uniqueness: true, length: { maximum: 100 }
+  validates :name, presence: true, uniqueness: true, length: { maximum: 100, message: '%<count>s characters is the maximum allowed' }
 end
