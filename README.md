@@ -117,8 +117,11 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 
-```sh
-gem install ruby
+```
+you need to install ruby 3.2.2 using the prefer tool, example: 
+- [rvm](https://rvm.io/)
+- [rbenv](https://github.com/rbenv/rbenv)
+- [asdf-vm](https://asdf-vm.com/)
 ```
 - Browser (Google Chrome, Mozilla Firefox, Safari or any other browser)
 
@@ -146,26 +149,22 @@ Install this project with:
 
 To run the project, execute the following command:
 
-```
-rails tailwindcss:watch
-control + c 
-rails s
+```sh
+./bin/dev
 ```
 **Note:** If there are any errors consider adding your necesary username and password in `database.yml` for setting up your local enviroment and use the following comand:
 
-```
-rails db:create db:migrate
-rails s
+```sh
+rails db:drop db:create db:migrate
+./bin/dev
 ```
 
 ### Run tests
 
 To run tests, run the following command:
 
-```
-rails tailwindcss:watch
-control + c
-rspec spec
+```sh
+rspec
 ```
 
 <!-- ### Deployment
