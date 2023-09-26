@@ -253,7 +253,8 @@ form > input:focus {
   width: 95%;
   margin: 60px auto;
   border-radius: 10px;
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .input-date::-webkit-calendar-picker-indicator {
@@ -264,6 +265,12 @@ form > input:focus {
 @media (min-width: 740px) {
   .bg-image-new-reservation {
     background-position: center;
-    background-size: 80%;
+    background-size: contain;
+  }
+}
+
+@media (min-width: 420px) {
+  .bg-new-reservation {
+    height: 100vh;
   }
 }

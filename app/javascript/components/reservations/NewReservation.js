@@ -19,7 +19,7 @@ const NewReservation = () => {
         <>
           <div className='h-full w-full bg-new-reservation'>
             <div className="bg-image-new-reservation w-full h-full grid place-content-center">
-              <section className='form-new-reservation-bg flex flex-col justify-center items-center'>
+              <section className='form-new-reservation-bg flex flex-col justify-center items-center sm:max-w-5xl sm:w-4/5 lg:px-6'>
                 <h1 className='font-ace text-2xl text-white text-shadow-title text-center'>Make a Reservation</h1>
                 <div className='bg-white h-1px w-5/6 max-w-xs my-5'></div>
                 <p className='text-white text-center w-11/12 text-shadow-title'>
@@ -29,7 +29,7 @@ const NewReservation = () => {
                   your mind imagines. If you want to find out if a reservation is available in your area, 
                   please use the selector below.
                 </p>
-                <form className="flex flex-col gap-7 items-center mt-5 w-full">
+                <form className="flex flex-col gap-7 items-center mt-5 w-full lg:flex-row" >
                   <select type="text" placeholder="City" className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12" >
                     <option className="bg-zinc-800" value="" disabled > Select a City </option>
                     <option className='bg-zinc-800' value="Cordoba" > Cordoba, Argentina </option>
@@ -44,7 +44,7 @@ const NewReservation = () => {
                       name="date"
                       placeholder="Date"
                       min={new Date().toISOString().split("T")[0]}
-                      className="w-full font-roboto shadow-md border-white rounded-full bg-transparent text-white input-date"
+                      className="w-full font-roboto shadow-md border-white rounded-full bg-transparent text-white input-date py-4"
                     />
                   </div>
                   <select type="text" placeholder="Vehicle" className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12" >
