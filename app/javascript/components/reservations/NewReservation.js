@@ -1,20 +1,26 @@
 import React from 'react';
 import { useEffect } from "react";
+import { useParams } from 'react-router';
+import { useLocation } from 'react-router-dom';
 import { PongSpinner } from 'react-spinners-kit';
 import { useDispatch, useSelector } from 'react-redux';
 import { getVehiclesInfo } from '../../redux/vehicleSlice';
 
 const NewReservation = () => {
+  const location = useLocation();
+  const { vehicleId } = useParams();
   const dispatch = useDispatch();
   const vehicle = useSelector((state) => state.vehicles);
 
   useEffect(() => {
-    dispatch(getVehiclesInfo());
+    if (vehicle.vehicles.length === 0 ) {
+      dispatch(getVehiclesInfo());
+    }
   }, [dispatch]);
 
   return (
     <>
-      {vehicle.status === 'Loading' && <div className="h-screen flex justify-center items-center"><PongSpinner size={100} color="#686769" loading /></div> }
+      {vehicle.status === 'Loading'  && <div className="h-screen flex justify-center items-center"><PongSpinner size={100} color="#686769" loading /></div> }
       {vehicle.status === 'fulfilled' && (
         <>
           <div className='h-full w-full bg-new-reservation'>
@@ -47,12 +53,22 @@ const NewReservation = () => {
                       className="w-full font-roboto shadow-md border-white rounded-full bg-transparent text-white input-date py-4"
                     />
                   </div>
-                  <select type="text" placeholder="Vehicle" className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12" >
-                    <option className="bg-zinc-800" value="" disabled > Select a Vehicle </option>
-                    {vehicle.vehicles.map((vehicle) => (
-                      <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800"> {vehicle.name} </option>
-                    ))}
-                  </select>
+                    { location.pathname === '/reserve' ? (
+                        <select type="text" placeholder="Vehicle" className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12" >
+                          <option className="bg-zinc-800" value="" disabled > Select a Vehicle </option>
+                          {vehicle.vehicles.map((vehicle) => (
+                            <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800"> {vehicle.name} </option>
+                          ))}
+                        </select>
+                      ) : (
+                        <select type="text" placeholder="Vehicle" className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12">
+                          {vehicle.vehicles.map((vehicle) => {
+                            if (vehicle.id === parseInt(vehicleId, 10)) {
+                              return <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800" selected> {vehicle.name} </option>
+                            }
+                          })}
+                        </select>
+                      ) }
                   <button type="submit" className="font-roboto font-medium w-4/5 max-w-xs transition-scale text-primaryGreen
                   bg-white border-white py-4 px-8 rounded-full md:w-60"> 
                     Reserve 
