@@ -17,13 +17,11 @@ const MyReservationsList = () => {
     if (vehicles.length === 0) {
       dispatch(getVehiclesInfo());
     }
-  }, []);
+  }, [dispatch, reservations.length, vehicles.length]);
 
   const userReserves = reservations.filter((reservation) => reservation.user_id === userId);
   const vehicleIds = userReserves.map((reservation) => reservation.vehicle_id);
   const filteredVehicles = vehicles.filter((vehicle) => vehicleIds.includes(vehicle.id));
-
-  console.log(userReserves, vehicleIds, filteredVehicles);
 
   return (
     <div className="flex">
