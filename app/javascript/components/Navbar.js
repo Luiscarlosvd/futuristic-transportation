@@ -5,8 +5,12 @@ import { BsTwitter } from 'react-icons/bs';
 import { FaFacebookF, FaVimeoV, FaPinterestP } from 'react-icons/fa';
 import { TiSocialGooglePlus } from 'react-icons/ti';
 import logo from '../../assets/images/logo-no-back.png';
+import { useParams } from 'react-router-dom';
 
 const Navbar = () => {
+
+  const { vehicleId } = useParams();
+
   const location = useLocation();
 
   const [show, setShow] = useState(false);
@@ -16,7 +20,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (['/', '/log-in', '/sign-up'].includes(location.pathname)) {
+    if (['/', '/log-in', '/sign-up', '/reserve', `/details/${vehicleId}/reserve`].includes(location.pathname)) {
       setShow(false);
     } else {
       setShow(true);
@@ -34,7 +38,7 @@ const Navbar = () => {
         }}
         className={`fixed left-3 top-3 text-3xl cursor-pointer nav-icon ${
           show ? 'display' : 'hide'
-        } ${location.pathname === '/' || location.pathname === '/log-in' || location.pathname === '/sign-up' ? 'block white' : 'hidden'}`}
+        } ${['/', '/log-in', '/sign-up', '/reserve', `/details/${vehicleId}/reserve`].includes(location.pathname) ? 'block white' : 'hidden'}`}
       />
       <div
         className={`bg-white fixed -left-full h-screen overflow-y-scroll flex flex-col justify-start z-50 w-60 nav-container ${
