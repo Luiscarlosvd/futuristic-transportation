@@ -208,17 +208,6 @@ form > input:focus {
   color: #97bf0f;
 }
 
-@media (max-width: 768px) {
-  .nav-icon {
-    display: block;
-    color: #97bf0f;
-  }
-
-  .white {
-    color: white;
-  }
-}
-
 .licence {
   font-size: 13px;
 }
@@ -263,4 +252,35 @@ form > input:focus {
 
 .vehicles-content {
   max-width: calc(100vw - 15rem);
+  min-width: calc(100vw - 15rem);
+}
+
+.card-image::after {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background-color: rgb(173, 173, 173);
+}
+
+@media (max-width: 768px) {
+  .nav-icon {
+    display: block;
+    color: #97bf0f;
+  }
+
+  .white {
+    color: white;
+  }
+
+  .vehicles-content {
+    max-width: 100vw;
+    min-width: 100vw;
+  }
+
+  .slide {
+    display: none;
+  }
 }
