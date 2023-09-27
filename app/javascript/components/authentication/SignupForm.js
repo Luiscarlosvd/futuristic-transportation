@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import useForm from "../hooks/useForm";
+import { useForm } from "react-hook-form";
 
 const SignupForm = () => {
 
-  const { formData, handleChange, handleSubmit, resetForm } = useForm({
-    username: '',
-    email: '',
-  });
+  const { register, handleSubmit, formState: {errors} } = useForm();
 
   return (
     <div className="w-full h-screen bg-signup">
@@ -16,21 +13,30 @@ const SignupForm = () => {
           <h1 className="font-ace text-2xl text-white text-shadow-title">
             Sign Up
           </h1>
-          <form className="flex flex-col gap-7 items-center" onSubmit={handleSubmit}>
-            <input
-              name="username"
-              type="text"
-              placeholder="Username"
-              className="font-ace text-lg border-white rounded-full placeholder-white py-5"
-              onChange={handleChange}
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Email"
-              className="font-ace text-lg border-white rounded-full placeholder-white py-5"
-              onChange={handleChange}
-            />
+          <form 
+            className="flex flex-col gap-7 items-center" 
+            onSubmit={handleSubmit((data) => console.log(data))}
+          >
+            <label className="flex flex-col items-center gap-1">
+              <span className="font-bold text-red-600">{errors.name?.message}</span>
+              <input
+                {...register("name", { required: 'This field is required.' })}
+                name="name"
+                type="text"
+                placeholder="Username"
+                className="font-ace text-lg border-white rounded-full placeholder-white py-5"
+              />
+            </label>
+            <label className="flex flex-col items-center gap-1">
+              <span className="font-bold text-red-600">{errors.email?.message}</span>
+              <input
+                {...register("email", { required: 'This field is required.' })}
+                name="email"
+                type="email"
+                placeholder="Email"
+                className="font-ace text-lg border-white rounded-full placeholder-white py-5"
+              />
+            </label>
             <button
               type="submit"
               className="bg-white font-ace text-slate-600 py-2 px-5 rounded-full transition-scale shadow-md"

@@ -142,14 +142,14 @@
   background-size: auto 60%;
 }
 
-form > input {
+form > label > input {
   background-color: rgba(255, 0, 0, 0) !important;
   color: white;
   transition: all 0.2s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
 }
 
-form > input:focus {
+form > label > input:focus {
   transform: scale(1.05);
 }
 
