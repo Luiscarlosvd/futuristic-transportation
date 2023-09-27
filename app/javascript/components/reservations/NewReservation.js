@@ -15,7 +15,7 @@ const NewReservation = () => {
     if (vehicle.vehicles.length === 0) {
       dispatch(getVehiclesInfo());
     }
-  }, [dispatch]);
+  }, [dispatch, vehicle.vehicles.length]);
 
   return (
     <>

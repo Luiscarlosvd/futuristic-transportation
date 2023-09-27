@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { BsTwitter } from 'react-icons/bs';
-import { FaFacebookF, FaVimeoV, FaPinterestP, FaGoogle } from 'react-icons/fa';
+import {
+  FaFacebookF, FaVimeoV, FaPinterestP, FaGoogle,
+} from 'react-icons/fa';
 import logo from '../../assets/images/logo-no-back.png';
-import { useParams } from 'react-router-dom';
+
 import useWindowResize from './useWindowResize';
 
 const Navbar = () => {
@@ -29,7 +31,7 @@ const Navbar = () => {
     if (width <= 768) {
       setShow(false);
     }
-  }, [width, location]);
+  }, [width, location, vehicleId]);
 
   return (
     <>
@@ -78,7 +80,7 @@ const Navbar = () => {
           <div className="flex gap-2 items-center text-darkGrey media-list">
             <BsTwitter />
             <FaFacebookF />
-            <FaGoogle/>
+            <FaGoogle />
             <FaVimeoV />
             <FaPinterestP />
           </div>

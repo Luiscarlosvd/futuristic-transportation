@@ -1,14 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
-import VehicleCard from "./VehicleCard";
-import { TbTriangle } from "react-icons/tb";
-import { useSelector, useDispatch } from "react-redux";
-import { getVehiclesInfo } from "../../redux/vehicleSlice";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
-import { PongSpinner } from "react-spinners-kit";
+import React, { useState, useRef, useEffect } from 'react';
+import { TbTriangle } from 'react-icons/tb';
+import { useSelector, useDispatch } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
+import { PongSpinner } from 'react-spinners-kit';
+import { getVehiclesInfo } from '../../redux/vehicleSlice';
+import VehicleCard from './VehicleCard';
 
-import "swiper/css";
-import Divisor from "./Divisor";
+import 'swiper/css';
+import Divisor from './Divisor';
 
 const VehiclesList = () => {
   const dispatch = useDispatch();
@@ -46,16 +46,16 @@ const VehiclesList = () => {
     if (vehicles.vehicles.length === 0) {
       dispatch(getVehiclesInfo());
     }
-  }, []);
+  });
 
   return (
     <>
-      {vehicles.status === "Loading" && (
+      {vehicles.status === 'Loading' && (
         <div className="h-screen flex justify-center items-center">
           <PongSpinner size={100} color="#686769" loading />
         </div>
       )}
-      {vehicles.status === "fulfilled" && (
+      {vehicles.status === 'fulfilled' && (
         <div className="flex w-screen">
           <div className="navbar-space" />
           <div className="flex flex-col gap-10 min-h-screen vehicles-content justify-center bg-slate-50">
@@ -67,9 +67,10 @@ const VehiclesList = () => {
             </div>
             <Divisor quantity={15} />
             <div className="flex items-center justify-center w-full gap-8">
-              <div
+              <button
+                type="button"
                 className={`slide mr-auto pl-8 pr-3 py-3 rounded-r-full bg-primaryGreen ${
-                  listStart ? "gray-bg" : ""
+                  listStart ? 'gray-bg' : ''
                 }`}
                 onClick={() => {
                   slideBack();
@@ -78,7 +79,7 @@ const VehiclesList = () => {
                 <TbTriangle
                   className="text-l text-white -rotate-90"
                 />
-              </div>
+              </button>
               <Swiper
                 id="always-be-swipin"
                 onSwiper={(swiper) => {
@@ -113,10 +114,8 @@ const VehiclesList = () => {
                   <SwiperSlide key={vehicle.id}>
                     <Link to={`/details/${vehicle.id}`}>
                       <VehicleCard
-                        id={vehicle.id}
                         name={vehicle.name}
                         description={vehicle.description}
-                        price={vehicle.price}
                         photo={vehicle.photo}
                       />
                     </Link>
@@ -124,9 +123,10 @@ const VehiclesList = () => {
                 ))}
               </Swiper>
 
-              <div
+              <button
+                type="button"
                 className={`slide ml-auto pr-8 pl-3 py-3 rounded-l-full bg-primaryGreen ${
-                  listEnd ? "gray-bg" : ""
+                  listEnd ? 'gray-bg' : ''
                 }`}
                 onClick={() => {
                   slideForward();
@@ -135,7 +135,7 @@ const VehiclesList = () => {
                 <TbTriangle
                   className="text-l text-white rotate-90"
                 />
-              </div>
+              </button>
             </div>
           </div>
         </div>
