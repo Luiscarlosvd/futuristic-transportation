@@ -200,6 +200,10 @@ form > input:focus {
   transition: all 300ms ease-in-out;
 }
 
+.nav-container::-webkit-scrollbar {
+  display: none;
+}
+
 .nav-container.display {
   left: 0;
 }
