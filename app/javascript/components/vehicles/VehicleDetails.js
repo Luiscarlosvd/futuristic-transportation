@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { PongSpinner } from 'react-spinners-kit';
 import { AiOutlineLeft, AiOutlineRightCircle } from 'react-icons/ai';
 import { BsCarFrontFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { getVehiclesInfo } from '../../redux/vehicleSlice';
 import useWindowResize from '../useWindowResize';
 import PriceList from './PriceList';
 
@@ -12,12 +13,19 @@ const VehicleDetails = () => {
   const vehicle = useSelector((state) => state.vehicles);
   const { width } = useWindowResize();
   const { vehicleId } = useParams();
+  const dispatch = useDispatch();
   const vehicleDetails = vehicle.vehicles.find((vehicle) => vehicle.id === parseInt(vehicleId, 10));
+
+  useEffect(() => {
+    if (vehicle.vehicles.length === 0) {
+      dispatch(getVehiclesInfo());
+    }
+  }, [dispatch, vehicle.vehicles.length]);
 
   return (
     <>
       {vehicle.status === 'Loading' && <div className="h-screen flex justify-center items-center"><PongSpinner size={100} color="#686769" loading /></div> }
-      {vehicle.status === 'idle' && (
+      {vehicle.status === 'fulfilled' && (
         <>
           <div className="flex">
             <div className="navbar-space" />
