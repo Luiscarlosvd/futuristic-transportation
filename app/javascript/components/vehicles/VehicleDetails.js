@@ -2,10 +2,10 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 import { PongSpinner } from 'react-spinners-kit';
-import useWindowResize from '../useWindowResize';
 import { AiOutlineLeft, AiOutlineRightCircle } from 'react-icons/ai';
 import { BsCarFrontFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import useWindowResize from '../useWindowResize';
 import PriceList from './PriceList';
 
 const VehicleDetails = () => {

@@ -12,15 +12,7 @@ export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
   });
 
 const initialState = {
-  vehicles: [
-    {
-      id: 1,
-      name: 'super duper vehicle',
-      photo: 'https://lh3.googleusercontent.com/u/2/drive-viewer/AK7aPaBZu9r6FDBzFsC-K13-wIdpBV3ncfnI35pQJfcRzpkOO0MOq_16QER_pHSAf7RZvXnTZYJ_SnasIVS8mUjoq06_-bWpbQ=w1868-h903',
-      description: 'hooals,laksnknskncndsjks',
-      price: 23000.32,
-    }
-  ],
+  vehicles: [],
   status: 'idle',
   error: null,
 };

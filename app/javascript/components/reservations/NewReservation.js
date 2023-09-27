@@ -41,7 +41,7 @@ const NewReservation = () => {
                     <option className="bg-zinc-800" value="Cordoba"> Cordoba, Argentina </option>
                     <option className="bg-zinc-800" value="Barquisimeto"> Barquisimeto, Venezuela </option>
                     <option className="bg-zinc-800" value="Carabobo"> Carabobo, Venezuela </option>
-                    <option className="bg-zinc-800" value="Medellin"> Medellin, Colombia </option>
+                    <option className="bg-zinc-800" value="Medellin"> Ibagué, Colombia </option>
                   </select>
                   <div className="w-11/12 flex justify-start relative">
                     <input
@@ -69,7 +69,7 @@ const NewReservation = () => {
                       {vehicle.vehicles.map((vehicle) => {
                         if (vehicle.id === parseInt(vehicleId, 10)) {
                           return (
-                            <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800" selected>
+                            <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800">
                               {' '}
                               {vehicle.name}
                               {' '}
