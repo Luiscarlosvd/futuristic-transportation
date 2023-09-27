@@ -60,7 +60,7 @@ const VehiclesList = () => {
           <div className="navbar-space" />
           <div className="flex flex-col gap-10 min-h-screen vehicles-content justify-center bg-slate-50">
             <div className="flex flex-col items-center gap-3 mx-auto">
-              <h1 className="text-darkGrey text-4xl font-ace">Latest Models</h1>
+              <h1 className="text-darkGrey text-4xl font-ace text-shadow-title">Latest Models</h1>
               <p className="font-roboto text-gray-400 font-semibold text-sm">
                 Please select a Vehicle
               </p>
@@ -71,12 +71,12 @@ const VehiclesList = () => {
                 className={`slide mr-auto pl-8 pr-3 py-3 rounded-r-full bg-primaryGreen ${
                   listStart ? "gray-bg" : ""
                 }`}
+                onClick={() => {
+                  slideBack();
+                }}
               >
                 <TbTriangle
                   className="text-l text-white -rotate-90"
-                  onClick={() => {
-                    slideBack();
-                  }}
                 />
               </div>
               <Swiper
@@ -128,12 +128,12 @@ const VehiclesList = () => {
                 className={`slide ml-auto pr-8 pl-3 py-3 rounded-l-full bg-primaryGreen ${
                   listEnd ? "gray-bg" : ""
                 }`}
+                onClick={() => {
+                  slideForward();
+                }}
               >
                 <TbTriangle
                   className="text-l text-white rotate-90"
-                  onClick={() => {
-                    slideForward();
-                  }}
                 />
               </div>
             </div>

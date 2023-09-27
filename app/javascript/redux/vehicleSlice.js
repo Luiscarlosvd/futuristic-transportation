@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
   async () => {
     try {
-      const response = await axios.get('api/v1/vehicles');
+      const response = await axios.get('/api/v1/vehicles');
       return response.data.vehicles;
     } catch (error) {
       return error.message;
@@ -23,8 +23,8 @@ const vehiclesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getVehiclesInfo.fulfilled, (state, action) => ({ ...state, status: 'fulfilled', vehicles: action.payload }))
       .addCase(getVehiclesInfo.pending, (state) => ({ ...state, status: 'Loading' }))
+      .addCase(getVehiclesInfo.fulfilled, (state, action) => ({ ...state, status: 'fulfilled', vehicles: action.payload }))
       .addCase(getVehiclesInfo.rejected, (state, action) => ({ ...state, status: 'rejected', error: action.error.message }));
   },
 });

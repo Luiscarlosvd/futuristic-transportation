@@ -5,10 +5,12 @@ import { PongSpinner } from 'react-spinners-kit';
 import { AiOutlineLeft, AiOutlineRightCircle } from 'react-icons/ai';
 import { BsCarFrontFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import useWindowResize from '../useWindowResize';
 import PriceList from './PriceList';
 
 const VehicleDetails = () => {
   const vehicle = useSelector((state) => state.vehicles);
+  const { width } = useWindowResize();
   const { vehicleId } = useParams();
   const vehicleDetails = vehicle.vehicles.find((vehicle) => vehicle.id === parseInt(vehicleId, 10));
 
@@ -20,7 +22,7 @@ const VehicleDetails = () => {
           <div className="flex">
             <div className="navbar-space" />
             <div className="mt-8 details-container">
-              { window.innerWidth < 900
+              { width < 900
                 ? (
                   <div className="w-11/12 m-auto mb-7 flex flex-col justify-center items-center text-center">
                     <h1 className="font-ace text-5xl text-black text-shadow-title mb-2">{vehicleDetails.name}</h1>
@@ -35,7 +37,7 @@ const VehicleDetails = () => {
                 </Link>
               </div>
               <div className="w-11/12 m-auto flex flex-col justify-center mb-16 md:my-auto md:mx-8 details-right-container">
-                { window.innerWidth > 900
+                { width > 900
                   ? (
                     <div className="w-11/12 m-auto mb-7 flex flex-col justify-end items-end text-right">
                       <h1 className="font-ace text-5xl text-black text-right text-shadow-title mb-2">{vehicleDetails.name}</h1>

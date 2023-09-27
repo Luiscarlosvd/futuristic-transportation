@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { BsTwitter } from 'react-icons/bs';
-import { FaFacebookF, FaVimeoV, FaPinterestP } from 'react-icons/fa';
-import { TiSocialGooglePlus } from 'react-icons/ti';
+import { FaFacebookF, FaVimeoV, FaPinterestP, FaGoogle } from 'react-icons/fa';
 import logo from '../../assets/images/logo-no-back.png';
 import { useParams } from 'react-router-dom';
+import useWindowResize from './useWindowResize';
 
 const Navbar = () => {
+  const { width } = useWindowResize();
 
   const { vehicleId } = useParams();
 
@@ -25,10 +26,10 @@ const Navbar = () => {
     } else {
       setShow(true);
     }
-    if (window.innerWidth <= 768) {
+    if (width <= 768) {
       setShow(false);
     }
-  }, [location]);
+  }, [width, location]);
 
   return (
     <>
@@ -77,7 +78,7 @@ const Navbar = () => {
           <div className="flex gap-2 items-center text-darkGrey media-list">
             <BsTwitter />
             <FaFacebookF />
-            <TiSocialGooglePlus />
+            <FaGoogle/>
             <FaVimeoV />
             <FaPinterestP />
           </div>
