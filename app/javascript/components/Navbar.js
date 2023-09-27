@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { BsTwitter } from 'react-icons/bs';
-import { FaFacebookF, FaVimeoV, FaPinterestP } from 'react-icons/fa';
-import { TiSocialGooglePlus } from 'react-icons/ti';
+import {
+  FaFacebookF, FaVimeoV, FaPinterestP, FaGoogle,
+} from 'react-icons/fa';
 import logo from '../../assets/images/logo-no-back.png';
 
+import useWindowResize from './useWindowResize';
+
 const Navbar = () => {
+  const { width } = useWindowResize();
+
+  const { vehicleId } = useParams();
+
   const location = useLocation();
 
   const [show, setShow] = useState(false);
@@ -16,15 +23,15 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (['/', '/log-in', '/sign-up'].includes(location.pathname)) {
+    if (['/', '/log-in', '/sign-up', '/reserve', `/details/${vehicleId}/reserve`].includes(location.pathname)) {
       setShow(false);
     } else {
       setShow(true);
     }
-    if (window.innerWidth <= 768) {
+    if (width <= 768) {
       setShow(false);
     }
-  }, [location]);
+  }, [width, location, vehicleId]);
 
   return (
     <>
@@ -34,7 +41,7 @@ const Navbar = () => {
         }}
         className={`fixed left-3 top-3 text-3xl cursor-pointer nav-icon ${
           show ? 'display' : 'hide'
-        } ${location.pathname === '/' || location.pathname === '/log-in' || location.pathname === '/sign-up' ? 'block white' : 'hidden'}`}
+        } ${['/', '/log-in', '/sign-up', '/reserve', `/details/${vehicleId}/reserve`].includes(location.pathname) ? 'block white' : 'hidden'}`}
       />
       <div
         className={`bg-white fixed -left-full h-screen overflow-y-scroll flex flex-col justify-start z-50 w-60 nav-container ${
@@ -42,24 +49,18 @@ const Navbar = () => {
         }`}
       >
         <img src={logo} className="w-2/3 mx-auto" alt="Galactic Gears" />
-        <div className="flex flex-col font-ace ml-2 text-darkGrey font-bold navigation">
+        <div className="flex flex-col font-ace ml-2 text-darkGrey font-bold navigation mb-10">
           <NavLink className="p-2" to="/">
             HOME
           </NavLink>
           <NavLink className="p-2" to="/vehicles">
             VEHICLES LIST
           </NavLink>
-          <NavLink className="p-2" to="/details/id">
-            VEHICLE DETAILS
-          </NavLink>
           <NavLink className="p-2" to="/my-reservations">
-            MY RESERVATIONS
+            RESERVATIONS
           </NavLink>
           <NavLink className="p-2" to="/reserve">
             RESERVE
-          </NavLink>
-          <NavLink className="p-2" to="details/id/reserve">
-            RESERVE SPECIFIC
           </NavLink>
           <NavLink className="p-2" to="log-in">
             LOGIN
@@ -79,7 +80,7 @@ const Navbar = () => {
           <div className="flex gap-2 items-center text-darkGrey media-list">
             <BsTwitter />
             <FaFacebookF />
-            <TiSocialGooglePlus />
+            <FaGoogle />
             <FaVimeoV />
             <FaPinterestP />
           </div>

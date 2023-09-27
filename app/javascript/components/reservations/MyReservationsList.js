@@ -37,9 +37,9 @@ const MyReservationsList = () => {
   return (
     <div className="flex">
       <div className="navbar-space" />
-      <div className="min-h-screen w-full gray-bg">
+      <div className="min-h-screen w-full bg-slate-50 pb-6">
 
-        <h1 className="text-center text-xl text-shadow-title font-bold py-6 mb-20 font-ace">Reservations</h1>
+        <h1 className="text-center text-4xl text-shadow-title py-6 mb-20 font-ace text-darkGrey">Reservations</h1>
         <div className="flex flex-row flex-wrap justify-center gap-8">
 
           {filteredVehicles.map((vehicle, index) => (
