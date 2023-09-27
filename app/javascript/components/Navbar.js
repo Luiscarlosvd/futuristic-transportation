@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa';
 import logo from '../../assets/images/logo-no-back.png';
 
-import useWindowResize from './useWindowResize';
+import useWindowResize from './hooks/useWindowResize';
 
 const Navbar = () => {
   const { width } = useWindowResize();

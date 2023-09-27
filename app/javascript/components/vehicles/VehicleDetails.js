@@ -6,7 +6,7 @@ import { AiOutlineLeft, AiOutlineRightCircle } from 'react-icons/ai';
 import { BsCarFrontFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { getVehiclesInfo } from '../../redux/vehicleSlice';
-import useWindowResize from '../useWindowResize';
+import useWindowResize from '../hooks/useWindowResize';
 import PriceList from './PriceList';
 
 const VehicleDetails = () => {
