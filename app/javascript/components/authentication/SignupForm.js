@@ -14,7 +14,7 @@ const SignupForm = () => {
             Sign Up
           </h1>
           <form 
-            className="flex flex-col gap-7 items-center" 
+            className="flex flex-col gap-7 items-center"
             onSubmit={handleSubmit((data) => console.log(data))}
           >
             <label className="flex flex-col items-center gap-1">

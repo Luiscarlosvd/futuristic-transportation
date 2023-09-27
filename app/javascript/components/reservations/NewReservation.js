@@ -2,14 +2,18 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useLocation } from 'react-router-dom';
 import { PongSpinner } from 'react-spinners-kit';
+import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { getVehiclesInfo } from '../../redux/vehicleSlice';
+import { postReservation } from '../../redux/reservationsSlice';
 
 const NewReservation = () => {
   const location = useLocation();
   const { vehicleId } = useParams();
   const dispatch = useDispatch();
   const vehicle = useSelector((state) => state.vehicles);
+
+  const { register, handleSubmit, formState: {errors} } = useForm();
 
   useEffect(() => {
     if (vehicle.vehicles.length === 0) {
@@ -35,51 +39,76 @@ const NewReservation = () => {
                   reservation is available in your area,
                   please use the selector below.
                 </p>
-                <form className="flex flex-col gap-7 items-center mt-5 w-full lg:flex-row">
-                  <select type="text" placeholder="City" className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12">
-                    <option className="bg-zinc-800" value="" disabled> Select a City </option>
-                    <option className="bg-zinc-800" value="Cordoba"> Cordoba, Argentina </option>
-                    <option className="bg-zinc-800" value="Barquisimeto"> Barquisimeto, Venezuela </option>
-                    <option className="bg-zinc-800" value="Carabobo"> Carabobo, Venezuela </option>
-                    <option className="bg-zinc-800" value="Medellin"> Ibagué, Colombia </option>
-                  </select>
-                  <div className="w-11/12 flex justify-start relative">
+                <form 
+                  onSubmit={handleSubmit((data) => dispatch(postReservation({...data, vehicle: parseInt(data.vehicle, 10), user: 1 })))}
+                  className="flex flex-col gap-7 items-center mt-5 w-full lg:flex-row"
+                >
+                  <div className='w-11/12 flex flex-col items-center gap-1'>
+                    <span className="font-bold text-red-600">{errors.city?.message}</span>
+                    <select
+                      {...register("city", { required: 'This field is required.' })}
+                      type="text" 
+                      placeholder="City" 
+                      className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-full"
+                    >
+                      <option className="bg-zinc-800" value=""> Select a City </option>
+                      <option className="bg-zinc-800" value="Cordoba"> Cordoba, Argentina </option>
+                      <option className="bg-zinc-800" value="Barquisimeto"> Barquisimeto, Venezuela </option>
+                      <option className="bg-zinc-800" value="Carabobo"> Carabobo, Venezuela </option>
+                      <option className="bg-zinc-800" value="Medellin"> Ibagué, Colombia </option>
+                    </select>
+                  </div>
+                  <div className="w-11/12 flex flex-col items-center gap-1">
+                    <span className="font-bold text-red-600">{errors.date?.message}</span>
                     <input
-                      required
-                      type="date"
-                      name="date"
+                      {...register("event_date", { required: 'This field is required.' })}
+                      type="datetime-local"
+                      name="event_date"
                       placeholder="Date"
-                      min={new Date().toISOString().split('T')[0]}
+                      min={new Date().toISOString().split(' ')[0]}
                       className="w-full font-roboto shadow-md border-white rounded-full bg-transparent text-white input-date py-4"
                     />
                   </div>
-                  { location.pathname === '/reserve' ? (
-                    <select type="text" placeholder="Vehicle" className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12">
-                      <option className="bg-zinc-800" value="" disabled> Select a Vehicle </option>
-                      {vehicle.vehicles.map((vehicle) => (
-                        <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800">
-                          {' '}
-                          {vehicle.name}
-                          {' '}
-                        </option>
-                      ))}
-                    </select>
-                  ) : (
-                    <select type="text" placeholder="Vehicle" className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12">
-                      {vehicle.vehicles.map((vehicle) => {
-                        if (vehicle.id === parseInt(vehicleId, 10)) {
-                          return (
-                            <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800">
-                              {' '}
-                              {vehicle.name}
-                              {' '}
-                            </option>
-                          );
-                        }
-                        return null;
-                      })}
-                    </select>
-                  ) }
+                  <div className="w-11/12 flex flex-col items-center gap-1">
+                    <span className="font-bold text-red-600">{errors.vehicle_id?.message}</span>
+                    { location.pathname === '/reserve' ? (
+                      <select
+                        {...register("vehicle", { required: 'This field is required.' })}
+                        type="text"
+                        placeholder="Vehicle"
+                        className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12"
+                      >
+                        <option className="bg-zinc-800" value=""> Select a Vehicle </option>
+                        {vehicle.vehicles.map((vehicle) => (
+                          <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800">
+                            {' '}
+                            {vehicle.name}
+                            {' '}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <select
+                        {...register("vehicle", { required: 'This field is required.' })} 
+                        type="text"
+                        placeholder="Vehicle"
+                        className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12"
+                      >
+                        {vehicle.vehicles.map((vehicle) => {
+                          if (vehicle.id === parseInt(vehicleId, 10)) {
+                            return (
+                              <option key={vehicle.id} value={vehicle.id} className="bg-zinc-800">
+                                {' '}
+                                {vehicle.name}
+                                {' '}
+                              </option>
+                            );
+                          }
+                          return null;
+                        })}
+                      </select>
+                    ) }
+                  </div>
                   <button
                     type="submit"
                     className="font-roboto font-medium w-4/5 max-w-xs transition-scale text-primaryGreen
