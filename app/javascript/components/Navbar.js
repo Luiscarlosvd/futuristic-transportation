@@ -53,17 +53,11 @@ const Navbar = () => {
           <NavLink className="p-2" to="/vehicles">
             VEHICLES LIST
           </NavLink>
-          <NavLink className="p-2" to="/details/id">
-            VEHICLE DETAILS
-          </NavLink>
           <NavLink className="p-2" to="/my-reservations">
             RESERVATIONS
           </NavLink>
           <NavLink className="p-2" to="/reserve">
             RESERVE
-          </NavLink>
-          <NavLink className="p-2" to="details/id/reserve">
-            RESERVE SPECIFIC
           </NavLink>
           <NavLink className="p-2" to="log-in">
             LOGIN
