@@ -16,6 +16,8 @@ class InitializeReservations < ActiveRecord::Migration[7.0]
     Reservation.create(city: "Ciudad 3", event_date: Time.now, user: user3, vehicle: vehicle3)
     Reservation.create(city: "Ciudad 4", event_date: Time.now, user: user4, vehicle: vehicle1)
     Reservation.create(city: "Ciudad 5", event_date: Time.now, user: user5, vehicle: vehicle3)
+    Reservation.create(city: "Roma", event_date: Time.now, user: user1, vehicle: vehicle2)
+    Reservation.create(city: "New York", event_date: Time.now, user: user1, vehicle: vehicle3)
   end
 
   def down
