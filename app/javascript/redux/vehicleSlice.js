@@ -11,6 +11,15 @@ export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
     }
   });
 
+  export const newVehicle = createAsyncThunk("vehicles/newVehicle", async (formData) => {
+    const response = await axios.post(`/api/v1/vehicles`, {
+      vehicles: formData,
+    });
+    console.log(formData);
+    console.log(response);
+    return response.data;
+  });
+
 const initialState = {
   vehicles: [],
   status: 'idle',

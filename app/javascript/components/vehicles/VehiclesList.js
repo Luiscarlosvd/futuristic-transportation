@@ -46,7 +46,7 @@ const VehiclesList = () => {
     if (vehicles.vehicles.length === 0) {
       dispatch(getVehiclesInfo());
     }
-  });
+  }, []);
 
   return (
     <>
