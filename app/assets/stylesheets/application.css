@@ -232,3 +232,45 @@ form > input:focus {
 .media-list > svg:hover {
   color: #97bf0f;
 }
+
+/* New Reservation */
+
+.bg-new-reservation {
+  background: radial-gradient(circle, rgba(157, 200, 1, 0.9243346997001926) 55%, rgba(132, 166, 14, 0.9523459041819853) 100%);
+}
+
+.bg-image-new-reservation {
+  background-image: url(Image-new-reservation.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110%;
+  opacity: 0.9;
+}
+
+.form-new-reservation-bg {
+  background-color: #25252552;
+  backdrop-filter: blur(0.9px);
+  width: 95%;
+  margin: 60px auto;
+  border-radius: 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.input-date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 740px) {
+  .bg-image-new-reservation {
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+@media (min-width: 420px) {
+  .bg-new-reservation {
+    height: 100vh;
+  }
+}
