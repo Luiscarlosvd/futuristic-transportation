@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const SignupForm = () => {
   const [formData, setFormData] = useState({
     name: '',
-    password: '',
     email: '',
+    password: '',
   });
 
   const handleInputChange = (e) => {
@@ -14,7 +14,6 @@ const SignupForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Datos enviados:', formData);
 
     try {
       const response = await fetch('/register', {
@@ -22,13 +21,15 @@ const SignupForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          user: { name: formData.name, email: formData.email, password: formData.password },
+        }),
       });
 
       if (response.ok) {
-        console.log('Usuario registrado exitosamente');
+        window.location.replace('/');
       } else {
-        console.error('Error al registrar el usuario');
+        window.location.reload();
       }
     } catch (error) {
       console.error('Error de red:', error);
@@ -52,18 +53,18 @@ const SignupForm = () => {
                 className="font-ace text-lg border-white rounded-full placeholder-white py-5"
               />
               <input
-                type="password"
-                placeholder="Contraseña"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                className="font-ace text-lg border-white rounded-full placeholder-white py-5"
-              />
-              <input
                 type="email"
                 placeholder="Correo Electrónico"
                 name="email"
                 value={formData.email}
+                onChange={handleInputChange}
+                className="font-ace text-lg border-white rounded-full placeholder-white py-5"
+              />
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                value={formData.password}
                 onChange={handleInputChange}
                 className="font-ace text-lg border-white rounded-full placeholder-white py-5"
               />
