@@ -1,8 +1,10 @@
 class InitializeUsers < ActiveRecord::Migration[7.0]
   def up
-    5.times do |i|
-      User.create(name: "User #{i + 1}", email: "email#{i + 1}@m.com")
-    end
+    User.create!(name: "User1", email: "email1@m.com", password: '111111')
+    User.create!(name: "User2", email: "email2@m.com", password: '111111')
+    User.create!(name: "User3", email: "email3@m.com", password: '111111')
+    User.create!(name: "User4", email: "email4@m.com", password: '111111')
+    User.create!(name: "User5", email: "email5@m.com", password: '111111')
   end
 
   def down
