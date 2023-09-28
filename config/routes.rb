@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     end
   end
   namespace :authentication, path: '', as: '' do
-    resources :users, only: [:new, :create], path: '/register', path_names: { new: '/' }
-    resources :sessions, only: [:new, :create, :destroy], path: '/login', path_names: { new: '/' }
+    resources :users, only: [:create], path: '/register', path_names: { new: '/' }
+    resources :sessions, only: [:create, :destroy], path: '/login', path_names: { new: '/' }
   end
   root 'react_app#index'
   get '(/*all)', to: 'react_app#index'
