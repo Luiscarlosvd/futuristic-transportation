@@ -17,7 +17,7 @@ const VehicleDetails = () => {
   return (
     <>
       {vehicle.status === 'Loading' && <div className="h-screen flex justify-center items-center"><PongSpinner size={100} color="#686769" loading /></div> }
-      {vehicle.status === 'idle' && (
+      {vehicle.status === 'fulfilled' && (
         <>
           <div className="flex">
             <div className="navbar-space" />

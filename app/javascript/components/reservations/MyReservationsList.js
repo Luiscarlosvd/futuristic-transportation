@@ -9,7 +9,6 @@ const MyReservationsList = () => {
   const { vehicles } = useSelector((store) => store.vehicles);
 
   const userId = window.current_user;
-  console.log(userId);
 
   function formatEventDate(eventDate) {
     const date = new Date(eventDate);
