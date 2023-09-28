@@ -8,7 +8,8 @@ const MyReservationsList = () => {
   const { reservations } = useSelector((store) => store.reservations);
   const { vehicles } = useSelector((store) => store.vehicles);
 
-  const userId = 1;
+  const userId = window.current_user;
+  console.log(userId);
 
   function formatEventDate(eventDate) {
     const date = new Date(eventDate);
