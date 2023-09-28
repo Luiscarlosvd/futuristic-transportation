@@ -6,6 +6,8 @@
     "dev": "webpack --mode development"
   },
   "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^7.3.0",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.5.0",
     "prop-types": "^15.8.1",
@@ -18,6 +20,7 @@
     "react-router-dom": "^6.16.0",
     "react-spinners-kit": "^1.9.1",
     "swiper": "^10.3.0",
+    "tailwindcss-stimulus-components": "^4.0.4",
     "webpack": "^5.88.2"
   },
   "devDependencies": {

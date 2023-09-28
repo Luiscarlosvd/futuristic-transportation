@@ -47,7 +47,7 @@ RSpec.describe Vehicle, type: :model do
       photo_left: 'https://example.com/images/toyota_corolla_left.jpg',
       photo_right: 'https://example.com/images/toyota_corolla_right.jpg'
     )
-    user1 = User.create!(name: 'User Random', email: 'emailRandom@m.com')
+    user1 = User.create!(name: 'Random', email: 'emailRandom@m.com', password: '111111')
     expect(user1.persisted?).to be true
 
     reservation1 = vehicle1.reservations.create(city: 'Ciudad 1', event_date: Time.now, user: user1)
