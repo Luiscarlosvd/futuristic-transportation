@@ -5,11 +5,22 @@ import { BsTwitter } from 'react-icons/bs';
 import {
   FaFacebookF, FaVimeoV, FaPinterestP, FaGoogle,
 } from 'react-icons/fa';
+import axios from 'axios';
 import logo from '../../assets/images/logo-no-back.png';
 
 import useWindowResize from './hooks/useWindowResize';
 
 const Navbar = () => {
+  function deleteSession() {
+    axios.delete(`/login/${window.current_user}`)
+      .then(() => {
+        window.location.replace('/');
+      })
+      .catch(() => {
+        window.location.replace('/');
+      });
+  }
+
   const { width } = useWindowResize();
 
   const { vehicleId } = useParams();
@@ -74,6 +85,9 @@ const Navbar = () => {
           </NavLink>
           <NavLink className="px-2 py-1" to="vehicles/delete">
             DELETE VEHICLE
+          </NavLink>
+          <NavLink onClick={() => { deleteSession(); }} className="px-2 py-1">
+            LOGOUT
           </NavLink>
         </div>
         <div className="mt-auto flex flex-col gap-3 ml-4 mb-3">
