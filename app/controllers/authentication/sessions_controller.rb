@@ -1,5 +1,4 @@
 class Authentication::SessionsController < ApplicationController
-  skip_before_action :protect_pages
   skip_before_action :verify_authenticity_token, only: %i[new create destroy]
 
   def new; end
@@ -9,17 +8,18 @@ class Authentication::SessionsController < ApplicationController
 
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
-      # p @user.id
-      redirect_to root_path, notice: 'Login Succesful'
+      redirect_to '/', notice: 'Login Succesfull', status: 200
     else
-      redirect_to new_session_path, alert: 'Login Failed'
+      redirect_to '/', alert: 'Login Failed', status: :unprocessable_entity
     end
   end
 
   def destroy
-    # p session[:user_id]
-    session.delete(:user_id)
+    if session.delete(:user_id)
 
-    redirect_to root_path, notice: 'User Destroyed'
+      redirect_to '/',status: 200, notice: 'You have succesfully logged out'
+    else
+      redirect_to '/',status: :unprocessable_entity, alert: 'We have troubles with the logout'
+    end
   end
 end
