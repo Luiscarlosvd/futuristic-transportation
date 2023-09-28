@@ -1,44 +1,127 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
-const SignupForm = () => (
-  <div className="w-full h-screen bg-signup">
-    <div className="bg-image-form w-full h-screen grid place-content-center">
-      <div className="form-bg px-3 py-6 flex flex-col gap-16 items-center rounded-lg">
-        <h1 className="font-ace text-2xl text-white text-shadow-title">
-          Sign Up
-        </h1>
-        <form className="flex flex-col gap-7 items-center">
-          <input
-            type="text"
-            placeholder="Username"
-            className="font-ace text-lg border-white rounded-full placeholder-white py-5"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="font-ace text-lg border-white rounded-full placeholder-white py-5"
-          />
-          <button
-            type="submit"
-            className="bg-white font-ace text-slate-600 py-2 px-5 rounded-full transition-scale shadow-md"
-          >
-            {' '}
-            Register
-            {' '}
-          </button>
-        </form>
-        <p className="text-white">
-          Already have an acount?
-          <Link to="/log-in" className="underline text-blue-700">
-            {' '}
-            Sign In
-            {' '}
-          </Link>
-        </p>
+const SignupForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    password: '',
+    email: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Datos enviados:', formData);
+
+    try {
+      const response = await fetch('/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log('Usuario registrado exitosamente');
+      } else {
+        console.error('Error al registrar el usuario');
+      }
+    } catch (error) {
+      console.error('Error de red:', error);
+    }
+  };
+
+  return (
+    <div>
+      <div className="w-full h-screen bg-signup">
+        <div className="bg-image-form w-full h-screen grid place-content-center">
+          <div className="form-bg px-3 py-6 flex flex-col gap-16 items-center rounded-lg">
+            <h1 className="font-ace text-2xl text-white text-shadow-title">Sign Up</h1>
+
+            <form className="flex flex-col gap-7 items-center" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Nombre"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="font-ace text-lg border-white rounded-full placeholder-white py-5"
+              />
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                className="font-ace text-lg border-white rounded-full placeholder-white py-5"
+              />
+              <input
+                type="email"
+                placeholder="Correo Electrónico"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="font-ace text-lg border-white rounded-full placeholder-white py-5"
+              />
+              <button type="submit" className="bg-white font-ace text-slate-600 py-2 px-5 rounded-full transition-scale shadow-md">
+                Register
+              </button>
+            </form>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default SignupForm;
+
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+
+// const SignupForm = () => (
+//   <div className="w-full h-screen bg-signup">
+//     <div className="bg-image-form w-full h-screen grid place-content-center">
+//       <div className="form-bg px-3 py-6 flex flex-col gap-16 items-center rounded-lg">
+//         <h1 className="font-ace text-2xl text-white text-shadow-title">
+//           Sign Up
+//         </h1>
+//         <form className="flex flex-col gap-7 items-center">
+//           <input
+//             type="text"
+//             placeholder="Username"
+//             className="font-ace text-lg border-white rounded-full placeholder-white py-5"
+//           />
+//           <input
+//             type="email"
+//             placeholder="Email"
+//             className="font-ace text-lg border-white rounded-full placeholder-white py-5"
+//           />
+//           <button
+//             type="submit"
+//             className="bg-white font-ace text-slate-600 py-2 px-5 rounded-full transition-scale shadow-md"
+//           >
+//             {' '}
+//             Register
+//             {' '}
+//           </button>
+//         </form>
+//         <p className="text-white">
+//           Already have an acount?
+//           <Link to="/log-in" className="underline text-blue-700">
+//             {' '}
+//             Sign In
+//             {' '}
+//           </Link>
+//         </p>
+//       </div>
+//     </div>
+//   </div>
+// );
+
+// export default SignupForm;
