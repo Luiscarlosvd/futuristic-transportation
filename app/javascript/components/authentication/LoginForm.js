@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    login: '',
     password: '',
   });
 
@@ -15,7 +14,6 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Datos enviados:', formData);
 
     try {
       const response = await fetch('/login', {
@@ -27,9 +25,9 @@ const LoginForm = () => {
       });
 
       if (response.ok) {
-        console.log('User logged succesfully');
+        window.location.replace('/');
       } else {
-        console.error('Error al crear el usuario');
+        window.location.reload();
       }
     } catch (error) {
       console.error('Error de red:', error);
@@ -44,17 +42,9 @@ const LoginForm = () => {
           <form className="flex flex-col gap-7 items-center" onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              className="font-ace text-lg border-white rounded-full placeholder-white py-5"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={formData.email}
+              placeholder="Email or Username"
+              name="login"
+              value={formData.login}
               onChange={handleInputChange}
               className="font-ace text-lg border-white rounded-full placeholder-white py-5"
             />
