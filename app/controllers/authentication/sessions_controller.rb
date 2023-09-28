@@ -17,9 +17,9 @@ class Authentication::SessionsController < ApplicationController
   def destroy
     if session.delete(:user_id)
 
-      redirect_to '/',status: 200, notice: 'You have succesfully logged out'
+      redirect_to '/', status: 200, notice: 'You have succesfully logged out'
     else
-      redirect_to '/',status: :unprocessable_entity, alert: 'We have troubles with the logout'
+      redirect_to '/', status: :unprocessable_entity, alert: 'We have troubles with the logout'
     end
   end
 end
