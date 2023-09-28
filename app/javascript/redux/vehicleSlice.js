@@ -20,6 +20,11 @@ export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
     return response.data;
   });
 
+  export const deleteVehicle = createAsyncThunk("vehicles/deleteVehicles", async (itemId) => {
+    await axios.delete(`/api/v1/vehicles/${itemId}`);
+    return itemId; // Return the deleted vehicle's ID to update the state
+  });
+
 const initialState = {
   vehicles: [],
   status: 'idle',
