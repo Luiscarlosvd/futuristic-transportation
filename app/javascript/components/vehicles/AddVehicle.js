@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { newVehicle } from "../../redux/vehicleSlice";
 import { toast } from "react-hot-toast";
 
@@ -16,9 +15,6 @@ const AddVehicle = () => {
       reset();
       // Show toast message
       toast.success("Vehicle added successfully!");
-      toast.error("Incorrect field added")
-      // Redirect to "/vehicles"
-      navigate("/vehicles");
     });
   };
 
@@ -56,7 +52,7 @@ const AddVehicle = () => {
               />
             </div>
           </div>
-          <div className="inputCont inputCont2">
+          <div className="">
             <input
               required={true}
               className=""

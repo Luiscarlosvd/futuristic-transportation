@@ -12,12 +12,12 @@ export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
   });
 
   export const newVehicle = createAsyncThunk("vehicles/newVehicle", async (formData) => {
-    const response = await axios.post(`/api/v1/vehicles`, {
-      vehicles: formData,
-    });
-    console.log(formData);
-    console.log(response);
+    try {
+    const response = await axios.post('/api/v1/vehicles', formData);
     return response.data;
+  } catch (error) {
+    return error.message;
+  }
   });
 
   export const deleteVehicle = createAsyncThunk("vehicles/deleteVehicles", async (itemId) => {
@@ -39,7 +39,28 @@ const vehiclesSlice = createSlice({
     builder
       .addCase(getVehiclesInfo.pending, (state) => ({ ...state, status: 'Loading' }))
       .addCase(getVehiclesInfo.fulfilled, (state, action) => ({ ...state, status: 'fulfilled', vehicles: action.payload }))
-      .addCase(getVehiclesInfo.rejected, (state, action) => ({ ...state, status: 'rejected', error: action.error.message }));
+      .addCase(getVehiclesInfo.rejected, (state, action) => ({ ...state, status: 'rejected', error: action.error.message }))
+      .addCase(newVehicle.pending, (state) => ({ ...state, status: "loading"}))
+      .addCase(newVehicle.fulfilled, (state, action) => {
+        if (action.payload === 'Request failed with status code 422') {
+          window.location.reload('/vehicles/new');
+        } else {
+          window.location.replace('/vehicles');
+        }
+        return {
+          ...state,
+          status: 'fulfilled',
+          user: window.current_user,
+        };
+      })
+      .addCase(newVehicle.rejected, (state, action) => {
+        window.location.replace('/vehicles/new');
+        return {
+          ...state,
+          status: 'rejected',
+          error: action.error.message,
+        };
+      };)
   },
 });
 
