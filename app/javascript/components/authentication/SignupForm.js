@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createUser } from '../../redux/userSlice';
 import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
