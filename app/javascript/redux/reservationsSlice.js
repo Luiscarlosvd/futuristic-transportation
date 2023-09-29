@@ -15,18 +15,18 @@ export const fetchReservations = createAsyncThunk('reservations/fetchReservation
     } catch (error) {
       return error.message;
     }
-});
+  });
 
 export const postReservation = createAsyncThunk('reservations/postReservation',
   async (reservationData) => {
     try {
-      console.log( reservationData );
-      const response = await axios.get('api/v1/reservations/create', reservationData);
+      console.log(reservationData);
+      const response = await axios.post('/api/v1/reservations', reservationData);
       return response.data;
     } catch (error) {
       return error.message;
     }
-});
+  });
 
 const reservationsSlice = createSlice({
   name: 'reservations',
@@ -38,8 +38,14 @@ const reservationsSlice = createSlice({
       .addCase(fetchReservations.fulfilled, (state, action) => ({ ...state, status: 'fulfilled', reservations: action.payload }))
       .addCase(fetchReservations.rejected, (state, action) => ({ ...state, status: 'rejected', error: action.error.message }))
       .addCase(postReservation.pending, (state) => ({ ...state, status: 'pending' }))
-      .addCase(postReservation.fulfilled, (state, action) => ({ ...state, status: 'fulfilled' }))
-      .addCase(postReservation.rejected, (state, action) => ({ ...state, status: 'rejected', error: action.error.message }));
+      .addCase(postReservation.fulfilled, (state) => {
+        // window.location.replace('/my-reservations');
+        return { ...state, status: 'fulfilled' }}
+      )
+      .addCase(postReservation.rejected, (state, action) => {
+        // window.location.reload();
+        return { ...state, status: 'rejected', error: action.error.message }}
+      );
   },
 });
 
