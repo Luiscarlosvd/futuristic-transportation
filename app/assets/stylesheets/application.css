@@ -143,14 +143,21 @@
 }
 
 form > input {
-  background-color: rgba(255, 0, 0, 0) !important;
+  background-color: rgba(255, 255, 255, 0);
   color: white;
   transition: all 0.2s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
+  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514); */
+  outline: none;
 }
 
 form > input:focus {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+.form-input {
+  background-color: rgba(0, 0, 0, 0.342);
+  border: 0;
+  border-bottom: 2px solid #97bf0f;
 }
 
 .bg-registration {
