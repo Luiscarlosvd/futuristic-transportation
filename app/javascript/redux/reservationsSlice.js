@@ -39,13 +39,13 @@ const reservationsSlice = createSlice({
       .addCase(fetchReservations.rejected, (state, action) => ({ ...state, status: 'rejected', error: action.error.message }))
       .addCase(postReservation.pending, (state) => ({ ...state, status: 'pending' }))
       .addCase(postReservation.fulfilled, (state) => {
-        // window.location.replace('/my-reservations');
-        return { ...state, status: 'fulfilled' }}
-      )
+        window.location.replace('/my-reservations');
+        return { ...state, status: 'fulfilled' };
+      })
       .addCase(postReservation.rejected, (state, action) => {
-        // window.location.reload();
-        return { ...state, status: 'rejected', error: action.error.message }}
-      );
+        window.location.reload();
+        return { ...state, status: 'rejected', error: action.error.message };
+      });
   },
 });
 

@@ -41,9 +41,7 @@ const NewReservation = () => {
                   please use the selector below.
                 </p>
                 <form
-                  onSubmit={handleSubmit((data) => {
-                    return dispatch(postReservation({ ...data, vehicle_id: parseInt(data.vehicle_id, 10), user_id: user }))
-                  })}
+                  onSubmit={handleSubmit((data) => dispatch(postReservation({ ...data, vehicle_id: parseInt(data.vehicle_id, 10), user_id: user })))}
                   className="flex flex-col gap-7 items-center mt-5 w-full lg:flex-row"
                 >
                   <div className="w-11/12 flex flex-col items-center gap-1">

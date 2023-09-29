@@ -31,7 +31,7 @@ const MyReservationsList = () => {
 
   const userReserves = reservations.filter((reservation) => reservation.user_id === userId);
   const vehicleIds = userReserves.map((reservation) => reservation.vehicle_id);
-  console.log(vehicleIds)
+  console.log(vehicleIds);
   const filteredVehicles = vehicles.filter((vehicle) => vehicleIds.includes(vehicle.id));
 
   return (

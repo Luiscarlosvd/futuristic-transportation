@@ -31,6 +31,16 @@ export const loginUser = createAsyncThunk(
   },
 );
 
+export const deleteSession = () => {
+  axios.delete(`/login/${window.current_user}`)
+    .then(() => {
+      window.location.replace('/');
+    })
+    .catch(() => {
+      window.location.replace('/');
+    });
+};
+
 const initialState = {
   user: window.current_user,
   status: 'idle',
