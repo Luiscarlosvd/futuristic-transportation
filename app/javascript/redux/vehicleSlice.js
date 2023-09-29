@@ -59,8 +59,8 @@ const vehiclesSlice = createSlice({
           ...state,
           status: 'rejected',
           error: action.error.message,
-        };
-      };)
+        }
+      });
   },
 });
 

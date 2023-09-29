@@ -2,26 +2,15 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { newVehicle } from "../../redux/vehicleSlice";
-import { toast } from "react-hot-toast";
 
 const AddVehicle = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { register, handleSubmit, reset } = useForm();
-
-  const onSubmit = async (data) => {
-    dispatch(newVehicle(data)).then(() => {
-      // When vehicle added successfully, reset form fields
-      reset();
-      // Show toast message
-      toast.success("Vehicle added successfully!");
-    });
-  };
+  const { register, handleSubmit} = useForm();
 
   return (
     <>
       <div className="flex flex-col justify-center items-center">
-        <form className="" onSubmit={handleSubmit(onSubmit)}>
+        <form className="" onSubmit={handleSubmit((data) => dispatch(newVehicle(data)))}>
           <h2 className="">New Vehicle</h2>
           <div className="">
             <div className="">
