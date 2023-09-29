@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-
 export const fetchReservations = createAsyncThunk('reservations/fetchReservations',
   async (user) => {
     try {
@@ -15,13 +14,12 @@ export const fetchReservations = createAsyncThunk('reservations/fetchReservation
 export const postReservation = createAsyncThunk('reservations/postReservation',
   async (reservationData) => {
     try {
-      console.log(reservationData);
       const response = await axios.post('/api/v1/reservations', reservationData);
       return response.data;
     } catch (error) {
       return error.message;
     }
-});
+  });
 
 const initialState = {
   reservations: [],

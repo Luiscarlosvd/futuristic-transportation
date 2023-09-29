@@ -28,11 +28,11 @@ const MyReservationsList = () => {
   return (
     <>
       {status === 'Loading' && (
-          <div className="h-screen flex justify-center items-center w-full">
-            <PongSpinner size={100} color="#686769" loading />
-          </div>
+      <div className="h-screen flex justify-center items-center w-full">
+        <PongSpinner size={100} color="#686769" loading />
+      </div>
       )}
-      {status === 'fulfilled' && (
+      {status === 'fulfilled' && reservations.length > 0 && (
         <>
           <div className="flex">
             <div className="navbar-space" />
@@ -59,6 +59,17 @@ const MyReservationsList = () => {
             </div>
           </div>
         </>
+      )}
+      {status === 'fulfilled' && reservations.length === 0 && (
+        <div className="flex w-screen">
+          <div className="navbar-space" />
+          <div className="flex flex-col gap-30 min-h-screen w-full items-center justify-center bg-slate-50 p-20">
+            <h1 className="text-center text-4xl text-shadow-title py-6 mb-20 font-ace text-darkGrey">Reservations</h1>
+            <h2 className="text-darkGrey font-ace text-center text-xl">
+              There are not any reservations to show yet.
+            </h2>
+          </div>
+        </div>
       )}
     </>
   );
