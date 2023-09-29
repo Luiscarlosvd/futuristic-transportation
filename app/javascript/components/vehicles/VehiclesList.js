@@ -43,7 +43,7 @@ const VehiclesList = () => {
   };
 
   useEffect(() => {
-    if (vehicles.vehicles.length === 0) {
+    if (vehicles.vehicles?.length === 0) {
       dispatch(getVehiclesInfo());
     }
   }, []);
@@ -55,90 +55,98 @@ const VehiclesList = () => {
           <PongSpinner size={100} color="#686769" loading />
         </div>
       )}
-      {vehicles.status === 'fulfilled' && (
-        <div className="flex w-screen">
-          <div className="navbar-space" />
-          <div className="flex flex-col gap-10 min-h-screen vehicles-content justify-center bg-slate-50">
-            <div className="flex flex-col items-center gap-3 mx-auto">
-              <h1 className="text-darkGrey text-4xl font-ace text-shadow-title">Latest Models</h1>
-              <p className="font-roboto text-gray-400 font-semibold text-sm">
-                Please select a Vehicle
-              </p>
-            </div>
-            <Divisor quantity={15} />
-            <div className="flex items-center justify-center w-full gap-8">
-              <button
-                type="button"
-                className={`slide mr-auto pl-8 pr-3 py-3 rounded-r-full bg-primaryGreen ${
-                  listStart ? 'gray-bg' : ''
-                }`}
-                onClick={() => {
-                  slideBack();
-                }}
-              >
-                <TbTriangle
-                  className="text-l text-white -rotate-90"
-                />
-              </button>
-              <Swiper
-                id="always-be-swipin"
-                onSwiper={(swiper) => {
-                  swiperRef.current = swiper;
-                }}
-                className="swiper-container"
-                direction="horizontal"
-                breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 100,
-                    allowTouchMove: true,
-                  },
-                  768: {
-                    slidesPerView: 1,
-                    spaceBetween: 100,
-                    allowTouchMove: false,
-                  },
-                  890: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                    allowTouchMove: false,
-                  },
-                  1180: {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
-                    allowTouchMove: false,
-                  },
-                }}
-              >
-                {vehicles.vehicles.map((vehicle) => (
-                  <SwiperSlide key={vehicle.id}>
-                    <Link to={`/details/${vehicle.id}`}>
-                      <VehicleCard
-                        name={vehicle.name}
-                        description={vehicle.description}
-                        photo={vehicle.photo}
-                      />
-                    </Link>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+      {vehicles.status === 'fulfilled' && vehicles.vehicles?.length > 0 && (
+      <div className="flex w-screen">
+        <div className="navbar-space" />
+        <div className="flex flex-col gap-10 min-h-screen vehicles-content justify-center bg-slate-50">
+          <div className="flex flex-col items-center gap-3 mx-auto">
+            <h1 className="text-darkGrey text-4xl font-ace text-shadow-title">
+              Latest Models
+            </h1>
+            <p className="font-roboto text-gray-400 font-semibold text-sm">
+              Please select a Vehicle
+            </p>
+          </div>
+          <Divisor quantity={15} />
+          <div className="flex items-center justify-center w-full gap-8">
+            <button
+              type="button"
+              className={`slide mr-auto pl-8 pr-3 py-3 rounded-r-full bg-primaryGreen ${
+                listStart ? 'gray-bg' : ''
+              }`}
+              onClick={() => {
+                slideBack();
+              }}
+            >
+              <TbTriangle className="text-l text-white -rotate-90" />
+            </button>
+            <Swiper
+              id="always-be-swipin"
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              className="swiper-container"
+              direction="horizontal"
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 100,
+                  allowTouchMove: true,
+                },
+                768: {
+                  slidesPerView: 1,
+                  spaceBetween: 100,
+                  allowTouchMove: false,
+                },
+                890: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                  allowTouchMove: false,
+                },
+                1180: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                  allowTouchMove: false,
+                },
+              }}
+            >
+              {vehicles.vehicles.map((vehicle) => (
+                <SwiperSlide key={vehicle.id}>
+                  <Link to={`/details/${vehicle.id}`}>
+                    <VehicleCard
+                      name={vehicle.name}
+                      description={vehicle.description}
+                      photo={vehicle.photo}
+                    />
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-              <button
-                type="button"
-                className={`slide ml-auto pr-8 pl-3 py-3 rounded-l-full bg-primaryGreen ${
-                  listEnd ? 'gray-bg' : ''
-                }`}
-                onClick={() => {
-                  slideForward();
-                }}
-              >
-                <TbTriangle
-                  className="text-l text-white rotate-90"
-                />
-              </button>
-            </div>
+            <button
+              type="button"
+              className={`slide ml-auto pr-8 pl-3 py-3 rounded-l-full bg-primaryGreen ${
+                listEnd ? 'gray-bg' : ''
+              }`}
+              onClick={() => {
+                slideForward();
+              }}
+            >
+              <TbTriangle className="text-l text-white rotate-90" />
+            </button>
           </div>
         </div>
+      </div>
+      )}
+      {vehicles.status === 'fulfilled' && !vehicles.vehicles && (
+      <div className="flex w-screen">
+        <div className="navbar-space" />
+        <div className="flex min-h-screen w-full items-center justify-center bg-slate-50 p-20">
+          <h2 className="text-darkGrey font-ace text-center text-xl">
+            There are not any cars to show yet.
+          </h2>
+        </div>
+      </div>
       )}
     </>
   );
