@@ -17,7 +17,7 @@
 }
 
 .bg-main {
-  background: radial-gradient(circle, rgba(255, 180, 0, 1) 50%, rgba(255, 159, 0, 1) 100%);
+  background: radial-gradient(circle, rgb(255 142 0) 50%, rgb(129 54 0) 100%);
 }
 
 .text-shadow-title {

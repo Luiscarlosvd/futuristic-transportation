@@ -10,7 +10,7 @@ class Authentication::SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/', notice: 'Login Successfull.', status: 200
     else
-      redirect_to '/', alert: 'Login Failed.', status: :unprocessable_entity
+      redirect_to '/', alert: 'Error: Username or Password Invalid.', status: :unprocessable_entity
     end
   end
 

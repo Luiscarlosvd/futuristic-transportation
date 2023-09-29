@@ -31,7 +31,6 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-
 const initialState = {
   user: window.current_user,
   status: "idle",
@@ -50,7 +49,7 @@ const userSlice = createSlice({
       }))
       .addCase(createUser.fulfilled, (state) => {
         window.location.replace('/');
-        return { 
+        return {
           ...state,
           status: "fulfilled",
           user: window.current_user,
@@ -68,8 +67,12 @@ const userSlice = createSlice({
         ...state,
         status: "Loading",
       }))
-      .addCase(loginUser.fulfilled, (state) => {
-        window.location.replace('/');
+      .addCase(loginUser.fulfilled, (state, action) => {
+        if (action.payload === "Request failed with status code 422" ) {
+          window.location.reload('/log-in');
+        } else {
+          window.location.replace('/');
+        }
         return { 
           ...state,
           status: "fulfilled",
@@ -77,7 +80,7 @@ const userSlice = createSlice({
         }
       })
       .addCase(loginUser.rejected, (state, action) => {
-        window.location.reload();
+        window.location.replace('/log-in');
         return { 
           ...state,
           status: "rejected",
