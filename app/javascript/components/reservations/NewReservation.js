@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useLocation } from 'react-router-dom';
 import { PongSpinner } from 'react-spinners-kit';
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { getVehiclesInfo } from '../../redux/vehicleSlice';
 import { postReservation } from '../../redux/reservationsSlice';
@@ -10,10 +10,11 @@ import { postReservation } from '../../redux/reservationsSlice';
 const NewReservation = () => {
   const location = useLocation();
   const { vehicleId } = useParams();
+  const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const vehicle = useSelector((state) => state.vehicles);
 
-  const { register, handleSubmit, formState: {errors} } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   useEffect(() => {
     if (vehicle.vehicles.length === 0) {
@@ -39,29 +40,31 @@ const NewReservation = () => {
                   reservation is available in your area,
                   please use the selector below.
                 </p>
-                <form 
-                  onSubmit={handleSubmit((data) => dispatch(postReservation({...data, vehicle: parseInt(data.vehicle, 10), user: 1 })))}
+                <form
+                  onSubmit={handleSubmit((data) => {
+                    return dispatch(postReservation({ ...data, vehicle_id: parseInt(data.vehicle_id, 10), user_id: user }))
+                  })}
                   className="flex flex-col gap-7 items-center mt-5 w-full lg:flex-row"
                 >
-                  <div className='w-11/12 flex flex-col items-center gap-1'>
+                  <div className="w-11/12 flex flex-col items-center gap-1">
                     <span className="font-bold text-red-600">{errors.city?.message}</span>
                     <select
-                      {...register("city", { required: 'This field is required.' })}
-                      type="text" 
-                      placeholder="City" 
+                      {...register('city', { required: 'This field is required.' })}
+                      type="text"
+                      placeholder="City"
                       className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-full"
                     >
                       <option className="bg-zinc-800" value=""> Select a City </option>
-                      <option className="bg-zinc-800" value="Cordoba"> Cordoba, Argentina </option>
-                      <option className="bg-zinc-800" value="Barquisimeto"> Barquisimeto, Venezuela </option>
-                      <option className="bg-zinc-800" value="Carabobo"> Carabobo, Venezuela </option>
-                      <option className="bg-zinc-800" value="Medellin"> Ibagué, Colombia </option>
+                      <option className="bg-zinc-800" value="Cordoba, Argentina"> Cordoba, Argentina </option>
+                      <option className="bg-zinc-800" value="Barquisimeto, Venezuela"> Barquisimeto, Venezuela </option>
+                      <option className="bg-zinc-800" value="Carabobo, Venezuela"> Carabobo, Venezuela </option>
+                      <option className="bg-zinc-800" value="Ibagué, Colombia"> Ibagué, Colombia </option>
                     </select>
                   </div>
                   <div className="w-11/12 flex flex-col items-center gap-1">
                     <span className="font-bold text-red-600">{errors.date?.message}</span>
                     <input
-                      {...register("event_date", { required: 'This field is required.' })}
+                      {...register('event_date', { required: 'This field is required.' })}
                       type="datetime-local"
                       name="event_date"
                       placeholder="Date"
@@ -73,7 +76,7 @@ const NewReservation = () => {
                     <span className="font-bold text-red-600">{errors.vehicle_id?.message}</span>
                     { location.pathname === '/reserve' ? (
                       <select
-                        {...register("vehicle", { required: 'This field is required.' })}
+                        {...register('vehicle_id', { required: 'This field is required.' })}
                         type="text"
                         placeholder="Vehicle"
                         className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12"
@@ -89,7 +92,7 @@ const NewReservation = () => {
                       </select>
                     ) : (
                       <select
-                        {...register("vehicle", { required: 'This field is required.' })} 
+                        {...register('vehicle_id', { required: 'This field is required.' })}
                         type="text"
                         placeholder="Vehicle"
                         className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12"

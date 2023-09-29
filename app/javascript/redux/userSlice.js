@@ -1,91 +1,91 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 export const createUser = createAsyncThunk(
-  "user/createUser",
+  'user/createUser',
   async (data) => {
     const headers = {
       'Content-Type': 'application/json',
     };
     try {
-      const response = await axios.post("/register", data, headers);
+      const response = await axios.post('/register', data, headers);
       return response.data;
     } catch (error) {
       return error.message;
     }
-  }
+  },
 );
 
 export const loginUser = createAsyncThunk(
-    "user/loginUser",
+  'user/loginUser',
   async (data) => {
     const headers = {
-        'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
     };
     try {
-        const response = await axios.post("/login", data, headers);
-        return response.data;
+      const response = await axios.post('/login', data, headers);
+      return response.data;
     } catch (error) {
-        return error.message;
+      return error.message;
     }
-  }
+  },
 );
 
 const initialState = {
   user: window.current_user,
-  status: "idle",
+  status: 'idle',
   error: null,
 };
 
 const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(createUser.pending, (state) => ({
         ...state,
-        status: "Loading",
+        status: 'Loading',
       }))
       .addCase(createUser.fulfilled, (state) => {
         window.location.replace('/');
         return {
           ...state,
-          status: "fulfilled",
+          status: 'fulfilled',
           user: window.current_user,
-        }
+        };
       })
       .addCase(createUser.rejected, (state, action) => {
         window.location.reload();
-        return { 
+        return {
           ...state,
-          status: "rejected",
+          status: 'rejected',
           error: action.error.message,
-        }
+        };
       })
       .addCase(loginUser.pending, (state) => ({
         ...state,
-        status: "Loading",
+        status: 'Loading',
       }))
       .addCase(loginUser.fulfilled, (state, action) => {
-        if (action.payload === "Request failed with status code 422" ) {
+        if (action.payload === 'Request failed with status code 422') {
           window.location.reload('/log-in');
         } else {
           window.location.replace('/');
         }
-        return { 
+        return {
           ...state,
-          status: "fulfilled",
+          status: 'fulfilled',
           user: window.current_user,
-        }
+        };
       })
       .addCase(loginUser.rejected, (state, action) => {
         window.location.replace('/log-in');
-        return { 
+        return {
           ...state,
-          status: "rejected",
+          status: 'rejected',
           error: action.error.message,
-        }
+        };
       });
   },
 });

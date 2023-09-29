@@ -6,9 +6,8 @@ import { getVehiclesInfo } from '../../redux/vehicleSlice';
 const MyReservationsList = () => {
   const dispatch = useDispatch();
   const { reservations } = useSelector((store) => store.reservations);
+  const userId = useSelector((state) => state.user.user);
   const { vehicles } = useSelector((store) => store.vehicles);
-
-  const userId = window.current_user;
 
   function formatEventDate(eventDate) {
     const date = new Date(eventDate);
@@ -18,7 +17,7 @@ const MyReservationsList = () => {
       hour: 'numeric',
       minute: 'numeric',
     };
-    return date.toLocaleDateString(undefined, options);
+    return date.toLocaleDateString('en-US', options);
   }
 
   useEffect(() => {
@@ -32,6 +31,7 @@ const MyReservationsList = () => {
 
   const userReserves = reservations.filter((reservation) => reservation.user_id === userId);
   const vehicleIds = userReserves.map((reservation) => reservation.vehicle_id);
+  console.log(vehicleIds)
   const filteredVehicles = vehicles.filter((vehicle) => vehicleIds.includes(vehicle.id));
 
   return (

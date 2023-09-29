@@ -40,8 +40,8 @@ const PriceList = ({ price }) => {
 PriceList.propTypes = {
   price: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
-  ]).isRequired
+    PropTypes.number,
+  ]).isRequired,
 };
 
 export default PriceList;

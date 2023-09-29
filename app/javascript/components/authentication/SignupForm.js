@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { createUser } from '../../redux/userSlice';
 import { useDispatch } from 'react-redux';
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
+import { createUser } from '../../redux/userSlice';
 
 const SignupForm = () => {
   const dispatch = useDispatch();
@@ -14,29 +14,29 @@ const SignupForm = () => {
           <div className="form-bg px-3 py-6 flex flex-col gap-16 items-center rounded-lg">
             <h1 className="font-ace text-2xl text-white text-shadow-title">Sign Up</h1>
 
-            <form 
+            <form
               className="flex flex-col gap-7 items-center"
-              onSubmit={handleSubmit((data) => dispatch(createUser( { user: data })))}
+              onSubmit={handleSubmit((data) => dispatch(createUser({ user: data })))}
             >
               <input
                 type="text"
                 placeholder="Name"
                 name="name"
-                {...register("name")}
+                {...register('name')}
                 className="font-ace text-lg border-white rounded-full placeholder-white py-5"
               />
               <input
                 type="email"
                 placeholder="Email"
                 name="email"
-                {...register("email")}
+                {...register('email')}
                 className="font-ace text-lg border-white rounded-full placeholder-white py-5"
               />
               <input
                 type="password"
                 placeholder="Password"
                 name="password"
-                {...register("password")}
+                {...register('password')}
                 className="font-ace text-lg border-white rounded-full placeholder-white py-5"
               />
               <button type="submit" className="bg-white font-ace text-slate-600 py-2 px-5 rounded-full transition-scale shadow-md">
