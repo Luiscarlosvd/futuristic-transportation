@@ -1,9 +1,11 @@
 class Api::V1::ReservationsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[create destroy]
+  
 
   def index
-    @reservations = Reservation.all
-    render json: @reservations
+    user_id = params[:user_id]
+    @reservations = Reservation.includes(:vehicle).where(user_id: user_id)
+    render json: @reservations, include: :vehicle
   end
 
   def create
@@ -28,5 +30,9 @@ class Api::V1::ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:city, :event_date, :user_id, :vehicle_id)
+  end
+
+  def user_params
+    params..require(:user).permit(:userId)
   end
 end

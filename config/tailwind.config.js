@@ -18,6 +18,7 @@ module.exports = {
         primaryGreen: '#97BF0F',
         secondaryOrange: '#FFB400',
         darkGrey: '#252525',
+        darkOrange: 'rgb(129 54 0)',
       }
     },
   },

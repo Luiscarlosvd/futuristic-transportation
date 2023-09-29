@@ -1,16 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const initialState = {
-  reservations: [],
-  status: 'idle',
-  error: null,
-};
 
 export const fetchReservations = createAsyncThunk('reservations/fetchReservations',
-  async () => {
+  async (user) => {
     try {
-      const response = await axios.get('api/v1/reservations');
+      const response = await axios.get(`api/v1/reservations?user_id=${user}`);
       return response.data;
     } catch (error) {
       return error.message;
@@ -26,7 +21,13 @@ export const postReservation = createAsyncThunk('reservations/postReservation',
     } catch (error) {
       return error.message;
     }
-  });
+});
+
+const initialState = {
+  reservations: [],
+  status: 'idle',
+  error: null,
+};
 
 const reservationsSlice = createSlice({
   name: 'reservations',
@@ -34,10 +35,10 @@ const reservationsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchReservations.pending, (state) => ({ ...state, status: 'pending' }))
+      .addCase(fetchReservations.pending, (state) => ({ ...state, status: 'Loading' }))
       .addCase(fetchReservations.fulfilled, (state, action) => ({ ...state, status: 'fulfilled', reservations: action.payload }))
       .addCase(fetchReservations.rejected, (state, action) => ({ ...state, status: 'rejected', error: action.error.message }))
-      .addCase(postReservation.pending, (state) => ({ ...state, status: 'pending' }))
+      .addCase(postReservation.pending, (state) => ({ ...state, status: 'Loading' }))
       .addCase(postReservation.fulfilled, (state) => {
         window.location.replace('/my-reservations');
         return { ...state, status: 'fulfilled' };
