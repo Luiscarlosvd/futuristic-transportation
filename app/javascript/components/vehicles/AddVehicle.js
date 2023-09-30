@@ -9,11 +9,9 @@ const AddVehicle = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center">
+      <div className="">
+        <h2 className="">New Vehicle</h2>
         <form className="" onSubmit={handleSubmit((data) => dispatch(newVehicle(data)))}>
-          <h2 className="">New Vehicle</h2>
-          <div className="">
-            <div className="">
               <input
                 required={true}
                 className=""
@@ -39,8 +37,6 @@ const AddVehicle = () => {
                 placeholder="Price"
                 {...register("price", { required: true })}
               />
-            </div>
-          </div>
           <div className="">
             <input
               required={true}
@@ -78,7 +74,6 @@ const AddVehicle = () => {
               {...register("photo_right", { required: true })}
             />
           </div>
-          <div className="" />
           <button type="submit">Add Vehicle</button>
         </form>
       </div>
