@@ -1,5 +1,4 @@
 class Api::V1::VehiclesController < ApplicationController
-  # skip_before_action :verify_authenticity_token, only: %i[create destroy]
 
   def index
     @vehicles = Vehicle.all
