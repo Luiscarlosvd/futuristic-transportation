@@ -17,7 +17,8 @@ class Api::V1::VehiclesController < ApplicationController
     if @vehicle.save
       render json: @vehicle, status: :created, notice: 'Vehicle was successfully created.', message: 'Vehicle Created'
     else
-      render json: @vehicle.errors, status: :unprocessable_entity, alert: 'Vehicle could not be created.', message: 'Invalid Request'
+      render json: @vehicle.errors, status: :unprocessable_entity, alert: 'Vehicle could not be created.',
+             message: 'Invalid Request'
     end
   end
 
