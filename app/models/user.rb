@@ -14,6 +14,8 @@ class User < ApplicationRecord
                    }
   validates :password, length: { minimum: 6 }, if: :password_digest_changed?
 
+  validates :isAdmin, inclusion: { in: [true, false] }
+
   has_many :reservations, dependent: :destroy
 
   before_save :downcase_attributes
