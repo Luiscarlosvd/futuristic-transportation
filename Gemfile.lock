@@ -103,6 +103,8 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.2.1)
       railties (>= 6.0.0)
+    json-schema (3.0.0)
+      addressable (>= 2.8)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -192,6 +194,20 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    rswag (2.10.1)
+      rswag-api (= 2.10.1)
+      rswag-specs (= 2.10.1)
+      rswag-ui (= 2.10.1)
+    rswag-api (2.10.1)
+      railties (>= 3.1, < 7.1)
+    rswag-specs (2.10.1)
+      activesupport (>= 3.1, < 7.1)
+      json-schema (>= 2.2, < 4.0)
+      railties (>= 3.1, < 7.1)
+      rspec-core (>= 2.14)
+    rswag-ui (2.10.1)
+      actionpack (>= 3.1, < 7.1)
+      railties (>= 3.1, < 7.1)
     rubyzip (2.3.2)
     selenium-webdriver (4.12.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -250,6 +266,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.8)
   rspec-rails (~> 6.0)
+  rswag
   selenium-webdriver
   sprockets-rails
   stimulus-rails
