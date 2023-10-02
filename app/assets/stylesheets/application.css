@@ -47,7 +47,7 @@
   border: 1px solid rgb(230, 64, 64);
   color: rgb(230, 64, 64);
   border-radius: 5px;
-  font-family: 'Bruno Ace', 'cursive';
+  font-family: 'Bruno Ace', 'cursive', sans-serif;
   transition: all 100ms;
   margin-top: auto;
 }
