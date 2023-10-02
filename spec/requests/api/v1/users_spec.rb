@@ -5,7 +5,7 @@ RSpec.describe 'Users API', type: :request do
     @user = User.create(
       name: 'Test User',
       password: '111111',
-      email: 'test@example.com',
+      email: 'test@example.com'
     )
   end
 
@@ -15,30 +15,29 @@ RSpec.describe 'Users API', type: :request do
       produces 'application/json'
 
       response '200', 'Users found' do
-        schema type: :object,
-                  type: :array,
-                    items: {
-                    type: :object,
-                    properties: {
-                      id: { type: :integer },
-                      email: { type: :string },
-                      name: { type: :string },
-                      password_digest: { type: :string },
-                      created_at: {type: :string },
-                      updated_at: {type: :string }
-                    },
+        schema type: :array,
+               items: {
+                 type: :object,
+                 properties: {
+                   id: { type: :integer },
+                   email: { type: :string },
+                   name: { type: :string },
+                   password_digest: { type: :string },
+                   created_at: { type: :string },
+                   updated_at: { type: :string }
+                 },
                  required: %w[id name email password_digest]
-                }
-          let!(:user) do
-            User.create(
-              name: 'Test User 2',
-              password: '11111122',
-              email: 'test2@example.com',
-            )
-          end
-          run_test!
+               }
+        let!(:user) do
+          User.create(
+            name: 'Test User 2',
+            password: '11111122',
+            email: 'test2@example.com'
+          )
+        end
+        run_test!
       end
-      
+
 
       response '404', 'No Users Found' do
         run_test!
@@ -56,7 +55,7 @@ RSpec.describe 'Users API', type: :request do
             properties: {
               name: { type: :string },
               password: { type: :string },
-              email: { type: :string },
+              email: { type: :string }
             },
             required: %w[name email password]
           }
@@ -68,7 +67,7 @@ RSpec.describe 'Users API', type: :request do
           User.create(
             name: 'Test User 3',
             password: '11111122333',
-            email: 'test3@example.com',
+            email: 'test3@example.com'
           )
         end
         run_test!
@@ -79,20 +78,20 @@ RSpec.describe 'Users API', type: :request do
           User.create(
             name: 'Test User 3',
             password: '',
-            email: 'test.com',
+            email: 'test.com'
           )
         end
         run_test!
       end
-    end 
+    end
   end
 
   path '/api/v1/users/{id}' do
     delete 'Delete a user' do
       tags 'Users'
       produces 'application/json'
-      parameter name: :id, :in => :path, :type => :string
-      
+      parameter name: :id, in: :path, type: :string
+
       response '200', 'User deleted' do
         run_test!
       end
