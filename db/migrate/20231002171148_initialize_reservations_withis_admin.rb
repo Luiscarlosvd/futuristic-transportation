@@ -1,4 +1,4 @@
-class InitializeReservations < ActiveRecord::Migration[7.0]
+class InitializeReservationsWithisAdmin < ActiveRecord::Migration[7.0]
   def up
     user1 = User.find(1)
     user2 = User.find(2)

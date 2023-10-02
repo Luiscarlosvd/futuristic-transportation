@@ -1,5 +1,7 @@
 <div id="root"></div>
 <script>
 window.current_user = <%= Current.user&.id || -1 %>
+window.isAdmin = <%= Current.user&.isAdmin || false %>
+// console.log(window.current_user, window.isAdmin);
 </script>
-<script src=".../assets/builds/application.js"></script>
+<script src=".../assets/builds/application.js" type="application/json"></script>
