@@ -43,6 +43,7 @@ export const deleteSession = () => {
 
 const initialState = {
   user: window.current_user,
+  admin: window.isAdmin,
   status: 'idle',
   error: null,
 };
