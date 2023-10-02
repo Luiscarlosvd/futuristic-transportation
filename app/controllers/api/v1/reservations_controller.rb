@@ -1,5 +1,4 @@
 class Api::V1::ReservationsController < ApplicationController
-
   def index
     user_id = params[:user_id]
     @reservations = Reservation.includes(:vehicle).where(user_id:)
