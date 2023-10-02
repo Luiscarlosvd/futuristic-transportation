@@ -4,7 +4,11 @@ class Api::V1::ReservationsController < ApplicationController
   def index
     user_id = params[:user_id]
     @reservations = Reservation.includes(:vehicle).where(user_id:)
-    render json: @reservations, include: :vehicle
+    if @reservations.present?
+      render json: @reservations, include: :vehicle, message: 'Reservations Found'
+    else
+      render json: { success: false, message: 'No Reservations Found' }
+    end
   end
 
   def create
@@ -19,7 +23,7 @@ class Api::V1::ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     if @reservation.destroy
-      render json: { message: 'Vehicle deleted successfully' }, status: :no_content
+      render json: { success: true, message: 'Reservation deleted successfully' }
     else
       render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
     end
