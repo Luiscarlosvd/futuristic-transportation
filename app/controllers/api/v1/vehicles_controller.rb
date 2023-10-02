@@ -4,7 +4,7 @@ class Api::V1::VehiclesController < ApplicationController
   def index
     @vehicles = Vehicle.all
     if @vehicles.present?
-      render json: { success: true, vehicles: @vehicles }
+      render json: { success: true, vehicles: @vehicles, message: 'Vehicles Found' }
     else
       render json: { success: false, message: 'No Vehicles Found' }
     end
@@ -15,9 +15,9 @@ class Api::V1::VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
     if @vehicle.save
-      render json: @vehicle, status: :created
+      render json: @vehicle, message: 'Vehicle Created', status: :created
     else
-      render json: @vehicle.errors, status: :unprocessable_entity
+      render json: @vehicle.errors, status: :unprocessable_entity, message: 'Invalid Request'
     end
   end
 
