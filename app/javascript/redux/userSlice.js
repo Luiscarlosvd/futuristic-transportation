@@ -31,15 +31,15 @@ export const loginUser = createAsyncThunk(
   },
 );
 
-export const deleteSession = () => {
-  axios.delete(`/login/${window.current_user}`)
-    .then(() => {
-      window.location.replace('/');
-    })
-    .catch(() => {
-      window.location.replace('/');
-    });
-};
+export const deleteSession = createAsyncThunk('user/deleteSession', async () => {
+    try {
+      const response = await axios.delete(`/login/${window.current_user}`);
+      return response.data;
+    } catch (error) {
+      return error.message;
+    }
+  }
+)
 
 const initialState = {
   user: window.current_user,
@@ -92,6 +92,26 @@ const userSlice = createSlice({
       })
       .addCase(loginUser.rejected, (state, action) => {
         window.location.replace('/log-in');
+        return {
+          ...state,
+          status: 'rejected',
+          error: action.error.message,
+        };
+      })
+      .addCase(deleteSession.pending, (state) => ({
+        ...state,
+        status: 'Loading',
+      }))
+      .addCase(deleteSession.fulfilled, (state) => {
+        window.location.replace('/');
+        return {
+          ...state,
+          status: 'fulfilled',
+          user: window.current_user,
+        };
+      })
+      .addCase(deleteSession.rejected, (state, action) => {
+        window.location.replace('/');
         return {
           ...state,
           status: 'rejected',
