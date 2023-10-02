@@ -2,5 +2,8 @@
 <script>
 window.current_user = <%= Current.user&.id || -1 %>
 window.isAdmin = <%= Current.user&.isAdmin || false %>
+window.CSRF_TOKEN = '<%= form_authenticity_token %>'
+console.log(window.current_user, window.isAdmin, window.CSRF_TOKEN);
+
 </script>
 <script src=".../assets/builds/application.js" type="application/json"></script>

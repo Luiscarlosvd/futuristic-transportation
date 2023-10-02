@@ -1,5 +1,5 @@
 class Api::V1::ReservationsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: %i[create destroy]
+  # skip_before_action :verify_authenticity_token, only: %i[create destroy]
 
   def index
     user_id = params[:user_id]

@@ -1,6 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const csrfToken = window.CSRF_TOKEN;
+
+axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
+console.log('llegue al userSlice y este es el token csrf:', csrfToken);
+
 export const createUser = createAsyncThunk(
   'user/createUser',
   async (data) => {

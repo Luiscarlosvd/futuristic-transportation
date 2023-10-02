@@ -1,5 +1,5 @@
 class Authentication::SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: %i[new create destroy]
+  # skip_before_action :verify_authenticity_token, only: %i[new create destroy]
 
   def new; end
 
