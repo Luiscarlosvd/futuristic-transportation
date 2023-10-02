@@ -1,10 +1,24 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const csrfToken = window.CSRF_TOKEN;
+function readCookie(name) {
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i += 1) {
+    const cookie = cookies[i];
+    const cookieName = cookie.split('=')[0].trim();
+    const cookieValue = cookie.split('=')[1];
+    if (cookieName === name) {
+      return cookieValue;
+    }
+  }
+  return '';
+}
+
+// const csrfToken = window.CSRF_TOKEN;
+const csrfToken = readCookie('CSRF_TOKEN');
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
-console.log('llegue al userSlice y este es el token csrf:', csrfToken);
+// console.log('llegue al userSlice y este es el token csrf:', csrfToken);
 
 export const createUser = createAsyncThunk(
   'user/createUser',
