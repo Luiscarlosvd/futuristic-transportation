@@ -26,7 +26,8 @@ class Api::V1::VehiclesController < ApplicationController
     if @vehicle.destroy
       render json: { success: true, notice: 'Vehicle deleted successfully.' }
     else
-      render json: { errors: @vehicle.errors.full_messages }, status: :unprocessable_entity, alert: 'Error occurred while deleting vehicle.'
+      render json: { errors: @vehicle.errors.full_messages }, status: :unprocessable_entity,
+             alert: 'Error occurred while deleting vehicle.'
     end
   rescue StandardError => e
     render json: { success: false, notice: e.message }

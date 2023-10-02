@@ -1,26 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { PongSpinner } from 'react-spinners-kit';
 import { TbTriangle } from 'react-icons/tb';
-import { useDispatch, useSelector } from "react-redux";
-import { getVehiclesInfo } from "../../redux/vehicleSlice";
-import VehicleDeleteCard from './VehicleDeleteCard';
+import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { getVehiclesInfo } from '../../redux/vehicleSlice';
+import VehicleDeleteCard from './VehicleDeleteCard';
 import Divisor from './Divisor';
-​
+
 const DeleteVehicleList = () => {
   const dispatch = useDispatch();
   const vehicle = useSelector((state) => state.vehicles);
-​
+
   useEffect(() => {
     if (vehicle.vehicles?.length === 0) {
       dispatch(getVehiclesInfo());
     }
   }, []);
-​
+
   const [listStart, setListStart] = useState(true);
   const [listEnd, setListEnd] = useState(false);
   const swiperRef = useRef();
-​
+
   const slideForward = () => {
     if (!listEnd) {
       swiperRef.current.slideNext();
@@ -32,7 +32,7 @@ const DeleteVehicleList = () => {
       setListStart(false);
     }
   };
-​
+
   const slideBack = () => {
     if (!listStart) {
       swiperRef.current.slidePrev();
@@ -44,13 +44,13 @@ const DeleteVehicleList = () => {
       setListEnd(false);
     }
   };
-​
+
   return (
     <>
-          {vehicle.status === 'Loading' && (
-        <div className="h-screen flex justify-center items-center">
-          <PongSpinner size={100} color="#686769" loading />
-        </div>
+      {vehicle.status === 'Loading' && (
+      <div className="h-screen flex justify-center items-center">
+        <PongSpinner size={100} color="#686769" loading />
+      </div>
       )}
       {vehicle.status === 'fulfilled' && vehicle.vehicles?.length > 0 && (
       <div className="flex w-screen">
@@ -109,16 +109,16 @@ const DeleteVehicleList = () => {
             >
               {vehicle.vehicles.map((vehicle) => (
                 <SwiperSlide key={vehicle.id}>
-                    <VehicleDeleteCard
-                      id={vehicle.id}
-                      name={vehicle.name}
-                      description={vehicle.description}
-                      photo={vehicle.photo}
-                    />
+                  <VehicleDeleteCard
+                    id={vehicle.id}
+                    name={vehicle.name}
+                    description={vehicle.description}
+                    photo={vehicle.photo}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
-​
+
             <button
               type="button"
               className={`slide ml-auto pr-8 pl-3 py-3 rounded-l-full bg-primaryGreen ${
@@ -147,5 +147,5 @@ const DeleteVehicleList = () => {
     </>
   );
 };
-​
+
 export default DeleteVehicleList;

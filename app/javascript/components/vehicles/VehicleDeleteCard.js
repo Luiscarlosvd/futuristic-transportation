@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import Divisor from './Divisor';
-import { useDispatch } from "react-redux";
-import { deleteVehicle } from "../../redux/vehicleSlice";
-​
+import { deleteVehicle } from '../../redux/vehicleSlice';
+
 const VehicleDeleteCard = ({
   id, name, description, photo,
 }) => {
-​
   const dispatch = useDispatch();
-​
-​
+
   const handleDelete = (itemId) => {
     dispatch(deleteVehicle(itemId));
   };
-​
+
   return (
     <div className="flex flex-col items-center justify-center gap-3 relative">
       <div className="aspect-1 h-40 -z-50 rounded-full mx-auto top-0 bg-slate-200 absolute" />
@@ -22,17 +20,15 @@ const VehicleDeleteCard = ({
       <h3>{name}</h3>
       <Divisor quantity={5} />
       <p className="font-roboto text-xs text-gray-400">{ description }</p>
-      <button className='delete-btn' onClick={() => handleDelete(id)}>Delete</button>
+      <button type="button" className="delete-btn" onClick={() => handleDelete(id)}>Delete</button>
     </div>
   );
-  
-​
-} 
+};
 VehicleDeleteCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   photo: PropTypes.string.isRequired,
 };
-​
+
 export default VehicleDeleteCard;

@@ -11,23 +11,23 @@ export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
     }
   });
 
-  export const newVehicle = createAsyncThunk("vehicles/newVehicle", async (formData) => {
-    try {
+export const newVehicle = createAsyncThunk('vehicles/newVehicle', async (formData) => {
+  try {
     const response = await axios.post('/api/v1/vehicles', formData);
     return response.data;
   } catch (error) {
     return error.message;
   }
-  });
+});
 
-  export const deleteVehicle = createAsyncThunk("vehicles/deleteVehicle", async (itemId) => {
-    try {
-    response = await axios.delete(`/api/v1/vehicles/${itemId}`);
+export const deleteVehicle = createAsyncThunk('vehicles/deleteVehicle', async (itemId) => {
+  try {
+    const response = await axios.delete(`/api/v1/vehicles/${itemId}`);
     return response; // Return the deleted vehicle's ID to update the state
   } catch (error) {
     return error.message;
   }
-  });
+});
 
 const initialState = {
   vehicles: [],
@@ -44,7 +44,7 @@ const vehiclesSlice = createSlice({
       .addCase(getVehiclesInfo.pending, (state) => ({ ...state, status: 'Loading' }))
       .addCase(getVehiclesInfo.fulfilled, (state, action) => ({ ...state, status: 'fulfilled', vehicles: action.payload }))
       .addCase(getVehiclesInfo.rejected, (state, action) => ({ ...state, status: 'rejected', error: action.error.message }))
-      .addCase(newVehicle.pending, (state) => ({ ...state, status: "loading"}))
+      .addCase(newVehicle.pending, (state) => ({ ...state, status: 'loading' }))
       .addCase(newVehicle.fulfilled, (state, action) => {
         if (action.payload === 'Request failed with status code 422') {
           window.location.reload();
@@ -63,9 +63,9 @@ const vehiclesSlice = createSlice({
           ...state,
           status: 'rejected',
           error: action.error.message,
-        }
+        };
       })
-      .addCase(deleteVehicle.pending, (state) => ({ ...state, status: "loading"}))
+      .addCase(deleteVehicle.pending, (state) => ({ ...state, status: 'loading' }))
       .addCase(deleteVehicle.fulfilled, (state, action) => {
         if (action.payload === 'Request failed with status code 422') {
           window.location.reload();
@@ -84,7 +84,7 @@ const vehiclesSlice = createSlice({
           ...state,
           status: 'rejected',
           error: action.error.message,
-        }
+        };
       });
   },
 });
