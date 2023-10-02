@@ -12,6 +12,7 @@ const AddVehicle = () => {
       <div className="">
         <h2 className="">New Vehicle</h2>
         <form className="" onSubmit={handleSubmit((data) => dispatch(newVehicle(data)))}>
+          <div>
               <input
                 required={true}
                 className=""
@@ -37,6 +38,7 @@ const AddVehicle = () => {
                 placeholder="Price"
                 {...register("price", { required: true })}
               />
+          </div>
           <div className="">
             <input
               required={true}

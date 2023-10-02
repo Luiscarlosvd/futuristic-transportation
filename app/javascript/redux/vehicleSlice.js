@@ -20,10 +20,10 @@ export const getVehiclesInfo = createAsyncThunk('vehicles/getVehiclesInfo',
   }
   });
 
-  export const deleteVehicle = createAsyncThunk("vehicles/deleteVehicles", async (itemId) => {
+  export const deleteVehicle = createAsyncThunk("vehicles/deleteVehicle", async (itemId) => {
     try {
-    await axios.delete(`/api/v1/vehicles/${itemId}`);
-    return itemId; // Return the deleted vehicle's ID to update the state
+    response = await axios.delete(`/api/v1/vehicles/${itemId}`);
+    return response; // Return the deleted vehicle's ID to update the state
   } catch (error) {
     return error.message;
   }
@@ -47,7 +47,7 @@ const vehiclesSlice = createSlice({
       .addCase(newVehicle.pending, (state) => ({ ...state, status: "loading"}))
       .addCase(newVehicle.fulfilled, (state, action) => {
         if (action.payload === 'Request failed with status code 422') {
-          window.location.reload('/vehicles/new');
+          window.location.reload();
         } else {
           window.location.replace('/vehicles');
         }
@@ -68,7 +68,7 @@ const vehiclesSlice = createSlice({
       .addCase(deleteVehicle.pending, (state) => ({ ...state, status: "loading"}))
       .addCase(deleteVehicle.fulfilled, (state, action) => {
         if (action.payload === 'Request failed with status code 422') {
-          window.location.reload('/vehicles/delete');
+          window.location.reload();
         } else {
           window.location.replace('/vehicles');
         }
@@ -78,7 +78,7 @@ const vehiclesSlice = createSlice({
           user: window.current_user,
         };
       })
-      .addCase(vehicleDelete.rejected, (state, action) => {
+      .addCase(deleteVehicle.rejected, (state, action) => {
         window.location.replace('/vehicles/delete');
         return {
           ...state,
