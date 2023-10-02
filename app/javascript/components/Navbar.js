@@ -35,6 +35,7 @@ const Navbar = () => {
         '/sign-up',
         '/reserve',
         `/details/${vehicleId}/reserve`,
+        '/vehicles/new',
       ].includes(location.pathname)
     ) {
       setShow(false);
@@ -61,6 +62,7 @@ const Navbar = () => {
             '/sign-up',
             '/reserve',
             `/details/${vehicleId}/reserve`,
+            '/vehicles/new',
           ].includes(location.pathname)
             ? 'block white'
             : 'hidden'
