@@ -38,7 +38,6 @@ RSpec.describe 'Users API', type: :request do
         run_test!
       end
 
-
       response '404', 'No Users Found' do
         run_test!
       end
