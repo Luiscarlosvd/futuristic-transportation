@@ -37,14 +37,13 @@ export const loginUser = createAsyncThunk(
 );
 
 export const deleteSession = createAsyncThunk('user/deleteSession', async () => {
-    try {
-      const response = await axios.delete(`/login/${window.current_user}`);
-      return response.data;
-    } catch (error) {
-      return error.message;
-    }
+  try {
+    const response = await axios.delete(`/login/${window.current_user}`);
+    return response.data;
+  } catch (error) {
+    return error.message;
   }
-)
+});
 
 const initialState = {
   user: window.current_user,
