@@ -17,7 +17,7 @@ paths:
           type: string
       responses:
         '200':
-          description: Reservations Found
+          description: No Reservations Found
           content:
             application/json:
               schema:
@@ -50,7 +50,7 @@ paths:
                         description:
                           type: string
                         price:
-                          type: integer
+                          type: string
                         photo:
                           type: string
                         photo_back:
@@ -69,8 +69,6 @@ paths:
                   - event_date
                   - user_id
                   - vehicle_id
-        '422':
-          description: No Reservations Found
   "/api/v1/reservations":
     post:
       summary: Create a Reservation
@@ -78,7 +76,7 @@ paths:
       - Reservations
       parameters: []
       responses:
-        '200':
+        '201':
           description: Reservation Created
         '422':
           description: Invalid Request
@@ -112,12 +110,10 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          type: integer
       responses:
         '200':
           description: Reservation deleted successfully
-        '404':
-          description: Invalid Request
   "/api/v1/users":
     get:
       summary: Get a list of all users
@@ -129,74 +125,34 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    email:
-                      type: string
-                    name:
-                      type: string
-                    password_digest:
-                      type: string
-                    created_at:
-                      type: string
-                    updated_at:
-                      type: string
-                  required:
-                  - id
-                  - name
-                  - email
-                  - password_digest
-        '404':
-          description: No Users Found
-    post:
-      summary: Creates a user
-      tags:
-      - Users
-      parameters: []
-      responses:
-        '201':
-          description: User created
-        '422':
-          description: Invalid Request
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                    password:
-                      type: string
-                    email:
-                      type: string
-                  required:
-                  - name
-                  - email
-                  - password
-  "/api/v1/users/{id}":
-    delete:
-      summary: Delete a user
-      tags:
-      - Users
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        '200':
-          description: User deleted
-        '404':
-          description: Invalid Request
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        email:
+                          type: string
+                        name:
+                          type: string
+                        password_digest:
+                          type: string
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                        isAdmin:
+                          type: boolean
+                      required:
+                      - id
+                      - name
+                      - email
+                      - password_digest
   "/api/v1/vehicles":
     get:
       summary: Get a list of all vehicles
@@ -204,45 +160,50 @@ paths:
       - Vehicles
       responses:
         '200':
-          description: Users found
+          description: No Vehicles Found
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    description:
-                      type: string
-                    price:
-                      type: integer
-                    photo:
-                      type: string
-                    photo_back:
-                      type: string
-                    photo_left:
-                      type: string
-                    photo_right:
-                      type: string
-                    created_at:
-                      type: string
-                    updated_at:
-                      type: string
-                  required:
-                  - id
-                  - name
-                  - description
-                  - price
-                  - photo
-                  - photo_back
-                  - photo_left
-                  - photo_right
-        '422':
-          description: No Vehicles Found
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  vehicles:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        price:
+                          type: string
+                        photo:
+                          type: string
+                        photo_back:
+                          type: string
+                        photo_left:
+                          type: string
+                        photo_right:
+                          type: string
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                      required:
+                      - id
+                      - name
+                      - description
+                      - price
+                      - photo
+                      - photo_back
+                      - photo_left
+                      - photo_right
+                  message:
+                    type: string
     post:
       summary: Creates a vehicle
       tags:
@@ -294,11 +255,9 @@ paths:
           type: string
       responses:
         '200':
-          description: Vehicle deleted successfully
-        '404':
           description: Invalid Request
 servers:
-- url: https://{defaultHost}
+- url: http://{defaultHost}
   variables:
     defaultHost:
-      default: www.example.com
+      default: localhost:3000

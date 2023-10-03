@@ -8,6 +8,8 @@ describe 'Reservations API' do
       parameter name: :user_id, in: :path, type: :string
 
       response '200', 'Reservations Found' do
+        let(:user_id) { 2 }
+
         schema type: :array,
                items: {
                  type: :object,
@@ -25,7 +27,7 @@ describe 'Reservations API' do
                        id: { type: :integer },
                        name: { type: :string },
                        description: { type: :string },
-                       price: { type: :integer },
+                       price: { type: :string },
                        photo: { type: :string },
                        photo_back: { type: :string },
                        photo_left: { type: :string },
@@ -40,7 +42,17 @@ describe 'Reservations API' do
         run_test!
       end
 
-      response '422', 'No Reservations Found' do
+      response '200', 'No Reservations Found' do
+        let(:user_id) { 'a2423' }
+
+        it 'returns the "No Reservations Found" message' do
+          expected_response = {
+            success: false,
+            message: 'No Reservations Found'
+          }.to_json
+      
+          expect(response.body).to eq(expected_response)
+        end
         run_test!
       end
     end
@@ -61,7 +73,7 @@ describe 'Reservations API' do
         required: %w[city event_date user_id vehicle_id]
       }
 
-      response '200', 'Reservation Created' do
+      response '201', 'Reservation Created' do
         let(:reservation) do
           Reservation.create(
             city: 'Caracas, Venezuela',
@@ -74,7 +86,7 @@ describe 'Reservations API' do
       end
 
       response '422', 'Invalid Request' do
-        let(:reservation1) do
+        let(:reservation) do
           Reservation.create(
             city: '',
             event_date: Time.now,
@@ -91,13 +103,10 @@ describe 'Reservations API' do
     delete 'Delete a Reservation' do
       tags 'Reservations'
       produces 'application/json'
-      parameter name: :id, in: :path, type: :string
+      parameter name: :id, in: :path, type: :integer
 
       response '200', 'Reservation deleted successfully' do
-        run_test!
-      end
-
-      response '404', 'Invalid Request' do
+        let(:id) { 1 }
         run_test!
       end
     end

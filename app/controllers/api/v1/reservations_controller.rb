@@ -23,7 +23,7 @@ class Api::V1::ReservationsController < ApplicationController
     if @reservation.destroy
       render json: { success: true, message: 'Reservation deleted successfully' }
     else
-      render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
+      render json: { success: false, message: 'Id not found' }, status: :unprocessable_entity
     end
   end
 
