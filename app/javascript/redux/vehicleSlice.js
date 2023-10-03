@@ -23,7 +23,7 @@ export const newVehicle = createAsyncThunk('vehicles/newVehicle', async (formDat
 export const deleteVehicle = createAsyncThunk('vehicles/deleteVehicle', async (itemId) => {
   try {
     const response = await axios.delete(`/api/v1/vehicles/${itemId}`);
-    return response; // Return the deleted vehicle's ID to update the state
+    return response.data;
   } catch (error) {
     return error.message;
   }

@@ -23,7 +23,7 @@ const MyReservationsList = () => {
     if (reservations.length === 0) {
       dispatch(fetchReservations(userId));
     }
-  }, [dispatch, reservations.length]);
+  }, [dispatch, reservations.length, userId]);
 
   return (
     <>

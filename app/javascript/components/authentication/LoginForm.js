@@ -20,6 +20,7 @@ const LoginForm = () => {
             <input
               type="text"
               placeholder="Email or Username"
+              autoComplete="username"
               name="login"
               {...register('login')}
               className="font-ace text-lg form-input placeholder-white py-3 px-5"
@@ -27,6 +28,7 @@ const LoginForm = () => {
             <input
               type="password"
               placeholder="Password"
+              autoComplete="current-password"
               name="password"
               {...register('password')}
               className="font-ace text-lg form-input placeholder-white py-3 px-5"

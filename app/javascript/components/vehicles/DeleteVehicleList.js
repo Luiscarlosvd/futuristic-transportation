@@ -15,7 +15,7 @@ const DeleteVehicleList = () => {
     if (vehicle.vehicles?.length === 0) {
       dispatch(getVehiclesInfo());
     }
-  }, []);
+  }, [dispatch, vehicle.vehicles?.length]);
 
   const [listStart, setListStart] = useState(true);
   const [listEnd, setListEnd] = useState(false);
