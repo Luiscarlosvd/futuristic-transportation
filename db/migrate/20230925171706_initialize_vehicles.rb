@@ -23,14 +23,14 @@ class InitializeVehicles < ActiveRecord::Migration[7.0]
     )
     
     Vehicle.create(
-      name: "Mustang® Dark Horse",
+      name: "2024 Mustang® Dark Horse™ Premium",
       description: "The brand-new 2024 Mustang Dark Horse model is powered by a naturally aspirated Gen-4 5.0L Coyote V8 engine kicking out 500 horsepower, and 418 lb.-ft. of torque.That’s 100 hp/L for a visceral driving experience.",
-      price: 30000.00,
-      photo: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C600A.P8R..PK1..882.89A.576.BBHAU.13K.COU.BSHEH.BY1AB.BYBBR.BYPAC.858.LTS.64R.TBC.50C.RWD.67J.96D.45B.45T.990.19X.18Z.63V.FS--A.52B.GTDAC.91B.HLLAD.SSR.58X.17P.SY4.JCBAP.44E.MAC.YZTAB.%5D/EXT/1/vehicle.png",
-      photo_back: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C600A.P8R..PK1..882.89A.576.BBHAU.13K.COU.BSHEH.BY1AB.BYBBR.BYPAC.858.LTS.64R.TBC.50C.RWD.67J.96D.45B.45T.990.19X.18Z.63V.FS--A.52B.GTDAC.91B.HLLAD.SSR.58X.17P.SY4.JCBAP.44E.MAC.YZTAB.%5D/EXT/2/vehicle.png",
-      photo_left: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C600A.P8R..PK1..882.89A.576.BBHAU.13K.COU.BSHEH.BY1AB.BYBBR.BYPAC.858.LTS.64R.TBC.50C.RWD.67J.96D.45B.45T.990.19X.18Z.63V.FS--A.52B.GTDAC.91B.HLLAD.SSR.58X.17P.SY4.JCBAP.44E.MAC.YZTAB.%5D/EXT/3/vehicle.png",
-      photo_right: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C600A.P8R..PK1..882.89A.576.BBHAU.13K.COU.BSHEH.BY1AB.BYBBR.BYPAC.858.LTS.64R.TBC.50C.RWD.67J.96D.45B.45T.990.19X.18Z.63V.FS--A.52B.GTDAC.91B.HLLAD.SSR.58X.17P.SY4.JCBAP.44E.MAC.YZTAB.%5D/EXT/5/vehicle.png"
-    )    
+      price: 30920.00,
+      photo: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C700A.P8R..PK1..88A.89A.~12A00_BCMAG.68B.576.97B.B5WDB.BBHAU.13K.COU.BSHCV.BY1AJ.BYBBR.BYPBC.858.LTS.64R.TBC.D5HAB.50C.RWD.67J.96D.45B.45T.990.19X.18Z.63V.FS--A.GCEAE.52B.GTDAC.91B.HLLAD.HNAAJ.SSR.58X.17P.SY4.IGDAC.JCBAP.44E.MAC.YZTAC.CVN.%5D/EXT/1/vehicle.png",
+      photo_back: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C700A.P8R..PK1..88A.89A.~12A00_BCMAG.68B.576.97B.B5WDB.BBHAU.13K.COU.BSHCV.BY1AJ.BYBBR.BYPBC.858.LTS.64R.TBC.D5HAB.50C.RWD.67J.96D.45B.45T.990.19X.18Z.63V.FS--A.GCEAE.52B.GTDAC.91B.HLLAD.HNAAJ.SSR.58X.17P.SY4.IGDAC.JCBAP.44E.MAC.YZTAC.CVN.%5D/EXT/5/vehicle.png",
+      photo_left: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C700A.P8R..PK1..88A.89A.~12A00_BCMAG.68B.576.97B.B5WDB.BBHAU.13K.COU.BSHCV.BY1AJ.BYBBR.BYPBC.858.LTS.64R.TBC.D5HAB.50C.RWD.67J.96D.45B.45T.990.19X.18Z.63V.FS--A.GCEAE.52B.GTDAC.91B.HLLAD.HNAAJ.SSR.58X.17P.SY4.IGDAC.JCBAP.44E.MAC.YZTAC.CVN.%5D/EXT/3/vehicle.png",
+      photo_right: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C700A.P8R..PK1..88A.89A.~12A00_BCMAG.68B.576.97B.B5WDB.BBHAU.13K.COU.BSHCV.BY1AJ.BYBBR.BYPBC.858.LTS.64R.TBC.D5HAB.50C.RWD.67J.96D.45B.45T.990.19X.18Z.63V.FS--A.GCEAE.52B.GTDAC.91B.HLLAD.HNAAJ.SSR.58X.17P.SY4.IGDAC.JCBAP.44E.MAC.YZTAC.CVN.%5D/EXT/2/vehicle.png"
+    )
 
     Vehicle.create(
       name: "Mustang® Gray",
@@ -51,15 +51,35 @@ class InitializeVehicles < ActiveRecord::Migration[7.0]
       photo_left: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C100A.P8T..PYZ..88D.89W.~2WD00_BCMAB.AC--C.13A.COU.BSHEH.BYBBR.CJPAA.LTS.64Y.TDP.RWD.45Y.99H.FS--A.HLLAD.58V.IDBAD.SY4.44U.EBST.YZTAB.CLO.%5D/EXT/3/vehicle.png",
       photo_right: "https://build.ford.com/dig/Ford/Mustang/2024/HD-TILE/Image%5B%7CFord%7CMustang%7C2024%7C1%7C1.%7C100A.P8T..PYZ..88D.89W.~2WD00_BCMAB.AC--C.13A.COU.BSHEH.BYBBR.CJPAA.LTS.64Y.TDP.RWD.45Y.99H.FS--A.HLLAD.58V.IDBAD.SY4.44U.EBST.YZTAB.CLO.%5D/EXT/2/vehicle.png"
     )
+    
+    Vehicle.create(
+      name: "2023 Bronco® Raptor®",
+      description: "Delivers a brutish 418 horsepower and 440 lb.-ft. of torque. Paired with a 10-speed automatic transmission to take on the roughest terrain.",
+      price: 86580.00,
+      photo: "https://build.ford.com/dig/Ford/Bronco/2023/HD-TILE/Image%5B%7CFord%7CBronco%7C2023%7C1%7C1.%7C373A...PCN..883.89V.16B.43L.574.66C.4DR.64S.THM.99R.50A.67X.67H.77W.44T.%5D/EXT/1/vehicle.png",
+      photo_back: "https://build.ford.com/dig/Ford/Bronco/2023/HD-TILE/Image%5B%7CFord%7CBronco%7C2023%7C1%7C1.%7C373A...PCN..883.89V.16B.43L.574.66C.4DR.64S.THM.99R.50A.67X.67H.77W.44T.%5D/EXT/5/vehicle.png",
+      photo_left: "https://build.ford.com/dig/Ford/Bronco/2023/HD-TILE/Image%5B%7CFord%7CBronco%7C2023%7C1%7C1.%7C373A...PCN..883.89V.16B.43L.574.66C.4DR.64S.THM.99R.50A.67X.67H.77W.44T.%5D/EXT/3/vehicle.png",
+      photo_right: "https://build.ford.com/dig/Ford/Bronco/2023/HD-TILE/Image%5B%7CFord%7CBronco%7C2023%7C1%7C1.%7C373A...PCN..883.89V.16B.43L.574.66C.4DR.64S.THM.99R.50A.67X.67H.77W.44T.%5D/EXT/2/vehicle.png"
+    )
+    
+    Vehicle.create(
+      name: "2024 Bronco® Heritage Limited Edition",
+      description: "Capability for the trail. Connectivity to keep you in touch. Stories you'll tell for years",
+      price: 39130.00,
+      photo: "https://build.ford.com/dig/Ford/Bronco/2024/HD-TILE/Image%5B%7CFord%7CBronco%7C2024%7C1%7C1.%7C664A.E4E..PCW..88Y.89V.61L.65H.765.43Y.574.66C.87B.60B.18D.2DR.55B.643.THQ.60R.ESO.X7L.RLD.99P.85H.85C.67X.59A.65P.58P.SRS.17Q.85W.67H.65F.91S.77H.44T.65C.85B.PPL.%5D/EXT/1/vehicle.png",
+      photo_back: "https://build.ford.com/dig/Ford/Bronco/2024/HD-TILE/Image%5B%7CFord%7CBronco%7C2024%7C1%7C1.%7C664A.E4E..PCW..88Y.89V.61L.65H.765.43Y.574.66C.87B.60B.18D.2DR.55B.643.THQ.60R.ESO.X7L.RLD.99P.85H.85C.67X.59A.65P.58P.SRS.17Q.85W.67H.65F.91S.77H.44T.65C.85B.PPL.%5D/EXT/5/vehicle.png",
+      photo_left: "https://build.ford.com/dig/Ford/Bronco/2024/HD-TILE/Image%5B%7CFord%7CBronco%7C2024%7C1%7C1.%7C664A.E4E..PCW..88Y.89V.61L.65H.765.43Y.574.66C.87B.60B.18D.2DR.55B.643.THQ.60R.ESO.X7L.RLD.99P.85H.85C.67X.59A.65P.58P.SRS.17Q.85W.67H.65F.91S.77H.44T.65C.85B.PPL.%5D/EXT/3/vehicle.png",
+      photo_right: "https://build.ford.com/dig/Ford/Bronco/2024/HD-TILE/Image%5B%7CFord%7CBronco%7C2024%7C1%7C1.%7C664A.E4E..PCW..88Y.89V.61L.65H.765.43Y.574.66C.87B.60B.18D.2DR.55B.643.THQ.60R.ESO.X7L.RLD.99P.85H.85C.67X.59A.65P.58P.SRS.17Q.85W.67H.65F.91S.77H.44T.65C.85B.PPL.%5D/EXT/2/vehicle.png"
+    )
 
     Vehicle.create(
-      name: "Mustang® Gray",
-      description: "The brand-new 2024 Mustang Dark Horse model is powered by a naturally aspirated Gen-4 5.0L Coyote V8 engine kicking out 500 horsepower, and 418 lb.-ft. of torque.That’s 100 hp/L for a visceral driving experience.",
-      price: 30920,
-      photo: "https://build.ford.com/dig/Ford/Explorer/2023/HD-TILE/Image%5B%7CFord%7CExplorer%7C2023%7C1%7C1.%7C100A.K7B..PUM..887.89N.~4H700_VS-JJ.BSHCA.173.123.64X.TFC.DBCAB.RWD.99H.76P.FEDAM.17A.GAS.55B.58S.IDBAD.53L.44T.BV.CLO.%5D/EXT/1/vehicle.png",
-      photo_back: "https://build.ford.com/dig/Ford/Explorer/2023/HD-TILE/Image%5B%7CFord%7CExplorer%7C2023%7C1%7C1.%7C100A.K7B..PUM..887.89N.~4H700_VS-JJ.BSHCA.173.123.64X.TFC.DBCAB.RWD.99H.76P.FEDAM.17A.GAS.55B.58S.IDBAD.53L.44T.BV.CLO.%5D/EXT/5/vehicle.png",
-      photo_left: "https://build.ford.com/dig/Ford/Explorer/2023/HD-TILE/Image%5B%7CFord%7CExplorer%7C2023%7C1%7C1.%7C100A.K7B..PUM..887.89N.~4H700_VS-JJ.BSHCA.173.123.64X.TFC.DBCAB.RWD.99H.76P.FEDAM.17A.GAS.55B.58S.IDBAD.53L.44T.BV.CLO.%5D/EXT/3/vehicle.png",
-      photo_right: "https://build.ford.com/dig/Ford/Explorer/2023/HD-TILE/Image%5B%7CFord%7CExplorer%7C2023%7C1%7C1.%7C100A.K7B..PUM..887.89N.~4H700_VS-JJ.BSHCA.173.123.64X.TFC.DBCAB.RWD.99H.76P.FEDAM.17A.GAS.55B.58S.IDBAD.53L.44T.BV.CLO.%5D/EXT/2/vehicle.png"
+      name: "2024 Expedition® XLT",
+      description: "Ambition for new adventure. Performance and space to spare.",
+      price: 55525.00,
+      photo: "https://build.ford.com/dig/Ford/Expedition/2024/HD-TILE/Image%5B%7CFord%7CExpedition%7C2024%7C1%7C1.%7C104A...PYZ..88L.89H.774.18B.BYBAW.BS1.64X.4x2.998.%5D/EXT/1/vehicle.png",
+      photo_back: "https://build.ford.com/dig/Ford/Expedition/2024/HD-TILE/Image%5B%7CFord%7CExpedition%7C2024%7C1%7C1.%7C104A...PYZ..88L.89H.774.18B.BYBAW.BS1.64X.4x2.998.%5D/EXT/5/vehicle.png",
+      photo_left: "https://build.ford.com/dig/Ford/Expedition/2024/HD-TILE/Image%5B%7CFord%7CExpedition%7C2024%7C1%7C1.%7C104A...PYZ..88L.89H.774.18B.BYBAW.BS1.64X.4x2.998.%5D/EXT/3/vehicle.png",
+      photo_right: "https://build.ford.com/dig/Ford/Expedition/2024/HD-TILE/Image%5B%7CFord%7CExpedition%7C2024%7C1%7C1.%7C104A...PYZ..88L.89H.774.18B.BYBAW.BS1.64X.4x2.998.%5D/EXT/2/vehicle.png"
     )
   end
 
