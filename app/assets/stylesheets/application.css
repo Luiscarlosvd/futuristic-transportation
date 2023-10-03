@@ -323,7 +323,7 @@ form > input:focus {
 /* New Reservation */
 
 .bg-new-reservation {
-  background: radial-gradient(circle, rgba(157, 200, 1, 0.9243346997001926) 55%, rgba(132, 166, 14, 0.9523459041819853) 100%);
+  background: radial-gradient(circle, rgb(78 165 5) 55%, rgb(23 57 14) 100%);
 }
 
 .bg-image-new-reservation {

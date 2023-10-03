@@ -128,7 +128,7 @@ const Navbar = () => {
             <FaVimeoV />
             <FaPinterestP />
           </div>
-          <p className="licence">© 2023 Galactic Gears.</p>
+          <p className="licence">© 2023 Luxury Speedsters.</p>
         </div>
       </div>
     </>
