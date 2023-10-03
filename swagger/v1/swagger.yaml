@@ -298,7 +298,7 @@ paths:
         '404':
           description: Invalid Request
 servers:
-- url: http://{defaultHost}
+- url: https://{defaultHost}
   variables:
     defaultHost:
-      default: localhost:3000
+      default: www.example.com

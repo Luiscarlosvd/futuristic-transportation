@@ -1,6 +1,6 @@
 require 'swagger_helper'
 
-RSpec.describe 'Reservations API', type: :request do
+describe 'Reservations API' do
   path '/api/v1/reservations?user_id={user_id}' do
     get 'Get a list of all user Reservations' do
       tags 'Reservations'

@@ -1,6 +1,6 @@
 require 'swagger_helper'
 
-RSpec.describe 'Users API', type: :request do
+describe 'Users API' do
   before(:each) do
     @user = User.create(
       name: 'Test User',
