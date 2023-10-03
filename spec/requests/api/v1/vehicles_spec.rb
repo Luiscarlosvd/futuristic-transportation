@@ -108,7 +108,7 @@ describe 'Vehicles API' do
             success: false,
             notice: "Couldn't find Vehicle with 'id'=4000"
           }.to_json
-      
+
           expect(response.body).to eq(expected_response)
         end
       end

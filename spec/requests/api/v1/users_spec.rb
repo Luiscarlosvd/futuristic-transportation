@@ -34,7 +34,7 @@ describe 'Users API' do
           )
         end
         run_test!
-      end  
+      end
     end
   end
 end

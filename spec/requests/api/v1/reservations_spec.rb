@@ -9,7 +9,6 @@ describe 'Reservations API' do
 
       response '200', 'Reservations Found' do
         let(:user_id) { 2 }
-
         schema type: :array,
                items: {
                  type: :object,
@@ -50,7 +49,7 @@ describe 'Reservations API' do
             success: false,
             message: 'No Reservations Found'
           }.to_json
-      
+
           expect(response.body).to eq(expected_response)
         end
         run_test!
