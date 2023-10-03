@@ -2,10 +2,6 @@
 <script>
 window.current_user = <%= Current.user&.id || -1 %>
 window.isAdmin = <%= Current.user&.isAdmin || false %>
-// window.CSRF_TOKEN = '<%= form_authenticity_token %>'
 document.cookie = "CSRF_TOKEN=" + '<%= form_authenticity_token %>' + "; secure";
-
-// console.log(window.current_user, window.isAdmin, document.cookie);
-
 </script>
 <script src=".../assets/builds/application.js" type="application/json"></script>

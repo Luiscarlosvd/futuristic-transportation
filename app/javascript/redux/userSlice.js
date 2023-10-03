@@ -14,11 +14,9 @@ function readCookie(name) {
   return '';
 }
 
-// const csrfToken = window.CSRF_TOKEN;
 const csrfToken = readCookie('CSRF_TOKEN');
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
-// console.log('llegue al userSlice y este es el token csrf:', csrfToken);
 
 export const createUser = createAsyncThunk(
   'user/createUser',

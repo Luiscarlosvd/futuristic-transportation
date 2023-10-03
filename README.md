@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h1><b>Galatic Gear App</b></h1><a name="about-project"></a>
+  <h1><b>Luxury Speedsters</b></h1><a name="about-project"></a>
 </div>
 
 # 📗 Table of Contents
@@ -37,31 +37,12 @@ Experience the future of automotive luxury with our "Galactic Gear" app. Powered
 
 > List of technologies used for this project
 
-<!-- <details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
 <details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details> -->
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
+  <summary>BackEnd</summary>
   <ul>
     <li><a href="https://rubyonrails.org">Ruby on Rails</a></li>
+    <li><a href="https://stimulus.hotwired.dev/">Stimulus</a></li>
+    <li><a href="https://rspec.info/">Rspec</a></li>
   </ul>
 </details>
 
@@ -69,6 +50,8 @@ Experience the future of automotive luxury with our "Galactic Gear" app. Powered
   <summary>Front-end/View</summary>
   <ul>
     <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://axios-http.com/es/docs/intro">Axios</a></li>
+    <li><a href="https://tailwindcss.com/docs/guides/ruby-on-rails">Tailwind CSS</a></li>
   </ul>
 </details>
 
