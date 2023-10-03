@@ -12,8 +12,8 @@
 .home-img {
   background-image: url(home-mustang.png);
   background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
+  background-position: left bottom;
+  background-size: auto 60%;
 }
 
 .bg-main {
@@ -60,6 +60,7 @@
 @media (min-width: 768px) {
   .home-img {
     background-position: center;
+    background-size: contain;
   }
 }
 
