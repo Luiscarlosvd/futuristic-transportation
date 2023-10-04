@@ -8,15 +8,15 @@ paths:
     get:
       summary: Get a list of all user Reservations
       tags:
-      - Reservations
+        - Reservations
       parameters:
-      - name: user_id
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
-        '200':
+        "200":
           description: No Reservations Found
           content:
             application/json:
@@ -64,21 +64,21 @@ paths:
                         updated_at:
                           type: string
                   required:
-                  - id
-                  - city
-                  - event_date
-                  - user_id
-                  - vehicle_id
+                    - id
+                    - city
+                    - event_date
+                    - user_id
+                    - vehicle_id
   "/api/v1/reservations":
     post:
       summary: Create a Reservation
       tags:
-      - Reservations
+        - Reservations
       parameters: []
       responses:
-        '201':
+        "201":
           description: Reservation Created
-        '422':
+        "422":
           description: Invalid Request
       requestBody:
         content:
@@ -96,31 +96,31 @@ paths:
                 vehicle_id:
                   type: integer
               required:
-              - city
-              - event_date
-              - user_id
-              - vehicle_id
+                - city
+                - event_date
+                - user_id
+                - vehicle_id
   "/api/v1/reservations/{id}":
     delete:
       summary: Delete a Reservation
       tags:
-      - Reservations
+        - Reservations
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
-        '200':
+        "200":
           description: Reservation deleted successfully
   "/api/v1/users":
     get:
       summary: Get a list of all users
       tags:
-      - Users
+        - Users
       responses:
-        '200':
+        "200":
           description: Users found
           content:
             application/json:
@@ -149,17 +149,17 @@ paths:
                         isAdmin:
                           type: boolean
                       required:
-                      - id
-                      - name
-                      - email
-                      - password_digest
+                        - id
+                        - name
+                        - email
+                        - password_digest
   "/api/v1/vehicles":
     get:
       summary: Get a list of all vehicles
       tags:
-      - Vehicles
+        - Vehicles
       responses:
-        '200':
+        "200":
           description: No Vehicles Found
           content:
             application/json:
@@ -194,25 +194,25 @@ paths:
                         updated_at:
                           type: string
                       required:
-                      - id
-                      - name
-                      - description
-                      - price
-                      - photo
-                      - photo_back
-                      - photo_left
-                      - photo_right
+                        - id
+                        - name
+                        - description
+                        - price
+                        - photo
+                        - photo_back
+                        - photo_left
+                        - photo_right
                   message:
                     type: string
     post:
       summary: Creates a vehicle
       tags:
-      - Vehicles
+        - Vehicles
       parameters: []
       responses:
-        '201':
+        "201":
           description: Vehicle Created
-        '422':
+        "422":
           description: Invalid Request
       requestBody:
         content:
@@ -235,29 +235,33 @@ paths:
                 photo_right:
                   type: string
               required:
-              - name
-              - description
-              - price
-              - photo
-              - photo_back
-              - photo_left
-              - photo_right
+                - name
+                - description
+                - price
+                - photo
+                - photo_back
+                - photo_left
+                - photo_right
   "/api/v1/vehicles/{id}":
     delete:
       summary: Delete a Vehicle
       tags:
-      - Vehicles
+        - Vehicles
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
-        '200':
+        "200":
           description: Invalid Request
 servers:
-- url: http://{defaultHost}
-  variables:
-    defaultHost:
-      default: localhost:3000
+  - url: http://{defaultHost}
+    variables:
+      defaultHost:
+        default: localhost:3000
+  - url: http://{defaultHost1}
+    variables:
+      defaultHost1:
+        default: 127.0.0.1:3000
