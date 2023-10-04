@@ -6,10 +6,10 @@ import { loginUser } from '../../redux/userSlice';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   return (
-    <div className="w-full h-screen bg-registration">
+    <div className="w-full h-screen bg-signup">
       <div className="bg-image-form w-full h-screen grid place-content-center">
         <div className="form-bg px-3 py-6 flex flex-col gap-10 items-center rounded-lg">
           <h1 className="font-ace text-3xl text-white text-shadow-title">Log In</h1>
@@ -17,20 +17,22 @@ const LoginForm = () => {
             className="flex flex-col gap-6 items-center"
             onSubmit={handleSubmit((data) => dispatch(loginUser(data)))}
           >
+            <span className="font-bold text-red-600">{errors.login?.message}</span>
             <input
               type="text"
               placeholder="Email or Username"
               autoComplete="username"
               name="login"
-              {...register('login')}
+              {...register('login', { required: 'The Username or Email is required.' })}
               className="font-ace text-lg form-input placeholder-white py-3 px-5"
             />
+            <span className="font-bold text-red-600">{errors.password?.message}</span>
             <input
               type="password"
               placeholder="Password"
               autoComplete="current-password"
               name="password"
-              {...register('password')}
+              {...register('password', { required: 'The correct password is required.' })}
               className="font-ace text-lg form-input placeholder-white py-3 px-5"
             />
             <button
