@@ -33,10 +33,9 @@ const NewReservation = () => {
                 <h1 className="font-ace text-2xl text-white text-shadow-title text-center">Make a Reservation</h1>
                 <div className="bg-white h-1px w-5/6 max-w-xs my-5" />
                 <p className="text-white text-center w-11/12 text-shadow-title">
-                  In our company we have the ability
-                  to create any vehicle that you imagine completely tailored to your needs
-                  if you wish to purchase it. The future is today and we can create whatever
-                  your mind imagines. If you want to find out if a
+                  In our company we provide the best automobile service 
+                  for our clients, choose to feel like you are flying with us. 
+                  If you want to find out if a
                   reservation is available in your area,
                   please use the selector below.
                 </p>
@@ -47,7 +46,7 @@ const NewReservation = () => {
                   <div className="w-11/12 flex flex-col items-center gap-1">
                     <span className="font-bold text-red-600">{errors.city?.message}</span>
                     <select
-                      {...register('city', { required: 'This field is required.' })}
+                      {...register('city', { required: 'Please select a city.' })}
                       type="text"
                       placeholder="City"
                       className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-full"
@@ -60,9 +59,9 @@ const NewReservation = () => {
                     </select>
                   </div>
                   <div className="w-11/12 flex flex-col items-center gap-1">
-                    <span className="font-bold text-red-600">{errors.date?.message}</span>
+                    <span className="font-bold text-red-600">{errors.event_date?.message}</span>
                     <input
-                      {...register('event_date', { required: 'This field is required.' })}
+                      {...register('event_date', { required: 'Please select a date.' })}
                       type="datetime-local"
                       name="event_date"
                       placeholder="Date"
@@ -74,7 +73,7 @@ const NewReservation = () => {
                     <span className="font-bold text-red-600">{errors.vehicle_id?.message}</span>
                     { location.pathname === '/reserve' ? (
                       <select
-                        {...register('vehicle_id', { required: 'This field is required.' })}
+                        {...register('vehicle_id', { required: 'Please select a vehicle.' })}
                         type="text"
                         placeholder="Vehicle"
                         className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12"
@@ -90,7 +89,7 @@ const NewReservation = () => {
                       </select>
                     ) : (
                       <select
-                        {...register('vehicle_id', { required: 'This field is required.' })}
+                        {...register('vehicle_id', { required: 'Please select a vehicle.' })}
                         type="text"
                         placeholder="Vehicle"
                         className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-11/12"
