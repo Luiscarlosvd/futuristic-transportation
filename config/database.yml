@@ -86,6 +86,8 @@ test:
 #
 production:
   <<: *default
-  database: futuristic_transportation_production
-  username: futuristic_transportation
-  password: <%= ENV["FUTURISTIC_TRANSPORTATION_DATABASE_PASSWORD"] %>
+  database: postgresql_9cwd
+  username: postgresql_9cwd_user
+  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  host: dpg-cjto3s1gdgss738mv4f0-a
