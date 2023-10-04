@@ -88,6 +88,6 @@ production:
   <<: *default
   database: rentals_app
   username: rentals_app_user
-  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
+  password: <%= ENV["RENTALS_APP_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
-  host: dpg-ckeq3d6a3ovc738jpkvg-a
+  # host: dpg-ckeq3d6a3ovc738jpkvg-a
