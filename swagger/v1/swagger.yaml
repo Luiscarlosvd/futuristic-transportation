@@ -1,0 +1,267 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/reservations?user_id={user_id}":
+    get:
+      summary: Get a list of all user Reservations
+      tags:
+        - Reservations
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: No Reservations Found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    city:
+                      type: string
+                    event_date:
+                      type: string
+                      format: date-time
+                    user_id:
+                      type: integer
+                    vehicle_id:
+                      type: integer
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+                    vehicle:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        price:
+                          type: string
+                        photo:
+                          type: string
+                        photo_back:
+                          type: string
+                        photo_left:
+                          type: string
+                        photo_right:
+                          type: string
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                  required:
+                    - id
+                    - city
+                    - event_date
+                    - user_id
+                    - vehicle_id
+  "/api/v1/reservations":
+    post:
+      summary: Create a Reservation
+      tags:
+        - Reservations
+      parameters: []
+      responses:
+        "201":
+          description: Reservation Created
+        "422":
+          description: Invalid Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                city:
+                  type: string
+                event_date:
+                  type: string
+                  format: date-time
+                user_id:
+                  type: integer
+                vehicle_id:
+                  type: integer
+              required:
+                - city
+                - event_date
+                - user_id
+                - vehicle_id
+  "/api/v1/reservations/{id}":
+    delete:
+      summary: Delete a Reservation
+      tags:
+        - Reservations
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Reservation deleted successfully
+  "/api/v1/users":
+    get:
+      summary: Get a list of all users
+      tags:
+        - Users
+      responses:
+        "200":
+          description: Users found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        email:
+                          type: string
+                        name:
+                          type: string
+                        password_digest:
+                          type: string
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                        isAdmin:
+                          type: boolean
+                      required:
+                        - id
+                        - name
+                        - email
+                        - password_digest
+  "/api/v1/vehicles":
+    get:
+      summary: Get a list of all vehicles
+      tags:
+        - Vehicles
+      responses:
+        "200":
+          description: No Vehicles Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  vehicles:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        price:
+                          type: string
+                        photo:
+                          type: string
+                        photo_back:
+                          type: string
+                        photo_left:
+                          type: string
+                        photo_right:
+                          type: string
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                      required:
+                        - id
+                        - name
+                        - description
+                        - price
+                        - photo
+                        - photo_back
+                        - photo_left
+                        - photo_right
+                  message:
+                    type: string
+    post:
+      summary: Creates a vehicle
+      tags:
+        - Vehicles
+      parameters: []
+      responses:
+        "201":
+          description: Vehicle Created
+        "422":
+          description: Invalid Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                price:
+                  type: integer
+                photo:
+                  type: string
+                photo_back:
+                  type: string
+                photo_left:
+                  type: string
+                photo_right:
+                  type: string
+              required:
+                - name
+                - description
+                - price
+                - photo
+                - photo_back
+                - photo_left
+                - photo_right
+  "/api/v1/vehicles/{id}":
+    delete:
+      summary: Delete a Vehicle
+      tags:
+        - Vehicles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Invalid Request
+servers:
+  - url: http://{defaultHost}
+    variables:
+      defaultHost:
+        default: localhost:3000
+  - url: http://{defaultHost1}
+    variables:
+      defaultHost1:
+        default: 127.0.0.1:3000

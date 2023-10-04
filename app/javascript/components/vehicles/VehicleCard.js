@@ -13,7 +13,7 @@ const VehicleCard = ({
     <img className="h-40 aspect-auto mt-2" src={photo} alt="Vehicle" />
     <h3>{name}</h3>
     <Divisor quantity={5} />
-    <p className="font-roboto text-xs text-gray-400">{ description }</p>
+    <p className="font-roboto text-xs text-gray-400 w-3/4 text-center">{ description }</p>
     <div className="flex items-center gap-3 text-gray-400">
       <div className="p-1 rounded-full border border-gray-400 cursor-pointer">
         <BsTwitter />

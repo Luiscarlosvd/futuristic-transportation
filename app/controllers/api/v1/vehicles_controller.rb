@@ -1,10 +1,8 @@
 class Api::V1::VehiclesController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: %i[create destroy]
-
   def index
     @vehicles = Vehicle.all
     if @vehicles.present?
-      render json: { success: true, vehicles: @vehicles }
+      render json: { success: true, vehicles: @vehicles, message: 'Vehicles Found' }
     else
       render json: { success: false, notice: 'No Vehicles Found.' }
     end
@@ -15,9 +13,10 @@ class Api::V1::VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
     if @vehicle.save
-      render json: @vehicle, status: :created, notice: 'Vehicle was successfully created.'
+      render json: @vehicle, status: :created, notice: 'Vehicle was successfully created.', message: 'Vehicle Created'
     else
-      render json: @vehicle.errors, status: :unprocessable_entity, alert: 'Vehicle could not be created.'
+      render json: @vehicle.errors, status: :unprocessable_entity, alert: 'Vehicle could not be created.',
+             message: 'Invalid Request'
     end
   end
 

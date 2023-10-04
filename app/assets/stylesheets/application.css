@@ -10,10 +10,10 @@
 }
 
 .home-img {
-  background-image: url(home-wall.png);
+  background-image: url(home-mustang.png);
   background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
+  background-position: left bottom;
+  background-size: auto 60%;
 }
 
 .bg-main {
@@ -60,6 +60,7 @@
 @media (min-width: 768px) {
   .home-img {
     background-position: center;
+    background-size: contain;
   }
 }
 
@@ -146,12 +147,12 @@
 
 .form-bg {
   background-color: rgba(0, 0, 0, 0.285);
-  backdrop-filter: blur(0.5px);
+  backdrop-filter: blur(0.8px);
   box-shadow: 0 3px 4px 1px rgba(0, 0, 0, 0.5);
 }
 
 .bg-image-form {
-  background-image: url(Image-Log-Sign.png);
+  background-image: url(Ford-LogIn.png);
   background-repeat: no-repeat;
   background-position: right;
   background-size: auto 60%;
@@ -197,12 +198,16 @@ form > input:focus {
   .form-bg {
     padding: 3rem 7rem;
   }
+
+  .bg-image-form {
+    background-size: contain;
+  }
 }
 
 @media (min-width: 740px) {
   .bg-image-form {
     background-position: center;
-    background-size: contain;
+    background-size: 70%;
   }
 
   .form-bg {
@@ -322,11 +327,10 @@ form > input:focus {
 }
 
 .bg-image-new-reservation {
-  background-image: url(Image-new-reservation.png);
+  background-image: url(Ford-Green.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 110%;
-  opacity: 0.9;
 }
 
 .form-new-reservation-bg {
@@ -337,6 +341,10 @@ form > input:focus {
   border-radius: 10px;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.form-new-reservation-bg::-webkit-scrollbar {
+  display: none;
 }
 
 .input-date::-webkit-calendar-picker-indicator {

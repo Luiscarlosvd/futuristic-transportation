@@ -89,12 +89,16 @@ const Navbar = () => {
               <NavLink className="p-2" to="/reserve">
                 RESERVE
               </NavLink>
-              <NavLink className="p-2" to="vehicles/new">
-                ADD VEHICLE
-              </NavLink>
-              <NavLink className="px-2 py-1" to="vehicles/delete">
-                DELETE VEHICLE
-              </NavLink>
+              {user.admin && (
+                <>
+                  <NavLink className="p-2" to="vehicles/new">
+                    ADD VEHICLE
+                  </NavLink>
+                  <NavLink className="px-2 py-1" to="vehicles/delete">
+                    DELETE VEHICLE
+                  </NavLink>
+                </>
+              )}
               <NavLink
                 onClick={() => {
                   dispatch(deleteSession());

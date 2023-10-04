@@ -22,6 +22,7 @@ const SignupForm = () => {
               <input
                 type="text"
                 placeholder="Name"
+                autoComplete="username"
                 name="name"
                 {...register('name')}
                 className="font-ace text-lg form-input placeholder-white py-3 px-5"
@@ -29,6 +30,7 @@ const SignupForm = () => {
               <input
                 type="email"
                 placeholder="Email"
+                autoComplete="email"
                 name="email"
                 {...register('email')}
                 className="font-ace text-lg form-input placeholder-white py-3 px-5"
@@ -36,6 +38,7 @@ const SignupForm = () => {
               <input
                 type="password"
                 placeholder="Password"
+                autoComplete="current-password"
                 name="password"
                 {...register('password')}
                 className="font-ace text-lg form-input placeholder-white py-3 px-5"

@@ -25,8 +25,8 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  AllowedMethods: ['describe']
-  Max: 30
+  AllowedMethods: ['describe', 'get', 'post', 'path', 'delete']
+  Max: 40
 
 Style/Documentation:
   Enabled: false

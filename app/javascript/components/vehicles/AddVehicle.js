@@ -11,7 +11,7 @@ const AddVehicle = () => {
     <>
       <div className="h-full w-full bg-new-reservation">
         <div className="bg-image-new-reservation w-full h-screen p-5 grid grid-cols-1 place-content-center">
-          <section className="form-new-reservation-bg flex flex-col justify-center items-center overflow-y-scroll p-3 sm:max-w-full sm:w-full lg:px-6">
+          <section className="form-new-reservation-bg flex flex-col items-center overflow-y-scroll p-3 sm:max-w-full sm:w-full lg:px-6">
             <h2 className="font-ace text-2xl text-white text-shadow-title text-center">New Vehicle</h2>
             <div className="bg-white h-1px w-5/6 max-w-xs my-5" />
             <form className="flex flex-col gap-7 items-center mt-5 w-full lg:flex-row" onSubmit={handleSubmit((data) => dispatch(newVehicle(data)))}>
