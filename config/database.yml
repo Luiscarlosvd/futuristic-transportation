@@ -86,8 +86,8 @@ test:
 #
 production:
   <<: *default
-  database: postgresql_9cwd
-  username: postgresql_9cwd_user
+  database: rentals_app
+  username: rentals_app_user
   password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
-  host: dpg-cjto3s1gdgss738mv4f0-a
+  host: dpg-ckeq3d6a3ovc738jpkvg-a

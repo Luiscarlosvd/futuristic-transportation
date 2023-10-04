@@ -9,6 +9,12 @@ import { Link } from 'react-router-dom';
 import { getVehiclesInfo } from '../../redux/vehicleSlice';
 import useWindowResize from '../hooks/useWindowResize';
 import PriceList from './PriceList';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const VehicleDetails = () => {
   const vehicle = useSelector((state) => state.vehicles);
@@ -36,11 +42,11 @@ const VehicleDetails = () => {
       {vehicle.status === 'fulfilled' && (
         <>
           <div className="flex">
-            <div className="navbar-space" />
-            <div className="mt-8 details-container">
+            <div className="navbar-space flex-grow-0" />
+            <div className="pt-8 details-container bg-slate-50 flex-1 overflow-x-hidden">
               {width < 900 ? (
                 <div className="w-11/12 m-auto mb-7 flex flex-col justify-center items-center text-center">
-                  <h1 className="font-ace text-5xl text-black text-shadow-title mb-2">
+                  <h1 className="font-ace text-3xl text-black text-shadow-title mb-2">
                     {vehicleDetails.name}
                   </h1>
                   <p className="font-roboto text-shadow-title">
@@ -49,11 +55,48 @@ const VehicleDetails = () => {
                   <div className="w-24 bg-primaryGreen mt-4 h-1px" />
                 </div>
               ) : null}
-              <div className="relative details-photo-container">
-                <img
-                  src={vehicleDetails.photo}
-                  alt={`Vehicle (${vehicleDetails.name})`}
-                />
+              <div className="relative details-photo-container max-w-full pb-16">
+                <Swiper
+                  id="always-be-swipin"
+                  className="swiper-container"
+                  direction="horizontal"
+                  loop={true}
+                  effect={'fade'}
+                  pagination={{
+                    dynamicBullets: true,
+                  }}
+                  navigation={true}
+                  modules={[Pagination, Navigation]}           
+                >
+                  <SwiperSlide>
+                    <img
+                      className='w-full'
+                      src={vehicleDetails.photo}
+                      alt={`Vehicle (${vehicleDetails.name})`}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      className='w-full'
+                      src={vehicleDetails.photo_back}
+                      alt={`Vehicle (${vehicleDetails.name})`}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      className='w-full'
+                      src={vehicleDetails.photo_left}
+                      alt={`Vehicle (${vehicleDetails.name})`}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      className='w-full'
+                      src={vehicleDetails.photo_right}
+                      alt={`Vehicle (${vehicleDetails.name})`}
+                    />
+                  </SwiperSlide>
+                </Swiper>
                 <Link to="/vehicles" className="detailsBack">
                   <AiOutlineLeft className="text-2xl" />
                 </Link>
@@ -61,7 +104,7 @@ const VehicleDetails = () => {
               <div className="w-11/12 m-auto flex flex-col justify-center mb-16 md:my-auto md:mx-8 details-right-container">
                 {width > 900 ? (
                   <div className="w-11/12 m-auto mb-7 flex flex-col justify-end items-end text-right">
-                    <h1 className="font-ace text-5xl text-black text-right text-shadow-title mb-2">
+                    <h1 className="font-ace text-4xl text-black text-right text-shadow-title mb-2 title-desktop">
                       {vehicleDetails.name}
                     </h1>
                     <p className="font-roboto text-shadow-title text-right">

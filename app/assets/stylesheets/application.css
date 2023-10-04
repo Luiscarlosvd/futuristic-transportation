@@ -81,6 +81,7 @@
   padding-right: 0.8rem;
   border-radius: 0 2rem 2rem 0;
   transition: all 0.2s;
+  z-index: 1000;
 }
 
 .detailsBack:hover {
@@ -116,12 +117,17 @@
 }
 
 @media (min-width: 1132px) {
+  .title-desktop {
+    font-size: 32px;
+  }
+
   .details-container {
     display: flex;
+    max-width: calc(100vw - 15rem);
   }
 
   .detailsBack {
-    bottom: 8rem;
+    bottom: 7rem;
   }
 
   .details-photo-container {
@@ -129,7 +135,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 66.666%;
+    width: calc(66.666% - 4rem);
+    flex-grow: 1;
+    flex-shrink: 1;
   }
 
   .price-list-container {
@@ -140,6 +148,14 @@
   .details-right-container {
     width: 33.3333%;
     height: 80%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
   }
 }
 
@@ -263,7 +279,7 @@ form > input:focus {
   max-height: 100vw;
   min-height: 0;
   min-width: 0;
-  max-width: 100vw;
+  max-width: calc(100vw - 15rem);
   width: 100%;
   overflow: hidden;
 }
@@ -280,6 +296,7 @@ form > input:focus {
   max-height: 100%;
   height: 100%;
   display: flex;
+  max-width: 100%;
 }
 
 .vehicles-content {
@@ -314,6 +331,10 @@ form > input:focus {
 
   .slide {
     display: none;
+  }
+
+  .swiper-container {
+    max-width: 100vw;
   }
 }
 
@@ -360,4 +381,36 @@ form > input:focus {
   .bg-new-reservation {
     height: 100vh;
   }
+}
+
+@media (min-width: 1132px) {
+  .swiper-slide {
+    display: flex !important;
+    flex-direction: column;
+    place-content: center;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #a2cc16 !important;
+  background-color: rgba(0, 0, 0, 0.404);
+  padding: 5px !important;
+  border-radius: 1000px;
+}
+
+.swiper-pagination-bullet-active-main {
+  background-color:#a2cc16 !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 25px !important;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
 }
