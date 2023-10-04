@@ -174,11 +174,8 @@ form > input:focus {
 .form-input {
   background-color: rgba(0, 0, 0, 0.342);
   border: 0;
+  color: white;
   border-bottom: 2px solid #97bf0f;
-}
-
-.bg-registration {
-  background: radial-gradient(circle, rgba(128, 128, 128, 1) 55%, rgba(68, 74, 84, 1) 100%);
 }
 
 .bg-signup {
