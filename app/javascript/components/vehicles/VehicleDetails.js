@@ -6,11 +6,11 @@ import { AiOutlineLeft, AiOutlineRightCircle } from 'react-icons/ai';
 import { BiLogIn } from 'react-icons/bi';
 import { BsCarFrontFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import { getVehiclesInfo } from '../../redux/vehicleSlice';
 import useWindowResize from '../hooks/useWindowResize';
 import PriceList from './PriceList';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -60,38 +60,38 @@ const VehicleDetails = () => {
                   id="always-be-swipin"
                   className="swiper-container"
                   direction="horizontal"
-                  loop={true}
-                  effect={'fade'}
+                  loop
+                  effect="fade"
                   pagination={{
                     dynamicBullets: true,
                   }}
-                  navigation={true}
-                  modules={[Pagination, Navigation]}           
+                  navigation
+                  modules={[Pagination, Navigation]}
                 >
                   <SwiperSlide>
                     <img
-                      className='w-full'
+                      className="w-full"
                       src={vehicleDetails.photo}
                       alt={`Vehicle (${vehicleDetails.name})`}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img
-                      className='w-full'
+                      className="w-full"
                       src={vehicleDetails.photo_back}
                       alt={`Vehicle (${vehicleDetails.name})`}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img
-                      className='w-full'
+                      className="w-full"
                       src={vehicleDetails.photo_left}
                       alt={`Vehicle (${vehicleDetails.name})`}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img
-                      className='w-full'
+                      className="w-full"
                       src={vehicleDetails.photo_right}
                       alt={`Vehicle (${vehicleDetails.name})`}
                     />

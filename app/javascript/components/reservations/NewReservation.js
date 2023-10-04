@@ -33,8 +33,8 @@ const NewReservation = () => {
                 <h1 className="font-ace text-2xl text-white text-shadow-title text-center">Make a Reservation</h1>
                 <div className="bg-white h-1px w-5/6 max-w-xs my-5" />
                 <p className="text-white text-center w-11/12 text-shadow-title">
-                  In our company we provide the best automobile service 
-                  for our clients, choose to feel like you are flying with us. 
+                  In our company we provide the best automobile service
+                  for our clients, choose to feel like you are flying with us.
                   If you want to find out if a
                   reservation is available in your area,
                   please use the selector below.

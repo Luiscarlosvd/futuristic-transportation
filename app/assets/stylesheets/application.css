@@ -400,7 +400,7 @@ form > input:focus {
 }
 
 .swiper-pagination-bullet-active-main {
-  background-color:#a2cc16 !important;
+  background-color: #a2cc16 !important;
 }
 
 .swiper-button-next::after,
@@ -410,7 +410,7 @@ form > input:focus {
 
 @media (max-width: 768px) {
   .swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
-}
+  .swiper-button-next {
+    display: none !important;
+  }
 }

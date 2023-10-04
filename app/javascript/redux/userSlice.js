@@ -80,7 +80,7 @@ const userSlice = createSlice({
         } else {
           window.location.replace('/');
         }
-        console.log(action)
+        console.log(action);
         return {
           ...state,
           status: 'fulfilled',

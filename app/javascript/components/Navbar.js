@@ -73,10 +73,10 @@ const Navbar = () => {
           show ? 'display' : 'hide'
         }`}
       >
-        <img 
+        <img
           src="https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaAfROxiXkcJY1RmRHjSxhvjhAoCoES0deb_kWaEG_q1ldwOOSjlxjMwgq1jbgrfwgTak2hdWrx5FtyDOUpxMq2DofQA3w=w1912-h958"
-          className="w-2/3 mx-auto" 
-          alt="Galactic Gears" 
+          className="w-2/3 mx-auto"
+          alt="Galactic Gears"
         />
         <div className="flex flex-col font-ace ml-2 text-darkGrey font-bold navigation mb-10">
           <NavLink className="p-2" to="/">
