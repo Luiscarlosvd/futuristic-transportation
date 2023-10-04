@@ -86,8 +86,7 @@ test:
 #
 production:
   <<: *default
-  database: rentals_app
-  username: rentals_app_user
+  database: bgpnrwkm
+  username: bgpnrwkm
   password: <%= ENV["RENTALS_APP_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
-  # host: dpg-ckeq3d6a3ovc738jpkvg-a
