@@ -1,16 +1,26 @@
 <a name="readme-top"></a>
 
 <div align="center">
+  <br/>
+  <img src="./app/assets/images/Luxury-logo-readme1.png" alt="logo Luxury" width="300"  height="auto" />
+  <br/>
+  <br/>
   <h1><b>Luxury Speedsters</b></h1><a name="about-project"></a>
+</div>
+
+<div>
+ <img src="">
 </div>
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Recipe App ](#-recipe-app-)
+- [📖🚗 Luxury Speedsters App ](#-luxury-speedsters-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [🎫 Kanban Board ](#-kanban-board-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -27,9 +37,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Galactic Gear App <a name="about-project"></a>
+# 📖🚗 Luxury Speedsters App <a name="about-project"></a>
 
-Experience the future of automotive luxury with our "Galactic Gear" app. Powered by Ruby on Rails for a robust back end and React for an intuitive front end, this app enables users to browse a diverse catalog of cutting-edge vehicles, explore detailed car profiles, and effortlessly create reservations for their dream cars. Keep track of all your reservations in one place, making your journey towards automotive excellence seamless and exciting.
+Experience the future of automotive luxury with our "Luxury Speedsters" app. Powered by Ruby on Rails for a robust back end and React for an intuitive front end, this app enables users to browse a diverse catalog of cutting-edge vehicles, explore detailed car profiles, and effortlessly create reservations for their dream cars. Keep track of all your reservations in one place, making your journey towards automotive excellence seamless and exciting.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -73,12 +83,12 @@ Experience the future of automotive luxury with our "Galactic Gear" app. Powered
 
 ### Key Features <a name="key-features"></a>
 
-- **Create and Remove Cars**
-- **Create Reservation**
+- **Create and Remove Vehicles**
+- **Create Reservations**
 - **Full stack webpage**
 - **Can see all the list of reservation of current user**
 - **Details of every cars in db**
-- **Log in and sign up feature**
+- **Log in and Sign up feature**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -86,7 +96,15 @@ Experience the future of automotive luxury with our "Galactic Gear" app. Powered
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo Link](#)
+[You can see the Live Demo Here.](https://rentals-app-egry.onrender.com/) 💻📲
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🎫 Kanban Board <a name="kanban-board"></a>
+
+- [Link to Kanban Board.](https://github.com/users/Luiscarlosvd/projects/2)
+- [Initial state of the Kanban Board.](https://user-images.githubusercontent.com/99110717/269471550-04aefd81-fa1d-439a-8af6-4b714b9de26e.png)
+- *We are 4 Team Members.*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -199,7 +217,7 @@ Example:
 
 - [ ] **Improve UI**
 - [ ] **Add more functionality**
-- [ ] **Add More details on reservation List**
+- [ ] **Add More details on Reservation List**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
