@@ -57,7 +57,7 @@ const DeleteVehicleList = () => {
         <div className="navbar-space" />
         <div className="flex flex-col gap-10 min-h-screen vehicles-content justify-center bg-slate-50">
           <div className="flex flex-col items-center gap-3 mx-auto">
-            <h1 className="text-darkGrey text-4xl font-ace text-shadow-title">
+            <h1 className="text-darkGrey text-4xl text-center font-ace text-shadow-title">
               Delete a vehicle
             </h1>
             <p className="font-roboto text-gray-400 font-semibold text-sm">

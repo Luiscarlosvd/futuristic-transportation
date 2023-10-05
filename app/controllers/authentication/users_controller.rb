@@ -5,11 +5,12 @@ class Authentication::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save!
+    if @user.save
       session[:user_id] = @user.id
       redirect_to '/', notice: 'User Created!'
     else
-      redirect_to '/', status: :unprocessable_entity, alert: 'Unable to create the user.'
+      error_message = @user.errors.full_messages[0]
+      redirect_to '/', alert: error_message, status: :unprocessable_entity
     end
   end
 

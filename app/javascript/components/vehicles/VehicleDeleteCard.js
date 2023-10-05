@@ -19,7 +19,7 @@ const VehicleDeleteCard = ({
       <img className="h-40 aspect-auto mt-2" src={photo} alt="Vehicle" />
       <h3>{name}</h3>
       <Divisor quantity={5} />
-      <p className="font-roboto text-xs text-gray-400">{ description }</p>
+      <p className="font-roboto text-xs w-3/4 text-center text-gray-400">{description.length > 100 ? `${description.slice(0, 100)}...` : description}</p>
       <button type="button" className="delete-btn" onClick={() => handleDelete(id)}>Delete</button>
     </div>
   );

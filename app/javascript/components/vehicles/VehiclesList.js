@@ -71,14 +71,14 @@ const VehiclesList = () => {
           <div className="flex items-center justify-center w-full gap-8">
             <button
               type="button"
-              className={`slide mr-auto pl-8 pr-3 py-3 rounded-r-full bg-primaryGreen ${
+              className={`slide mr-auto pl-8 pr-4 py-5 rounded-r-full bg-primaryGreen ${
                 listStart ? 'gray-bg' : ''
               }`}
               onClick={() => {
                 slideBack();
               }}
             >
-              <TbTriangle className="text-l text-white -rotate-90" />
+              <TbTriangle className="text-xl text-white -rotate-90" />
             </button>
             <Swiper
               id="always-be-swipin"
@@ -125,14 +125,14 @@ const VehiclesList = () => {
 
             <button
               type="button"
-              className={`slide ml-auto pr-8 pl-3 py-3 rounded-l-full bg-primaryGreen ${
+              className={`slide ml-auto pr-8 pl-4 py-5 rounded-l-full bg-primaryGreen ${
                 listEnd ? 'gray-bg' : ''
               }`}
               onClick={() => {
                 slideForward();
               }}
             >
-              <TbTriangle className="text-l text-white rotate-90" />
+              <TbTriangle className="text-xl text-white rotate-90" />
             </button>
           </div>
         </div>

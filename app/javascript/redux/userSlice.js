@@ -74,8 +74,12 @@ const userSlice = createSlice({
         ...state,
         status: 'Loading',
       }))
-      .addCase(createUser.fulfilled, (state) => {
-        window.location.replace('/');
+      .addCase(createUser.fulfilled, (state, action) => {
+        if (action.payload === 'Request failed with status code 422') {
+          window.location.reload('/sign-up');
+        } else {
+          window.location.replace('/');
+        }
         return {
           ...state,
           status: 'fulfilled',
