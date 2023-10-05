@@ -30,7 +30,7 @@ const AddVehicle = () => {
                 <div className='w-full'>
                   <span className="font-bold text-red-600 mb-3">{errors.description?.message}</span>
                   <textarea
-                    className="font-roboto shadow-md border-white rounded-full bg-transparent text-white py-4 w-full placeholder-white"
+                    className="font-roboto resize-none shadow-md border-white rounded-full bg-transparent text-white py-4 w-full placeholder-white"
                     name="description"
                     placeholder="Description"
                     {...register('description', { required: 'This field is required.' })}
