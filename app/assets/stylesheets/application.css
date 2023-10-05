@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  overscroll-behavior: none;
+}
+
+/* Home */
+.gray-bg {
+  background-color: rgb(201, 201, 201);
+}
+
+.bg-reservations {
+  background: radial-gradient(circle, rgb(248, 250, 252) 35%, rgb(223, 224, 226) 100%);
+}
+
+.home-img {
+  background-image: url(home-mustang.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: auto 60%;
+}
+
+.bg-main {
+  background: radial-gradient(circle, rgb(255 142 0) 50%, rgb(129 54 0) 100%);
+}
+
+.text-shadow-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.green-button {
+  padding: 1rem 2rem;
+  background-color: #97bf0f;
+  color: white;
+  border-radius: 2000px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 1rem;
+  transition: all 0.2s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
+}
+
+.green-button:hover {
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  padding: 5px 15px;
+  border: 1px solid rgb(230, 64, 64);
+  color: rgb(230, 64, 64);
+  border-radius: 5px;
+  font-family: 'Bruno Ace', 'cursive', sans-serif;
+  transition: all 100ms;
+  margin-top: auto;
+}
+
+.delete-btn:hover {
+  background-color: rgb(230, 64, 64);
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .home-img {
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+/* Vehicle Details */
+
+.detailsBack {
+  color: white;
+  position: absolute;
+  font-size: 1.65rem;
+  width: 4rem;
+  height: 3.5rem;
+  background-color: #98be18;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 0.8rem;
+  border-radius: 0 2rem 2rem 0;
+  transition: all 0.2s;
+  z-index: 45;
+}
+
+.detailsBack:hover {
+  background-color: #7daa14;
+  transform: scale(1.05);
+}
+
+.h-1px {
+  height: 1.75px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.514);
+}
+
+.price-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.1rem 1.5rem;
+}
+
+.price-list:nth-child(even) {
+  background-color: #cdcdcdda;
+}
+
+.navbar-space {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-space {
+    display: flex;
+    min-width: 15rem;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1132px) {
+  .title-desktop {
+    font-size: 32px;
+  }
+
+  .details-container {
+    display: flex;
+    max-width: calc(100vw - 15rem);
+  }
+
+  .detailsBack {
+    bottom: 7rem;
+  }
+
+  .details-photo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(66.666% - 4rem);
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .price-list-container {
+    max-width: 500px;
+    margin: 1.5rem auto;
+  }
+
+  .details-right-container {
+    width: 33.3333%;
+    height: 80%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+  }
+}
+
+/* Log In and Sign Up */
+
+.form-bg {
+  background-color: rgba(0, 0, 0, 0.285);
+  backdrop-filter: blur(0.8px);
+  box-shadow: 0 3px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.bg-image-form {
+  background-image: url(Ford-LogIn.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: auto 60%;
+}
+
+form > input {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  transition: all 0.2s;
+
+  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514); */
+  outline: none;
+}
+
+form > input:focus {
+  transform: scale(1.03);
+}
+
+.form-input {
+  background-color: rgba(0, 0, 0, 0.342);
+  border: 0;
+  color: white;
+  border-bottom: 2px solid #97bf0f;
+}
+
+.bg-signup {
+  background: radial-gradient(circle, rgb(143, 143, 143) 30%, rgb(76, 84, 97) 100%);
+}
+
+.transition-scale {
+  transition: all 0.2s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
+}
+
+.transition-scale:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 648px) {
+  .form-bg {
+    padding: 3rem 7rem;
+  }
+
+  .bg-image-form {
+    background-size: contain;
+  }
+}
+
+@media (min-width: 740px) {
+  .bg-image-form {
+    background-position: center;
+    background-size: 70%;
+  }
+
+  .form-bg {
+    padding: 5rem 9rem;
+  }
+}
+
+/* nav */
+
+.navigation > a:hover {
+  background-color: #97bf0f;
+  color: white;
+  padding-left: 15px;
+  transition: all 100ms linear;
+}
+
+.nav-container {
+  transition: all 300ms ease-in-out;
+}
+
+.nav-container::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-container.display {
+  left: 0;
+}
+
+.nav-icon {
+  z-index: 1000;
+  transition: all 300ms;
+  color: white;
+}
+
+.nav-icon.display {
+  transform: rotate(180deg);
+  color: #97bf0f;
+}
+
+.licence {
+  font-size: 13px;
+}
+
+.media-list > svg {
+  transition: color 100ms linear;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.media-list > svg:hover {
+  color: #97bf0f;
+}
+
+.swiper-container {
+  height: 100%;
+  max-height: 100vw;
+  min-height: 0;
+  min-width: 0;
+  max-width: calc(100vw - 15rem);
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: auto;
+  flex-shrink: 0;
+  display: block;
+  height: 100%;
+  max-height: 100%;
+}
+
+.swiper-wrapper {
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+  max-width: 100%;
+}
+
+.vehicles-content {
+  max-width: calc(100vw - 15rem);
+  min-width: calc(100vw - 15rem);
+}
+
+.card-image::after {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background-color: rgb(173, 173, 173);
+}
+
+@media (max-width: 768px) {
+  .nav-icon {
+    display: block;
+    color: #97bf0f;
+  }
+
+  .white {
+    color: white;
+  }
+
+  .vehicles-content {
+    max-width: 100vw;
+    min-width: 100vw;
+  }
+
+  .slide {
+    display: none;
+  }
+
+  .swiper-container {
+    max-width: 100vw;
+  }
+}
+
+/* New Reservation */
+
+.bg-new-reservation {
+  background: radial-gradient(circle, rgb(78 165 5) 55%, rgb(23 57 14) 100%);
+}
+
+.bg-image-new-reservation {
+  background-image: url(Ford-Green.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110%;
+}
+
+.form-new-reservation-bg {
+  background-color: #25252552;
+  backdrop-filter: blur(0.9px);
+  width: 95%;
+  margin: 60px auto;
+  border-radius: 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.form-new-reservation-bg::-webkit-scrollbar {
+  display: none;
+}
+
+.input-date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 740px) {
+  .bg-image-new-reservation {
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+@media (min-width: 420px) {
+  .bg-new-reservation {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1132px) {
+  .swiper-slide {
+    display: flex !important;
+    flex-direction: column;
+    place-content: center;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #a2cc16 !important;
+  background-color: rgba(0, 0, 0, 0.404);
+  padding: 5px !important;
+  border-radius: 1000px;
+}
+
+.swiper-pagination-bullet-active-main {
+  background-color: #a2cc16 !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 25px !important;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
