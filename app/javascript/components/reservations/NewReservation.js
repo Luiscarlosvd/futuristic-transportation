@@ -27,14 +27,14 @@ const NewReservation = () => {
       {vehicle.status === 'Loading' && <div className="h-screen flex justify-center items-center"><PongSpinner size={100} color="#686769" loading /></div> }
       {vehicle.status === 'fulfilled' && (
         <>
-          <div className="h-full w-full bg-new-reservation">
+          <div className="h-screen w-full bg-new-reservation">
             <div className="bg-image-new-reservation w-full h-full grid place-content-center">
               <section className="form-new-reservation-bg flex flex-col justify-center items-center sm:max-w-5xl sm:w-4/5 lg:px-6">
                 <h1 className="font-ace text-2xl text-white text-shadow-title text-center">Make a Reservation</h1>
                 <div className="bg-white h-1px w-5/6 max-w-xs my-5" />
                 <p className="text-white text-center w-11/12 text-shadow-title">
-                  In our company we provide the best automobile service 
-                  for our clients, choose to feel like you are flying with us. 
+                  In our company we provide the best automobile service
+                  for our clients, choose to feel like you are flying with us.
                   If you want to find out if a
                   reservation is available in your area,
                   please use the selector below.

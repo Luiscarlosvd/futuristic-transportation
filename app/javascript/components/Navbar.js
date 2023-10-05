@@ -7,7 +7,6 @@ import {
   FaFacebookF, FaVimeoV, FaPinterestP, FaGoogle,
 } from 'react-icons/fa';
 import { deleteSession } from '../redux/userSlice';
-import logo from '../../assets/images/logo-no-back.png';
 
 import useWindowResize from './hooks/useWindowResize';
 
@@ -73,28 +72,32 @@ const Navbar = () => {
           show ? 'display' : 'hide'
         }`}
       >
-        <img src={logo} className="w-2/3 mx-auto" alt="Galactic Gears" />
+        <img
+          src="https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaAfROxiXkcJY1RmRHjSxhvjhAoCoES0deb_kWaEG_q1ldwOOSjlxjMwgq1jbgrfwgTak2hdWrx5FtyDOUpxMq2DofQA3w=w1912-h958"
+          className="w-2/3 mx-auto"
+          alt="Luxury Speedsters"
+        />
         <div className="flex flex-col font-ace ml-2 text-darkGrey font-bold navigation mb-10">
-          <NavLink className="p-2" to="/">
+          <NavLink className="px-2 py-3" to="/">
             HOME
           </NavLink>
-          <NavLink className="p-2" to="/vehicles">
+          <NavLink className="px-2 py-3" to="/vehicles">
             VEHICLES LIST
           </NavLink>
           {user.user !== -1 && (
             <>
-              <NavLink className="p-2" to="/my-reservations">
+              <NavLink className="px-2 py-3" to="/my-reservations">
                 RESERVATIONS
               </NavLink>
-              <NavLink className="p-2" to="/reserve">
+              <NavLink className="px-2 py-3" to="/reserve">
                 RESERVE
               </NavLink>
               {user.admin && (
                 <>
-                  <NavLink className="p-2" to="vehicles/new">
+                  <NavLink className="px-2 py-3" to="vehicles/new">
                     ADD VEHICLE
                   </NavLink>
-                  <NavLink className="px-2 py-1" to="vehicles/delete">
+                  <NavLink className="px-2 py-3" to="vehicles/delete">
                     DELETE VEHICLE
                   </NavLink>
                 </>
@@ -103,7 +106,7 @@ const Navbar = () => {
                 onClick={() => {
                   dispatch(deleteSession());
                 }}
-                className="px-2 py-1"
+                className="px-2 py-3"
               >
                 LOGOUT
               </NavLink>
@@ -111,10 +114,10 @@ const Navbar = () => {
           )}
           {user.user === -1 && (
             <>
-              <NavLink className="p-2" to="log-in">
+              <NavLink className="px-2 py-3" to="log-in">
                 LOGIN
               </NavLink>
-              <NavLink className="p-2" to="sign-up">
+              <NavLink className="px-2 py-3" to="sign-up">
                 SIGNUP
               </NavLink>
             </>

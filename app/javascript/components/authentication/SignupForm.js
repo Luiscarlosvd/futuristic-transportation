@@ -18,7 +18,7 @@ const SignupForm = () => {
               className="flex flex-col gap-7 items-center text-center"
               onSubmit={handleSubmit((data) => dispatch(createUser({ user: data })))}
             >
-              <div className='flex flex-col gap-1'>
+              <div className="flex flex-col gap-1">
                 <span className="font-bold text-red-600">{errors.name?.message}</span>
                 <input
                   type="text"
@@ -29,7 +29,7 @@ const SignupForm = () => {
                   className="font-ace text-lg form-input placeholder-white py-3 px-5"
                 />
               </div>
-              <div className='flex flex-col gap-1'>
+              <div className="flex flex-col gap-1">
                 <span className="font-bold text-red-600">{errors.email?.message}</span>
                 <input
                   type="email"
@@ -40,7 +40,7 @@ const SignupForm = () => {
                   className="font-ace text-lg form-input placeholder-white py-3 px-5"
                 />
               </div>
-              <div className='flex flex-col gap-1'>
+              <div className="flex flex-col gap-1">
                 <span className="font-bold text-red-600">{errors.password?.message}</span>
                 <input
                   type="password"
