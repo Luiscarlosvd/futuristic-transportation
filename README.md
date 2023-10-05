@@ -35,8 +35,6 @@
   - [❓ FAQ ](#-faq-)
   - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
-
 # 📖🚗 Luxury Speedsters App <a name="about-project"></a>
 
 Experience the future of automotive luxury with our "Luxury Speedsters" app. Powered by Ruby on Rails for a robust back end and React for an intuitive front end, this app enables users to browse a diverse catalog of cutting-edge vehicles, explore detailed car profiles, and effortlessly create reservations for their dream cars. Keep track of all your reservations in one place, making your journey towards automotive excellence seamless and exciting.
@@ -79,8 +77,6 @@ Experience the future of automotive luxury with our "Luxury Speedsters" app. Pow
   </ul>
 </details>
 
-<!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
 - **Create and Remove Vehicles**
@@ -104,7 +100,7 @@ Experience the future of automotive luxury with our "Luxury Speedsters" app. Pow
 
 - [Link to Kanban Board.](https://github.com/users/Luiscarlosvd/projects/2)
 - [Initial state of the Kanban Board.](https://user-images.githubusercontent.com/99110717/269471550-04aefd81-fa1d-439a-8af6-4b714b9de26e.png)
-- *We are 4 Team Members.*
+- *We are 4 members in our Team.*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -131,7 +127,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/enmanuelbayen/futuristic-transportation.git
+  git clone https://github.com/Luiscarlosvd/futuristic-transportation
 ```
 
 ### Install
@@ -164,24 +160,10 @@ rails db:drop db:create db:migrate
 To run tests, run the following command:
 
 ```sh
-rspec
+rspec ./spec/models
 ```
-
-<!-- ### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -211,17 +193,14 @@ Example:
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
-
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Improve UI**
-- [ ] **Add more functionality**
-- [ ] **Add More details on Reservation List**
+- [ ] **Add more functionalities**
+- [ ] **Add more details on reservation list**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -231,7 +210,6 @@ Feel free to check the [issues page](https://github.com/Luiscarlosvd/futuristic-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -240,7 +218,6 @@ If you like this project,please give it a ⭐️!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
@@ -250,7 +227,6 @@ We would like to thank Microverse for giving us the opportunity to learn and gro
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
 
 ## ❓ FAQ <a name="faq"></a>
 
@@ -264,16 +240,12 @@ We would like to thank Microverse for giving us the opportunity to learn and gro
 
   - [ ] **Yes, you can.**
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
