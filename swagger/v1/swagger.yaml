@@ -257,10 +257,10 @@ paths:
         "200":
           description: Invalid Request
 servers:
-  - url: http://{defaultHost}
+  - url: https://{defaultHost}
     variables:
       defaultHost:
-        default: localhost:3000
+        default: rentals-app-egry.onrender.com
   - url: http://{defaultHost1}
     variables:
       defaultHost1:
