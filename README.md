@@ -198,6 +198,8 @@ rspec ./spec/models
 - [ ] **Improve UI**
 - [ ] **Add more functionalities**
 - [ ] **Add more details on reservation list**
+- [ ] **Create toast messages for actions**
+- [ ] **Create functionality to make payments**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
